@@ -24,196 +24,209 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialPortConfiguration));
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.gbSerialPort = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.pbRefreshScan = new System.Windows.Forms.Button();
+			this.cbListOfPorts = new System.Windows.Forms.ComboBox();
+			this.gbProfil = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.pbSaveConfig = new System.Windows.Forms.Button();
+			this.bDeletConfig = new System.Windows.Forms.Button();
+			this.cbProfil = new System.Windows.Forms.ComboBox();
+			this.gbConfigConnexion = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.comboBox5 = new System.Windows.Forms.ComboBox();
-			this.comboBox6 = new System.Windows.Forms.ComboBox();
-			this.comboBox7 = new System.Windows.Forms.ComboBox();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
-			this.button4 = new System.Windows.Forms.Button();
-			this.groupBox1.SuspendLayout();
+			this.lBaudRate = new System.Windows.Forms.Label();
+			this.lParity = new System.Windows.Forms.Label();
+			this.lDataBits = new System.Windows.Forms.Label();
+			this.lStopBits = new System.Windows.Forms.Label();
+			this.lFlowControl = new System.Windows.Forms.Label();
+			this.cbBaudRate = new System.Windows.Forms.ComboBox();
+			this.cbDataBits = new System.Windows.Forms.ComboBox();
+			this.cbStopBits = new System.Windows.Forms.ComboBox();
+			this.cbFlowControl = new System.Windows.Forms.ComboBox();
+			this.cbParity = new System.Windows.Forms.ComboBox();
+			this.pbStartConnexion = new System.Windows.Forms.Button();
+			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			this.gbProfil.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
+			this.gbConfigConnexion.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// groupBox1
+			// gbSerialPort
 			// 
-			this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.TabStop = false;
+			this.gbSerialPort.Controls.Add(this.tableLayoutPanel1);
+			resources.ApplyResources(this.gbSerialPort, "gbSerialPort");
+			this.gbSerialPort.Name = "gbSerialPort";
+			this.gbSerialPort.TabStop = false;
 			// 
 			// tableLayoutPanel1
 			// 
 			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-			this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.pbRefreshScan, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.cbListOfPorts, 1, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			// 
-			// button1
+			// pbRefreshScan
 			// 
-			this.button1.BackgroundImage = global::SADCom.Properties.Resources.Refresh;
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.pbRefreshScan.BackgroundImage = global::SADCom.Properties.Resources.Refresh;
+			resources.ApplyResources(this.pbRefreshScan, "pbRefreshScan");
+			this.pbRefreshScan.Name = "pbRefreshScan";
+			this.pbRefreshScan.UseVisualStyleBackColor = true;
+			this.pbRefreshScan.Click += new System.EventHandler(this.pbRefreshScan_Click);
 			// 
-			// comboBox1
+			// cbListOfPorts
 			// 
-			resources.ApplyResources(this.comboBox1, "comboBox1");
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Name = "comboBox1";
+			resources.ApplyResources(this.cbListOfPorts, "cbListOfPorts");
+			this.cbListOfPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbListOfPorts.FormattingEnabled = true;
+			this.cbListOfPorts.Name = "cbListOfPorts";
+			this.cbListOfPorts.SelectedIndexChanged += new System.EventHandler(this.cbListOfPorts_SelectedIndexChanged);
 			// 
-			// groupBox2
+			// gbProfil
 			// 
-			this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-			resources.ApplyResources(this.groupBox2, "groupBox2");
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.TabStop = false;
+			this.gbProfil.Controls.Add(this.tableLayoutPanel2);
+			resources.ApplyResources(this.gbProfil, "gbProfil");
+			this.gbProfil.Name = "gbProfil";
+			this.gbProfil.TabStop = false;
 			// 
 			// tableLayoutPanel2
 			// 
 			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-			this.tableLayoutPanel2.Controls.Add(this.button2, 0, 0);
-			this.tableLayoutPanel2.Controls.Add(this.button3, 1, 0);
-			this.tableLayoutPanel2.Controls.Add(this.comboBox2, 2, 0);
+			this.tableLayoutPanel2.Controls.Add(this.pbSaveConfig, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.bDeletConfig, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.cbProfil, 2, 0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			// 
-			// button2
+			// pbSaveConfig
 			// 
-			this.button2.BackgroundImage = global::SADCom.Properties.Resources.SaveIcon;
-			resources.ApplyResources(this.button2, "button2");
-			this.button2.Name = "button2";
-			this.button2.UseVisualStyleBackColor = true;
+			this.pbSaveConfig.BackgroundImage = global::SADCom.Properties.Resources.SaveIcon;
+			resources.ApplyResources(this.pbSaveConfig, "pbSaveConfig");
+			this.pbSaveConfig.Name = "pbSaveConfig";
+			this.pbSaveConfig.UseVisualStyleBackColor = true;
+			this.pbSaveConfig.Click += new System.EventHandler(this.pbSaveConfig_Click);
 			// 
-			// button3
+			// bDeletConfig
 			// 
-			this.button3.BackgroundImage = global::SADCom.Properties.Resources.DeletFileIcon;
-			resources.ApplyResources(this.button3, "button3");
-			this.button3.Name = "button3";
-			this.button3.UseVisualStyleBackColor = true;
+			this.bDeletConfig.BackgroundImage = global::SADCom.Properties.Resources.DeletFileIcon;
+			resources.ApplyResources(this.bDeletConfig, "bDeletConfig");
+			this.bDeletConfig.Name = "bDeletConfig";
+			this.bDeletConfig.UseVisualStyleBackColor = true;
+			this.bDeletConfig.Click += new System.EventHandler(this.bDeletConfig_Click);
 			// 
-			// comboBox2
+			// cbProfil
 			// 
-			resources.ApplyResources(this.comboBox2, "comboBox2");
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Name = "comboBox2";
+			resources.ApplyResources(this.cbProfil, "cbProfil");
+			this.cbProfil.FormattingEnabled = true;
+			this.cbProfil.Name = "cbProfil";
+			this.cbProfil.SelectedIndexChanged += new System.EventHandler(this.cbProfil_SelectedIndexChanged);
 			// 
-			// groupBox3
+			// gbConfigConnexion
 			// 
-			this.groupBox3.Controls.Add(this.tableLayoutPanel3);
-			resources.ApplyResources(this.groupBox3, "groupBox3");
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.TabStop = false;
+			this.gbConfigConnexion.Controls.Add(this.tableLayoutPanel3);
+			resources.ApplyResources(this.gbConfigConnexion, "gbConfigConnexion");
+			this.gbConfigConnexion.Name = "gbConfigConnexion";
+			this.gbConfigConnexion.TabStop = false;
 			// 
 			// tableLayoutPanel3
 			// 
 			resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-			this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-			this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
-			this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
-			this.tableLayoutPanel3.Controls.Add(this.label4, 0, 3);
-			this.tableLayoutPanel3.Controls.Add(this.label5, 0, 4);
-			this.tableLayoutPanel3.Controls.Add(this.comboBox3, 1, 0);
-			this.tableLayoutPanel3.Controls.Add(this.comboBox5, 1, 2);
-			this.tableLayoutPanel3.Controls.Add(this.comboBox6, 1, 3);
-			this.tableLayoutPanel3.Controls.Add(this.comboBox7, 1, 4);
-			this.tableLayoutPanel3.Controls.Add(this.comboBox4, 1, 1);
+			this.tableLayoutPanel3.Controls.Add(this.lBaudRate, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.lParity, 0, 1);
+			this.tableLayoutPanel3.Controls.Add(this.lDataBits, 0, 2);
+			this.tableLayoutPanel3.Controls.Add(this.lStopBits, 0, 3);
+			this.tableLayoutPanel3.Controls.Add(this.lFlowControl, 0, 4);
+			this.tableLayoutPanel3.Controls.Add(this.cbBaudRate, 1, 0);
+			this.tableLayoutPanel3.Controls.Add(this.cbDataBits, 1, 2);
+			this.tableLayoutPanel3.Controls.Add(this.cbStopBits, 1, 3);
+			this.tableLayoutPanel3.Controls.Add(this.cbFlowControl, 1, 4);
+			this.tableLayoutPanel3.Controls.Add(this.cbParity, 1, 1);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
 			// 
-			// label1
+			// lBaudRate
 			// 
-			resources.ApplyResources(this.label1, "label1");
-			this.label1.Name = "label1";
+			resources.ApplyResources(this.lBaudRate, "lBaudRate");
+			this.lBaudRate.Name = "lBaudRate";
 			// 
-			// label2
+			// lParity
 			// 
-			resources.ApplyResources(this.label2, "label2");
-			this.label2.Name = "label2";
+			resources.ApplyResources(this.lParity, "lParity");
+			this.lParity.Name = "lParity";
 			// 
-			// label3
+			// lDataBits
 			// 
-			resources.ApplyResources(this.label3, "label3");
-			this.label3.Name = "label3";
+			resources.ApplyResources(this.lDataBits, "lDataBits");
+			this.lDataBits.Name = "lDataBits";
 			// 
-			// label4
+			// lStopBits
 			// 
-			resources.ApplyResources(this.label4, "label4");
-			this.label4.Name = "label4";
+			resources.ApplyResources(this.lStopBits, "lStopBits");
+			this.lStopBits.Name = "lStopBits";
 			// 
-			// label5
+			// lFlowControl
 			// 
-			resources.ApplyResources(this.label5, "label5");
-			this.label5.Name = "label5";
+			resources.ApplyResources(this.lFlowControl, "lFlowControl");
+			this.lFlowControl.Name = "lFlowControl";
 			// 
-			// comboBox3
+			// cbBaudRate
 			// 
-			resources.ApplyResources(this.comboBox3, "comboBox3");
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Name = "comboBox3";
+			resources.ApplyResources(this.cbBaudRate, "cbBaudRate");
+			this.cbBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbBaudRate.FormattingEnabled = true;
+			this.cbBaudRate.Name = "cbBaudRate";
 			// 
-			// comboBox5
+			// cbDataBits
 			// 
-			resources.ApplyResources(this.comboBox5, "comboBox5");
-			this.comboBox5.FormattingEnabled = true;
-			this.comboBox5.Name = "comboBox5";
+			resources.ApplyResources(this.cbDataBits, "cbDataBits");
+			this.cbDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbDataBits.FormattingEnabled = true;
+			this.cbDataBits.Name = "cbDataBits";
 			// 
-			// comboBox6
+			// cbStopBits
 			// 
-			resources.ApplyResources(this.comboBox6, "comboBox6");
-			this.comboBox6.FormattingEnabled = true;
-			this.comboBox6.Name = "comboBox6";
+			resources.ApplyResources(this.cbStopBits, "cbStopBits");
+			this.cbStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbStopBits.FormattingEnabled = true;
+			this.cbStopBits.Name = "cbStopBits";
 			// 
-			// comboBox7
+			// cbFlowControl
 			// 
-			resources.ApplyResources(this.comboBox7, "comboBox7");
-			this.comboBox7.FormattingEnabled = true;
-			this.comboBox7.Name = "comboBox7";
+			resources.ApplyResources(this.cbFlowControl, "cbFlowControl");
+			this.cbFlowControl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbFlowControl.FormattingEnabled = true;
+			this.cbFlowControl.Name = "cbFlowControl";
 			// 
-			// comboBox4
+			// cbParity
 			// 
-			resources.ApplyResources(this.comboBox4, "comboBox4");
-			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Name = "comboBox4";
+			resources.ApplyResources(this.cbParity, "cbParity");
+			this.cbParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbParity.FormattingEnabled = true;
+			this.cbParity.Name = "cbParity";
 			// 
-			// button4
+			// pbStartConnexion
 			// 
-			resources.ApplyResources(this.button4, "button4");
-			this.button4.Name = "button4";
-			this.button4.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.pbStartConnexion, "pbStartConnexion");
+			this.pbStartConnexion.Name = "pbStartConnexion";
+			this.pbStartConnexion.UseVisualStyleBackColor = true;
+			this.pbStartConnexion.Click += new System.EventHandler(this.pbStartConnexion_Click);
 			// 
 			// SerialPortConfiguration
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.groupBox3);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.pbStartConnexion);
+			this.Controls.Add(this.gbConfigConnexion);
+			this.Controls.Add(this.gbProfil);
+			this.Controls.Add(this.gbSerialPort);
 			this.Name = "SerialPortConfiguration";
-			this.groupBox1.ResumeLayout(false);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerialPortConfiguration_FormClosing);
+			this.Load += new System.EventHandler(this.SerialPortConfiguration_Load);
+			this.gbSerialPort.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
+			this.gbProfil.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
+			this.gbConfigConnexion.ResumeLayout(false);
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.tableLayoutPanel3.PerformLayout();
 			this.ResumeLayout(false);
@@ -222,27 +235,27 @@
 
 		#endregion
 
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox gbSerialPort;
+		private System.Windows.Forms.GroupBox gbProfil;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.Button pbRefreshScan;
+		private System.Windows.Forms.ComboBox cbListOfPorts;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Button pbSaveConfig;
+		private System.Windows.Forms.Button bDeletConfig;
+		private System.Windows.Forms.ComboBox cbProfil;
+		private System.Windows.Forms.GroupBox gbConfigConnexion;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox5;
-		private System.Windows.Forms.ComboBox comboBox6;
-		private System.Windows.Forms.ComboBox comboBox7;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Label lBaudRate;
+		private System.Windows.Forms.Label lParity;
+		private System.Windows.Forms.Label lDataBits;
+		private System.Windows.Forms.Label lStopBits;
+		private System.Windows.Forms.Label lFlowControl;
+		private System.Windows.Forms.ComboBox cbBaudRate;
+		private System.Windows.Forms.ComboBox cbDataBits;
+		private System.Windows.Forms.ComboBox cbStopBits;
+		private System.Windows.Forms.ComboBox cbFlowControl;
+		private System.Windows.Forms.ComboBox cbParity;
+		private System.Windows.Forms.Button pbStartConnexion;
 	}
 }
