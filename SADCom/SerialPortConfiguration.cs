@@ -19,6 +19,14 @@ namespace SADCom {
 		private string saveDirectory;
 		private string configFileSystem;
 
+		private SerialPort mSerialPort = null;
+		public SerialPort serialPort {
+			get {
+				return mSerialPort;
+			}
+		}
+	
+
 		public SerialPortConfiguration() {
 			InitializeComponent();
 
@@ -82,6 +90,11 @@ namespace SADCom {
 			this.cbBaudRate.Items.Add(115200);
 			this.cbBaudRate.Items.Add(128000);
 			this.cbBaudRate.SelectedIndex = 11;
+
+			ToolTip toolTip = new ToolTip();
+			toolTip.SetToolTip(this.pbRefreshScan, "Rescan serial port");
+			toolTip.SetToolTip(this.pbSaveConfig, "Save current configuration");
+			toolTip.SetToolTip(this.pbDeletConfig, "Delet the curent selected configuration");
 
 			//list
 			mListConfig = new List<SerialPortConfigSave>();
@@ -265,6 +278,7 @@ namespace SADCom {
 		private void pbStartConnexion_Click(object sender, EventArgs e) {
 			this.pbStartConnexion.Enabled = true;
 			SerialPort serialPortConnexion = new SerialPort();
+			this.mSerialPort = null;
 
 			try {
 				serialPortConnexion = new SerialPort();
@@ -278,11 +292,16 @@ namespace SADCom {
 				serialPortConnexion.Open();
 				serialPortConnexion.Close();
 				serialPortConnexion.Dispose();
+
+				this.mSerialPort = serialPortConnexion;
+
+				this.Close();
 			} catch(UnauthorizedAccessException unauthorizedAccessException) {
 				MessageBox.Show("Connexion non authorisé, veuillez réitérer ultérieurement.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
 			} catch {
 				MessageBox.Show("Erreur de connexion. Une modification des paramètre peuvent être nécéssaire.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
 			}
 		}
+		
 	}
 }

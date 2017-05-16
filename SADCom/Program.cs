@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SADCom {
@@ -13,7 +10,14 @@ namespace SADCom {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new SerialPortConfiguration());
+
+			SerialPortConfiguration configForm = new SerialPortConfiguration();
+			Application.Run(configForm);
+
+			if(configForm.serialPort != null) {
+				Application.Run(new SerialPortShell(configForm.serialPort));
+			}
+
 		}
 	}
 }

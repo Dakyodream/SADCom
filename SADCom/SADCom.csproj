@@ -62,7 +62,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerialDataToSave.cs" />
     <Compile Include="SerialPortConfigSave.cs" />
+    <Compile Include="SerialPortShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SerialPortShell.Designer.cs">
+      <DependentUpon>SerialPortShell.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerialPortState.cs" />
     <Compile Include="SerialPortConfiguration.cs">
       <SubType>Form</SubType>
@@ -82,6 +89,9 @@
     </Compile>
     <EmbeddedResource Include="SerialPortConfiguration.resx">
       <DependentUpon>SerialPortConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialPortShell.resx">
+      <DependentUpon>SerialPortShell.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +124,11 @@
   <ItemGroup>
     <None Include="Resources\Refresh.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SendData.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

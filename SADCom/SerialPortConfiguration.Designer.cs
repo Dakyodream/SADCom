@@ -31,7 +31,7 @@
 			this.gbProfil = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.pbSaveConfig = new System.Windows.Forms.Button();
-			this.bDeletConfig = new System.Windows.Forms.Button();
+			this.pbDeletConfig = new System.Windows.Forms.Button();
 			this.cbProfil = new System.Windows.Forms.ComboBox();
 			this.gbConfigConnexion = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -95,7 +95,7 @@
 			// 
 			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
 			this.tableLayoutPanel2.Controls.Add(this.pbSaveConfig, 0, 0);
-			this.tableLayoutPanel2.Controls.Add(this.bDeletConfig, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.pbDeletConfig, 1, 0);
 			this.tableLayoutPanel2.Controls.Add(this.cbProfil, 2, 0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			// 
@@ -107,13 +107,13 @@
 			this.pbSaveConfig.UseVisualStyleBackColor = true;
 			this.pbSaveConfig.Click += new System.EventHandler(this.pbSaveConfig_Click);
 			// 
-			// bDeletConfig
+			// pbDeletConfig
 			// 
-			this.bDeletConfig.BackgroundImage = global::SADCom.Properties.Resources.DeletFileIcon;
-			resources.ApplyResources(this.bDeletConfig, "bDeletConfig");
-			this.bDeletConfig.Name = "bDeletConfig";
-			this.bDeletConfig.UseVisualStyleBackColor = true;
-			this.bDeletConfig.Click += new System.EventHandler(this.bDeletConfig_Click);
+			this.pbDeletConfig.BackgroundImage = global::SADCom.Properties.Resources.DeletFileIcon;
+			resources.ApplyResources(this.pbDeletConfig, "pbDeletConfig");
+			this.pbDeletConfig.Name = "pbDeletConfig";
+			this.pbDeletConfig.UseVisualStyleBackColor = true;
+			this.pbDeletConfig.Click += new System.EventHandler(this.bDeletConfig_Click);
 			// 
 			// cbProfil
 			// 
@@ -242,7 +242,7 @@
 		private System.Windows.Forms.ComboBox cbListOfPorts;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private System.Windows.Forms.Button pbSaveConfig;
-		private System.Windows.Forms.Button bDeletConfig;
+		private System.Windows.Forms.Button pbDeletConfig;
 		private System.Windows.Forms.ComboBox cbProfil;
 		private System.Windows.Forms.GroupBox gbConfigConnexion;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

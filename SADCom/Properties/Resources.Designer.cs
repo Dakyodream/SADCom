@@ -63,6 +63,16 @@ namespace SADCom.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Data {
+            get {
+                object obj = ResourceManager.GetObject("Data", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeletFileIcon {
             get {
                 object obj = ResourceManager.GetObject("DeletFileIcon", resourceCulture);
@@ -86,6 +96,16 @@ namespace SADCom.Properties {
         internal static System.Drawing.Bitmap SaveIcon {
             get {
                 object obj = ResourceManager.GetObject("SaveIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SendData {
+            get {
+                object obj = ResourceManager.GetObject("SendData", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
