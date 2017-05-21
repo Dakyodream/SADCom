@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SADCom {
+	[Serializable]
 	class SerialDataToSave {
 		private string msData = "";
 		private DateTime mDateOfData;
@@ -17,7 +18,7 @@ namespace SADCom {
 
 		public string sDateOfData {
 			get {
-				return this.mDateOfData.ToString("hh:mm:ss.fffffff");
+				return this.mDateOfData.ToString("HH:mm:ss.fffffff");
 			}
 		}
 
@@ -34,7 +35,7 @@ namespace SADCom {
 
 		public override string ToString() {
 			string sDataReturn = this.data;
-			sDataReturn += this.mDateOfData.ToString(";hh:mm:ss.fffffff;\n");
+			sDataReturn += this.mDateOfData.ToString(";HH:mm:ss.fffffff;\n");
 			return sDataReturn;
 		}
 

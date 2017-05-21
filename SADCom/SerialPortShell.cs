@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +15,8 @@ namespace SADCom {
 	public partial class SerialPortShell : Form {
 		private SerialPort mSerialPort;
 
+		private string saveShellData;
+
 		private Timer mTimerForUpdateStatus;
 		delegate void SetTextCallback(string text);
 
@@ -20,6 +24,9 @@ namespace SADCom {
 		
 
 		public SerialPortShell(SerialPort serialPort ) {
+			string saveDirectory;
+			string sNameOfSaveFile = "saveShellData_" + serialPort.PortName + "_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + "_.bin" ;
+
 			InitializeComponent();
 
 			mTimerForUpdateStatus = new Timer();
@@ -28,6 +35,10 @@ namespace SADCom {
 			mTimerForUpdateStatus.Start();
 
 			mlistOfData = new List<SerialDataToSave>();
+
+			saveDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+			this.saveShellData = Path.Combine(saveDirectory, sNameOfSaveFile);
+
 
 			this.mSerialPort = serialPort;
 			this.mSerialPort.ReadTimeout = 200;
@@ -44,6 +55,7 @@ namespace SADCom {
 			this.mSerialPort.Disposed += MSerialPort_Disposed;
 			this.mSerialPort.ErrorReceived += MSerialPort_ErrorReceived;
 			this.mSerialPort.PinChanged += MSerialPort_PinChanged;
+
 
 			this.mSerialPort.Open();
 		}
@@ -82,7 +94,7 @@ namespace SADCom {
 			writeTxtOnForm(this.mSerialPort.ReadExisting());
 			
 		}
-
+		//génère garbage collector
 		public void writeTxtOnForm(string sTextToWrite) {
 			SerialDataToSave data;
 			if(this.rtbSerialPort.InvokeRequired) {
@@ -90,7 +102,7 @@ namespace SADCom {
 				this.Invoke(d, new object[] { sTextToWrite });
 			} else {
 				data = new SerialDataToSave(sTextToWrite);
-				mlistOfData.Add(data);
+				this.mlistOfData.Add(data);
 				if(bEnebleTimeData) {
 					this.rtbSerialPort.Text += data.sDateOfData + "\t";
 				}
@@ -99,6 +111,9 @@ namespace SADCom {
 					this.rtbSerialPort.Text += "\n";
 				}
 
+				if(this.mlistOfData.Count > 450) {
+					this.saveShell();
+				}
 				//this.rtbSerialPort.Text += sTextToWrite;
 
 
@@ -156,6 +171,116 @@ namespace SADCom {
 			//int iLength = (int)(this.rtbSerialPort.Size.Height / sizeTest.Height);
 			
 			//this.rtbSerialPort.Size = new Size(this.rtbSerialPort.Size.Width, (int) (iLength * sizeTest.Height));
+		}
+
+		//genère garbage collector
+		private void saveShell(){
+			List<SerialDataToSave> listeOfDataToSave;
+
+			//if(this.mlistOfData.Count > 100) {
+			//	try {
+
+			//		listeOfDataToSave = this.mlistOfData.GetRange(0, 100);
+
+			//		using(Stream stream = File.Open(saveShellData, FileMode.OpenOrCreate)) {
+			//			var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+			//			bformatter.Serialize(stream, listeOfDataToSave);
+			//		}
+
+			//		this.mlistOfData.RemoveRange(0, 100);
+			//		this.updateShell();
+			//	} catch(Exception exception) {
+			//		MessageBox.Show("Erreur détéctée lors la sauvegarde des données de configuration : \n" + exception.ToString(), "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+			//	}
+			//}			
+		}
+
+		//todo a affiner
+		private void exporterToolStripMenuItem_Click(object sender, EventArgs e) {
+			//RichTextBox rtbBoxToExport = new RichTextBox();
+			//List<SerialDataToSave> listeOfDataToSave = new List<SerialDataToSave>();
+
+			//SaveFileDialog saveFile = new SaveFileDialog();
+			//DateTime ExportDate = DateTime.Now;
+
+			//saveFile.DefaultExt = "*.csv";
+			//saveFile.FileName = "Export_"  + ExportDate.ToString("yyyyMMdd_HHmmss") + ".csv";
+
+			//try {
+
+			//	if(File.Exists(saveShellData)) {
+
+			//		using(Stream stream = File.Open(saveShellData, FileMode.Open)) {
+			//			var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+			//			listeOfDataToSave = (List<SerialDataToSave>)bformatter.Deserialize(stream);
+			//		}
+
+			//	}
+			//} catch {
+			//	MessageBox.Show("Erreur critique à l'initialisation", "Configuration", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+			//}
+			
+			//foreach(SerialDataToSave data in this.mlistOfData) {
+			//	listeOfDataToSave.Add(data);
+			//}
+
+			
+
+			//try {
+			//	saveFile.Filter = "CSV (séparateur: point-virgule)|*.csv|RTF Files|*.rtf|TEXT Texte|*.txt";
+			//	saveFile.Title = "Save file";
+			//	if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\Backup")) {
+			//		Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\Backup");
+			//	}
+			//	saveFile.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\Backup";
+
+			//	if(saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+			//	   saveFile.FileName.Length > 0) {
+
+			//		// Save the contents of the RichTextBox into the file.
+			//		if(saveFile.FileName.EndsWith(".csv")) {
+			//			rtbBoxToExport.AppendText("Auteur :; " + Application.ProductName.ToString() + ";\n");
+			//			rtbBoxToExport.AppendText("Configuration du port : \n");
+			//			rtbBoxToExport.AppendText("Nom : ;" + this.mSerialPort.PortName + ";\n");
+			//			rtbBoxToExport.AppendText("Vitesse : ;" + this.mSerialPort.BaudRate + ";\n");
+			//			rtbBoxToExport.AppendText("Bite de parité : ;" + this.mSerialPort.Parity + ";\n");
+			//			rtbBoxToExport.AppendText("Nombre de bits : ;" + this.mSerialPort.DataBits + ";\n");
+			//			rtbBoxToExport.AppendText("Bit de stop : ;" + this.mSerialPort.StopBits + ";\n");
+			//			rtbBoxToExport.AppendText("Data :; " + ExportDate.ToString("s") + ";\n");
+			//			foreach(SerialDataToSave data in listeOfDataToSave) {
+			//				rtbBoxToExport.Text += data.sDateOfData + ";" + data.data;
+			//				if(!data.data.Contains("\n")) {
+			//					rtbBoxToExport.Text += "\n";
+			//				}
+			//			}
+			//			rtbBoxToExport.SaveFile(saveFile.FileName, RichTextBoxStreamType.UnicodePlainText);
+			//		} else {
+			//			rtbBoxToExport.AppendText("Auteur :; " + Application.ProductName.ToString() + ";\n");
+			//			rtbBoxToExport.AppendText("Configuration du port : \n");
+			//			rtbBoxToExport.AppendText("\t- Nom : " + this.mSerialPort.PortName + " \n");
+			//			rtbBoxToExport.AppendText("\t- Vitesse : " + this.mSerialPort.BaudRate + " \n");
+			//			rtbBoxToExport.AppendText("\t- Bite de parité : " + this.mSerialPort.Parity + " \n");
+			//			rtbBoxToExport.AppendText("\t- Nombre de bits : " + this.mSerialPort.DataBits + " \n");
+			//			rtbBoxToExport.AppendText("\t- Bit de stop : " + this.mSerialPort.StopBits + " \n");
+			//			rtbBoxToExport.AppendText("Data :; " + ExportDate.ToString("s") + ";\n");
+			//			foreach(SerialDataToSave data in listeOfDataToSave) {
+			//				rtbBoxToExport.Text += data.sDateOfData + "\t" + data.data;
+			//				if(!data.data.Contains("\n")) {
+			//					rtbBoxToExport.Text += "\n";
+			//				}
+			//			}
+			//			rtbBoxToExport.SaveFile(saveFile.FileName);
+			//		}
+
+			//	}
+			//} catch(Exception saveException) {
+			//	MessageBox.Show("Une erreur à été rencontré lors de la sauvegarde du document : " + saveException.ToString(), "Sauvegarde des données", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			//	//throw new Exception("Une erreur à été rencontré lors de la sauvegarde du document : " + saveException.ToString());
+			//}
+
+
 		}
 	}
 }

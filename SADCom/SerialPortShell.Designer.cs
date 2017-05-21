@@ -32,16 +32,17 @@
 			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
 			this.toolStrip2 = new System.Windows.Forms.ToolStrip();
 			this.tbSendSimpleMessage = new System.Windows.Forms.ToolStripTextBox();
+			this.pbSendDimpleMessage = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.pbEnableTime = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.pbSendDimpleMessage = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.pbEnableTime = new System.Windows.Forms.ToolStripButton();
+			this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1.SuspendLayout();
 			this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -140,6 +141,16 @@
 			this.tbSendSimpleMessage.Name = "tbSendSimpleMessage";
 			this.tbSendSimpleMessage.Size = new System.Drawing.Size(100, 25);
 			// 
+			// pbSendDimpleMessage
+			// 
+			this.pbSendDimpleMessage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.pbSendDimpleMessage.Image = global::SADCom.Properties.Resources.SendData;
+			this.pbSendDimpleMessage.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.pbSendDimpleMessage.Name = "pbSendDimpleMessage";
+			this.pbSendDimpleMessage.Size = new System.Drawing.Size(23, 22);
+			this.pbSendDimpleMessage.Text = "Send data";
+			this.pbSendDimpleMessage.Click += new System.EventHandler(this.pbSendDimpleMessage_Click);
+			// 
 			// toolStrip1
 			// 
 			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
@@ -150,6 +161,25 @@
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(24, 57);
 			this.toolStrip1.TabIndex = 0;
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(22, 20);
+			this.toolStripButton1.Text = "toolStripButton1";
+			// 
+			// pbEnableTime
+			// 
+			this.pbEnableTime.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.pbEnableTime.Image = global::SADCom.Properties.Resources.Data;
+			this.pbEnableTime.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.pbEnableTime.Name = "pbEnableTime";
+			this.pbEnableTime.Size = new System.Drawing.Size(22, 20);
+			this.pbEnableTime.Text = "Enable time";
+			this.pbEnableTime.Click += new System.EventHandler(this.pbEnableTime_Click);
 			// 
 			// menuStrip1
 			// 
@@ -168,6 +198,8 @@
 			// 
 			// fichierToolStripMenuItem
 			// 
+			this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exporterToolStripMenuItem});
 			this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
 			this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
 			this.fichierToolStripMenuItem.Text = "Fichier";
@@ -196,34 +228,12 @@
 			this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
 			this.aideToolStripMenuItem.Text = "Aide";
 			// 
-			// pbSendDimpleMessage
+			// exporterToolStripMenuItem
 			// 
-			this.pbSendDimpleMessage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.pbSendDimpleMessage.Image = global::SADCom.Properties.Resources.SendData;
-			this.pbSendDimpleMessage.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.pbSendDimpleMessage.Name = "pbSendDimpleMessage";
-			this.pbSendDimpleMessage.Size = new System.Drawing.Size(23, 22);
-			this.pbSendDimpleMessage.Text = "Send data";
-			this.pbSendDimpleMessage.Click += new System.EventHandler(this.pbSendDimpleMessage_Click);
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(22, 20);
-			this.toolStripButton1.Text = "toolStripButton1";
-			// 
-			// pbEnableTime
-			// 
-			this.pbEnableTime.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.pbEnableTime.Image = global::SADCom.Properties.Resources.Data;
-			this.pbEnableTime.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.pbEnableTime.Name = "pbEnableTime";
-			this.pbEnableTime.Size = new System.Drawing.Size(30, 20);
-			this.pbEnableTime.Text = "Enable time";
-			this.pbEnableTime.Click += new System.EventHandler(this.pbEnableTime_Click);
+			this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
+			this.exporterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exporterToolStripMenuItem.Text = "exporter";
+			this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
 			// 
 			// SerialPortShell
 			// 
@@ -277,5 +287,6 @@
 		private System.Windows.Forms.ToolStrip toolStrip2;
 		private System.Windows.Forms.ToolStripTextBox tbSendSimpleMessage;
 		private System.Windows.Forms.ToolStripButton pbSendDimpleMessage;
+		private System.Windows.Forms.ToolStripMenuItem exporterToolStripMenuItem;
 	}
 }
