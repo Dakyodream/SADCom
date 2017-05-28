@@ -38,11 +38,12 @@
 			this.pbEnableTime = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.hexaItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1.SuspendLayout();
 			this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -204,6 +205,13 @@
 			this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
 			this.fichierToolStripMenuItem.Text = "Fichier";
 			// 
+			// exporterToolStripMenuItem
+			// 
+			this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
+			this.exporterToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+			this.exporterToolStripMenuItem.Text = "exporter";
+			this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
+			// 
 			// editionToolStripMenuItem
 			// 
 			this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
@@ -212,9 +220,18 @@
 			// 
 			// affichageToolStripMenuItem
 			// 
+			this.affichageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hexaItem});
 			this.affichageToolStripMenuItem.Name = "affichageToolStripMenuItem";
 			this.affichageToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
 			this.affichageToolStripMenuItem.Text = "Affichage";
+			// 
+			// hexaItem
+			// 
+			this.hexaItem.CheckOnClick = true;
+			this.hexaItem.Name = "hexaItem";
+			this.hexaItem.Size = new System.Drawing.Size(98, 22);
+			this.hexaItem.Text = "hexa";
 			// 
 			// configurationToolStripMenuItem
 			// 
@@ -228,13 +245,6 @@
 			this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
 			this.aideToolStripMenuItem.Text = "Aide";
 			// 
-			// exporterToolStripMenuItem
-			// 
-			this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
-			this.exporterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.exporterToolStripMenuItem.Text = "exporter";
-			this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
-			// 
 			// SerialPortShell
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +255,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "SerialPortShell";
 			this.Text = "SerialPortShell";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerialPortShell_FormClosing);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
@@ -288,5 +299,6 @@
 		private System.Windows.Forms.ToolStripTextBox tbSendSimpleMessage;
 		private System.Windows.Forms.ToolStripButton pbSendDimpleMessage;
 		private System.Windows.Forms.ToolStripMenuItem exporterToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem hexaItem;
 	}
 }
