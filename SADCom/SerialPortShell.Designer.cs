@@ -23,12 +23,12 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialPortShell));
 			this.rtbSerialPort = new System.Windows.Forms.RichTextBox();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.lStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.lLevelBuffer = new System.Windows.Forms.ToolStripStatusLabel();
-			this.pbLevelBuffer = new System.Windows.Forms.ToolStripProgressBar();
 			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
 			this.toolStrip2 = new System.Windows.Forms.ToolStrip();
 			this.tbSendSimpleMessage = new System.Windows.Forms.ToolStripTextBox();
@@ -43,7 +43,9 @@
 			this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hexaItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.enableAutoSave = new System.Windows.Forms.ToolStripMenuItem();
 			this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.statusStrip1.SuspendLayout();
 			this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -72,8 +74,7 @@
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lStatus,
-            this.lLevelBuffer,
-            this.pbLevelBuffer});
+            this.lLevelBuffer});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 276);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(403, 22);
@@ -92,13 +93,6 @@
 			this.lLevelBuffer.Name = "lLevelBuffer";
 			this.lLevelBuffer.Size = new System.Drawing.Size(39, 17);
 			this.lLevelBuffer.Text = "Buffer";
-			// 
-			// pbLevelBuffer
-			// 
-			this.pbLevelBuffer.Name = "pbLevelBuffer";
-			this.pbLevelBuffer.Size = new System.Drawing.Size(100, 16);
-			this.pbLevelBuffer.Step = 1;
-			this.pbLevelBuffer.Value = 50;
 			// 
 			// toolStripContainer1
 			// 
@@ -134,7 +128,7 @@
             this.pbSendDimpleMessage});
 			this.toolStrip2.Location = new System.Drawing.Point(3, 0);
 			this.toolStrip2.Name = "toolStrip2";
-			this.toolStrip2.Size = new System.Drawing.Size(137, 25);
+			this.toolStrip2.Size = new System.Drawing.Size(168, 25);
 			this.toolStrip2.TabIndex = 0;
 			// 
 			// tbSendSimpleMessage
@@ -235,15 +229,29 @@
 			// 
 			// configurationToolStripMenuItem
 			// 
+			this.configurationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enableAutoSave});
 			this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
 			this.configurationToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
 			this.configurationToolStripMenuItem.Text = "Configuration";
+			// 
+			// enableAutoSave
+			// 
+			this.enableAutoSave.Name = "enableAutoSave";
+			this.enableAutoSave.Size = new System.Drawing.Size(147, 22);
+			this.enableAutoSave.Text = "autosave data";
+			this.enableAutoSave.Click += new System.EventHandler(this.enableAutoSave_Click);
 			// 
 			// aideToolStripMenuItem
 			// 
 			this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
 			this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
 			this.aideToolStripMenuItem.Text = "Aide";
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
 			// 
 			// SerialPortShell
 			// 
@@ -294,11 +302,12 @@
 		private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel lLevelBuffer;
-		private System.Windows.Forms.ToolStripProgressBar pbLevelBuffer;
 		private System.Windows.Forms.ToolStrip toolStrip2;
 		private System.Windows.Forms.ToolStripTextBox tbSendSimpleMessage;
 		private System.Windows.Forms.ToolStripButton pbSendDimpleMessage;
 		private System.Windows.Forms.ToolStripMenuItem exporterToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hexaItem;
+		private System.Windows.Forms.ToolStripMenuItem enableAutoSave;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 	}
 }

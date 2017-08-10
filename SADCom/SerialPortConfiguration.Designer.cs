@@ -46,12 +46,21 @@
 			this.cbFlowControl = new System.Windows.Forms.ComboBox();
 			this.cbParity = new System.Windows.Forms.ComboBox();
 			this.pbStartConnexion = new System.Windows.Forms.Button();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.pbOptionalConfiguration = new System.Windows.Forms.Button();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.gbConfigConnexion.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gbSerialPort
@@ -211,14 +220,55 @@
 			this.pbStartConnexion.UseVisualStyleBackColor = true;
 			this.pbStartConnexion.Click += new System.EventHandler(this.pbStartConnexion_Click);
 			// 
+			// splitContainer1
+			// 
+			resources.ApplyResources(this.splitContainer1, "splitContainer1");
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.pbStartConnexion);
+			this.splitContainer1.Panel1.Controls.Add(this.pbOptionalConfiguration);
+			this.splitContainer1.Panel1.Controls.Add(this.gbConfigConnexion);
+			this.splitContainer1.Panel1.Controls.Add(this.gbProfil);
+			this.splitContainer1.Panel1.Controls.Add(this.gbSerialPort);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
+			this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+			this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+			// 
+			// pbOptionalConfiguration
+			// 
+			resources.ApplyResources(this.pbOptionalConfiguration, "pbOptionalConfiguration");
+			this.pbOptionalConfiguration.Name = "pbOptionalConfiguration";
+			this.pbOptionalConfiguration.UseVisualStyleBackColor = true;
+			this.pbOptionalConfiguration.Click += new System.EventHandler(this.pbOptionalConfiguration_Click);
+			// 
+			// groupBox3
+			// 
+			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.TabStop = false;
+			// 
+			// groupBox2
+			// 
+			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.TabStop = false;
+			// 
+			// groupBox1
+			// 
+			resources.ApplyResources(this.groupBox1, "groupBox1");
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.TabStop = false;
+			// 
 			// SerialPortConfiguration
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.pbStartConnexion);
-			this.Controls.Add(this.gbConfigConnexion);
-			this.Controls.Add(this.gbProfil);
-			this.Controls.Add(this.gbSerialPort);
+			this.Controls.Add(this.splitContainer1);
 			this.Name = "SerialPortConfiguration";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerialPortConfiguration_FormClosing);
 			this.Load += new System.EventHandler(this.SerialPortConfiguration_Load);
@@ -229,6 +279,10 @@
 			this.gbConfigConnexion.ResumeLayout(false);
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.tableLayoutPanel3.PerformLayout();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -257,5 +311,10 @@
 		private System.Windows.Forms.ComboBox cbFlowControl;
 		private System.Windows.Forms.ComboBox cbParity;
 		private System.Windows.Forms.Button pbStartConnexion;
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Button pbOptionalConfiguration;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox groupBox1;
 	}
 }

@@ -302,6 +302,16 @@ namespace SADCom {
 				MessageBox.Show("Erreur de connexion. Une modification des paramètre peuvent être nécéssaire.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
 			}
 		}
-		
+
+		private void pbOptionalConfiguration_Click(object sender, EventArgs e) {
+			this.splitContainer1.Panel2Collapsed = !this.splitContainer1.Panel2Collapsed;
+
+			if(this.splitContainer1.Panel2Collapsed) {
+				this.pbOptionalConfiguration.BackColor = SystemColors.ControlLight;
+			} else {
+				this.pbOptionalConfiguration.BackColor = SystemColors.ControlDark;
+			}
+			
+		}
 	}
 }

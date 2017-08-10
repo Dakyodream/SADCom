@@ -10,6 +10,7 @@ namespace SADCom {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			
 
 			SerialPortConfiguration configForm = new SerialPortConfiguration();
 			Application.Run(configForm);

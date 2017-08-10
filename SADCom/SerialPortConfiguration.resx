@@ -163,7 +163,7 @@
     <value>30, 3</value>
   </data>
   <data name="cbListOfPorts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 21</value>
+    <value>261, 21</value>
   </data>
   <data name="cbListOfPorts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -190,7 +190,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 27</value>
+    <value>294, 27</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -214,7 +214,7 @@
     <value>Top</value>
   </data>
   <data name="gbSerialPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
+    <value>0, 0</value>
   </data>
   <data name="gbSerialPort.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 46</value>
@@ -223,7 +223,7 @@
     <value>0, 46</value>
   </data>
   <data name="gbSerialPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 46</value>
+    <value>300, 46</value>
   </data>
   <data name="gbSerialPort.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -238,10 +238,10 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbSerialPort.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;gbSerialPort.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -319,7 +319,7 @@
     <value>57, 3</value>
   </data>
   <data name="cbProfil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 21</value>
+    <value>234, 21</value>
   </data>
   <data name="cbProfil.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -346,7 +346,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 29</value>
+    <value>294, 29</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,10 +370,10 @@
     <value>Top</value>
   </data>
   <data name="gbProfil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 51</value>
+    <value>0, 46</value>
   </data>
   <data name="gbProfil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 48</value>
+    <value>300, 48</value>
   </data>
   <data name="gbProfil.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -388,10 +388,10 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbProfil.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;gbProfil.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -583,7 +583,7 @@
     <value>133, 3</value>
   </data>
   <data name="cbBaudRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbBaudRate.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -607,7 +607,7 @@
     <value>133, 57</value>
   </data>
   <data name="cbDataBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbDataBits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -631,7 +631,7 @@
     <value>133, 84</value>
   </data>
   <data name="cbStopBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbStopBits.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -655,7 +655,7 @@
     <value>133, 111</value>
   </data>
   <data name="cbFlowControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbFlowControl.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -679,7 +679,7 @@
     <value>133, 30</value>
   </data>
   <data name="cbParity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbParity.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -706,7 +706,7 @@
     <value>5</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 136</value>
+    <value>294, 136</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -730,7 +730,7 @@
     <value>Top</value>
   </data>
   <data name="gbConfigConnexion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 99</value>
+    <value>0, 94</value>
   </data>
   <data name="gbConfigConnexion.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 155</value>
@@ -739,7 +739,7 @@
     <value>0, 155</value>
   </data>
   <data name="gbConfigConnexion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 155</value>
+    <value>300, 155</value>
   </data>
   <data name="gbConfigConnexion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -754,10 +754,10 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbConfigConnexion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;gbConfigConnexion.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pbStartConnexion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -766,10 +766,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbStartConnexion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 254</value>
+    <value>0, 272</value>
   </data>
   <data name="pbStartConnexion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 23</value>
+    <value>300, 23</value>
   </data>
   <data name="pbStartConnexion.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -784,9 +784,162 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbStartConnexion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;pbStartConnexion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="pbOptionalConfiguration.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pbOptionalConfiguration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 249</value>
+  </data>
+  <data name="pbOptionalConfiguration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 23</value>
+  </data>
+  <data name="pbOptionalConfiguration.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="pbOptionalConfiguration.Text" xml:space="preserve">
+    <value>Options avancées</value>
+  </data>
+  <data name="&gt;&gt;pbOptionalConfiguration.Name" xml:space="preserve">
+    <value>pbOptionalConfiguration</value>
+  </data>
+  <data name="&gt;&gt;pbOptionalConfiguration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbOptionalConfiguration.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;pbOptionalConfiguration.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>255</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 228</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Boutons</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 122</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>393, 100</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Sauvegarde dans un fichier ou pipe</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 16</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>393, 100</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Options d'affichage</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>810, 398</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -796,10 +949,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>264, 283</value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>280, 322</value>
+    <value>820, 408</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>280, 322</value>

@@ -16,7 +16,7 @@ namespace SADCom {
 	public partial class SerialPortShell : Form {
 		private SerialPort mSerialPort;
 
-		private string saveShellData;
+		private string saveShellData = "";
 
 		private System.Windows.Forms.Timer mTimerForUpdateStatus;
 		delegate void SetTextCallback(string text);
@@ -30,6 +30,7 @@ namespace SADCom {
 
 		private uint muiLengthOfNbOfLineOnShell = 100;
 
+		private RichTextBox rtbSaveFile = new RichTextBox();
 
 		private Mutex mMutexData = new Mutex();
 		private Mutex mMutexAffichage = new Mutex();
@@ -46,7 +47,7 @@ namespace SADCom {
 
 		//TODO try/catch
 		public SerialPortShell(SerialPort serialPort) {
-			string saveDirectory;
+			string saveDirectory = "";
 			string sNameOfSaveFile = "saveShellData_" + serialPort.PortName + "_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".bin";
 
 			InitializeComponent();
@@ -80,7 +81,7 @@ namespace SADCom {
 
 			//this.pbLevelBuffer.Maximum = this.rtbSerialPort.MaxLength;
 
-			this.pbLevelBuffer.Maximum = (int)muiLengthOfNbOfLineOnShell;
+			//this.pbLevelBuffer.Maximum = (int)muiLengthOfNbOfLineOnShell;
 
 			this.mSerialPort.DataReceived += MSerialPort_DataReceived;
 			this.mSerialPort.Disposed += MSerialPort_Disposed;
@@ -93,16 +94,16 @@ namespace SADCom {
 		private void MTimerForUpdateStatus_Tick(object sender, EventArgs e) {
 			//this.pbLevelBuffer.Value = this.rtbSerialPort.TextLength;
 
-		
+
 			//private String msDataOnly = "";
 			//private String msDate = "";
 			//private String msDataOnHexa = "";
 			//private String msDataWithAnalyse = "";
 
 			if(this.rtbSerialPort.Lines.Length < muiLengthOfNbOfLineOnShell) {
-				this.pbLevelBuffer.Value = this.rtbSerialPort.Lines.Length;
+				//this.pbLevelBuffer.Value = this.rtbSerialPort.Lines.Length;
 			} else {
-				this.pbLevelBuffer.Value = ((int)muiLengthOfNbOfLineOnShell);
+				//this.pbLevelBuffer.Value = ((int)muiLengthOfNbOfLineOnShell);
 			}
 			if(this.mSerialPort.IsOpen) {
 				this.lStatus.ForeColor = Color.Green;
@@ -134,14 +135,23 @@ namespace SADCom {
 		}
 
 		//warning génère garbage collector
-		
+
 		public void writeTxtOnForm(string sTextToWrite) {
 			string[] lgRtbRead;
 			string[] lgRtbWrite = new string[muiLengthOfNbOfLineOnShell];
 
+			List<SerialDataToSave> listeOfDataToSave;
+
+			RichTextBox rtbBoxToExport = new RichTextBox();
+			SaveFileDialog saveFile = new SaveFileDialog();
+			DateTime ExportDate = DateTime.Now;
+
+			saveFile.DefaultExt = "*.csv";
+
+
 			FileInfo infoOnFile;
 
-			if(this.rtbSerialPort.InvokeRequired) {
+			if(this.rtbSerialPort.InvokeRequired && (sTextToWrite != null)) {
 				SetTextCallback d = new SetTextCallback(writeTxtOnForm);
 				this.Invoke(d, new object[] { sTextToWrite });
 			} else {
@@ -162,18 +172,46 @@ namespace SADCom {
 							this.mlistOfNameForDataModifFile.Add(Path.GetTempPath() + @"SADCom\dataModifFile_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".bin");
 						}
 					}
-					
+
 					if(File.Exists(this.mlistOfNameForTimeFile[this.mlistOfNameForTimeFile.Count - 1])) {
 						infoOnFile = new FileInfo(this.mlistOfNameForTimeFile[this.mlistOfNameForTimeFile.Count - 1]);
 						if(infoOnFile.Length > 10485760) { //10Mo
 							this.mlistOfNameForTimeFile.Add(Path.GetTempPath() + @"SADCom\timeFile_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".bin");
 						}
-					}					
+					}
 
+					File.AppendAllText(this.mlistOfNameForDataFile[this.mlistOfNameForDataFile.Count - 1], sTextToWrite);
+					File.AppendAllText(this.mlistOfNameForDataModifFile[this.mlistOfNameForDataModifFile.Count - 1], sTextToWrite);
+					File.AppendAllText(this.mlistOfNameForTimeFile[this.mlistOfNameForTimeFile.Count - 1], DateTime.Now.ToString("HH:mm:ss.fffffff\n"));
 
-					File.AppendAllText(this.mlistOfNameForDataFile[this.mlistOfNameForDataFile.Count-1], sTextToWrite);
-					File.AppendAllText(this.mlistOfNameForDataModifFile[this.mlistOfNameForDataModifFile.Count-1], sTextToWrite);
-					File.AppendAllText(this.mlistOfNameForTimeFile[this.mlistOfNameForTimeFile.Count-1], DateTime.Now.ToString("HH:mm:ss.fffffff\n"));
+					if(this.enableAutoSave.Enabled) {
+
+						if(rtbSaveFile.TextLength < 4096) {
+							rtbSaveFile.AppendText(sTextToWrite);
+						} else {
+							if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\Backup")) {
+								Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\Backup");
+							}
+							saveFile.FileName = System.IO.Directory.GetCurrentDirectory() + "\\Backup" + "\\Export_" + ExportDate.ToString("yyyyMMdd_HHmmss") + ".csv";
+							
+
+							rtbBoxToExport.AppendText("Auteur :; " + Application.ProductName.ToString() + ";\n");
+							rtbBoxToExport.AppendText("Configuration du port : \n");
+							rtbBoxToExport.AppendText("Nom : ;" + this.mSerialPort.PortName + ";\n");
+							rtbBoxToExport.AppendText("Vitesse : ;" + this.mSerialPort.BaudRate + ";\n");
+							rtbBoxToExport.AppendText("Bite de parité : ;" + this.mSerialPort.Parity + ";\n");
+							rtbBoxToExport.AppendText("Nombre de bits : ;" + this.mSerialPort.DataBits + ";\n");
+							rtbBoxToExport.AppendText("Bit de stop : ;" + this.mSerialPort.StopBits + ";\n");
+							rtbBoxToExport.AppendText("Data :; " + ExportDate.ToString("s") + ";\n");
+
+							rtbBoxToExport.Text += rtbSaveFile.Text;
+							rtbBoxToExport.SaveFile(saveFile.FileName, RichTextBoxStreamType.UnicodePlainText);
+
+							rtbSaveFile.Clear();
+						}
+
+					}
+
 
 					this.rtbSerialPort.Text += sTextToWrite;
 					lgRtbRead = this.rtbSerialPort.Lines;
@@ -188,7 +226,7 @@ namespace SADCom {
 					this.rtbSerialPort.ScrollToCaret();
 					//this.rtbSerialPort.AutoScrollOffset = new Point(this.rtbSerialPort.AutoScrollOffset.Y, this.rtbSerialPort.AutoScrollOffset.X);
 					//this.rtbSerialPort.ScrollToCaret();
-				} catch (Exception e){
+				} catch(Exception e) {
 					MessageBox.Show("Erreur lors la reception de données : " + e.ToString(), "Read sata", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
@@ -252,7 +290,14 @@ namespace SADCom {
 		//ne fonctionne pas, pert les données. Le mieux, c'est la création d'un processus dedier qui irra sauvegarder
 		//10000 de ligne d'un coup sans gener l'afficheur
 		private void saveShell() {
-			List<SerialDataToSave> listeOfDataToSave;
+			//List<SerialDataToSave> listeOfDataToSave;
+
+			//RichTextBox rtbBoxToExport = new RichTextBox();
+			//SaveFileDialog saveFile = new SaveFileDialog();
+			//DateTime ExportDate = DateTime.Now;
+
+			//saveFile.DefaultExt = "*.csv";
+			//saveFile.FileName = "Export_" + ExportDate.ToString("yyyyMMdd_HHmmss") + ".csv";
 
 			//if(this.mlistOfData.Count > 250) {
 			//	try {
@@ -266,9 +311,37 @@ namespace SADCom {
 
 			//			bformatter.Serialize(stream, listeOfDataToSave);
 			//		}
+
+
+			//		if(this.enableAutoSave.Enabled) {
+			//			if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\Backup")) {
+			//				Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\Backup");
+			//			}
+			//			saveFile.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\Backup";
+
+
+			//			rtbBoxToExport.AppendText("Auteur :; " + Application.ProductName.ToString() + ";\n");
+			//			rtbBoxToExport.AppendText("Configuration du port : \n");
+			//			rtbBoxToExport.AppendText("Nom : ;" + this.mSerialPort.PortName + ";\n");
+			//			rtbBoxToExport.AppendText("Vitesse : ;" + this.mSerialPort.BaudRate + ";\n");
+			//			rtbBoxToExport.AppendText("Bite de parité : ;" + this.mSerialPort.Parity + ";\n");
+			//			rtbBoxToExport.AppendText("Nombre de bits : ;" + this.mSerialPort.DataBits + ";\n");
+			//			rtbBoxToExport.AppendText("Bit de stop : ;" + this.mSerialPort.StopBits + ";\n");
+			//			rtbBoxToExport.AppendText("Data :; " + ExportDate.ToString("s") + ";\n");
+			//			foreach(SerialDataToSave data in listeOfDataToSave) {
+			//				rtbBoxToExport.Text += data.sDateOfData + ";" + data.data;
+			//				if(!data.data.Contains("\n")) {
+			//					rtbBoxToExport.Text += "\n";
+			//				}
+			//			}
+			//			rtbBoxToExport.SaveFile(saveFile.FileName, RichTextBoxStreamType.UnicodePlainText);
+
+			//		}
+
 			//		this.mMutexData.WaitOne();
 			//		this.mlistOfData.RemoveRange(0, 249);
-			//		this.mMutexData.WaitOne();
+			//		this.mMutexData.ReleaseMutex();
+
 			//		listeOfDataToSave.Clear();
 			//		listeOfDataToSave = null;
 
@@ -394,6 +467,10 @@ namespace SADCom {
 					}
 				}
 			}
+		}
+
+		private void enableAutoSave_Click(object sender, EventArgs e) {
+			this.enableAutoSave.Checked = !this.enableAutoSave.Checked;
 		}
 	}
 }
