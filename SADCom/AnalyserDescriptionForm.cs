@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SADCom {
-	public partial class FormForTest : Form {
-		public FormForTest() {
+	public partial class AnalyserDescriptionForm : Form {
+		public AnalyserDescriptionForm() {
 			InitializeComponent();
 		}
 	}

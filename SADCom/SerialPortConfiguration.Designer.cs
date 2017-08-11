@@ -51,6 +51,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.optionTerminalDisplay = new SADCom.OptionTerminalDisplay();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();
@@ -61,6 +62,7 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gbSerialPort
@@ -261,8 +263,14 @@
 			// groupBox1
 			// 
 			resources.ApplyResources(this.groupBox1, "groupBox1");
+			this.groupBox1.Controls.Add(this.optionTerminalDisplay);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
+			// 
+			// optionTerminalDisplay
+			// 
+			resources.ApplyResources(this.optionTerminalDisplay, "optionTerminalDisplay");
+			this.optionTerminalDisplay.Name = "optionTerminalDisplay";
 			// 
 			// SerialPortConfiguration
 			// 
@@ -281,8 +289,11 @@
 			this.tableLayoutPanel3.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
+			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -316,5 +327,6 @@
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox1;
+		private OptionTerminalDisplay optionTerminalDisplay;
 	}
 }

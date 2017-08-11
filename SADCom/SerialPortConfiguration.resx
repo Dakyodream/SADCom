@@ -798,6 +798,9 @@
   <data name="pbOptionalConfiguration.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="pbOptionalConfiguration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbOptionalConfiguration.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 249</value>
   </data>
@@ -837,11 +840,14 @@
   <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
     <value>255</value>
   </data>
+  <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 228</value>
+    <value>0, 317</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
+    <value>506, 100</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -861,11 +867,14 @@
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 122</value>
+    <value>0, 217</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 100</value>
+    <value>506, 100</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -885,11 +894,56 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="optionTerminalDisplay.AccessibleName" xml:space="preserve">
+    <value>OptionsTerminal</value>
+  </data>
+  <data name="optionTerminalDisplay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optionTerminalDisplay.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="optionTerminalDisplay.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="optionTerminalDisplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="optionTerminalDisplay.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>440, 0</value>
+  </data>
+  <data name="optionTerminalDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 198</value>
+  </data>
+  <data name="optionTerminalDisplay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;optionTerminalDisplay.Name" xml:space="preserve">
+    <value>optionTerminalDisplay</value>
+  </data>
+  <data name="&gt;&gt;optionTerminalDisplay.Type" xml:space="preserve">
+    <value>SADCom.OptionTerminalDisplay, SADCom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;optionTerminalDisplay.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;optionTerminalDisplay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 16</value>
+    <value>0, 0</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 100</value>
+    <value>506, 217</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -922,7 +976,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 398</value>
+    <value>810, 516</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>300</value>
@@ -949,7 +1003,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>820, 408</value>
+    <value>820, 526</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>280, 322</value>

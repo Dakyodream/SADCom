@@ -30,6 +30,7 @@ namespace SADCom {
 		public SerialPortConfiguration() {
 			InitializeComponent();
 
+			
 			try {
 				saveDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 				configFileSystem = Path.Combine(saveDirectory, "saveConfiguration.bin");
@@ -120,6 +121,17 @@ namespace SADCom {
 				MessageBox.Show("Erreur critique à l'initialisation2", "Configuration", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
 			}
 
+			this.optionTerminalDisplay.opacityEvent += OptionTerminalDisplay1_opacityEvent;
+			this.optionTerminalDisplay.leaveOpacityConfigEvent += OptionTerminalDisplay1_leaveOpacityConfigEvent;
+
+		}
+
+		private void OptionTerminalDisplay1_leaveOpacityConfigEvent(object sender, EventArgs e) {
+			this.Opacity = 1.0;
+		}
+
+		private void OptionTerminalDisplay1_opacityEvent(object sender, EventArgs e, int opacity) {
+			this.Opacity = opacity/100.0;
 		}
 
 		private void pbRefreshScan_Click(object sender, EventArgs e) {

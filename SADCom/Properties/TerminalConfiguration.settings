@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SADCom.Properties" GeneratedClassName="TerminalConfiguration">
+  <Profiles />
+  <Settings>
+    <Setting Name="terminalFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Lucida Console, 10pt</Value>
+    </Setting>
+    <Setting Name="terminalForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="terminalBackground" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">1, 36, 86</Value>
+    </Setting>
+    <Setting Name="terminalOpacity" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

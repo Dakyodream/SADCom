@@ -76,13 +76,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoSaveManager.cs" />
-    <Compile Include="FormForTest.cs">
+    <Compile Include="AnalyserDescriptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormForTest.Designer.cs">
-      <DependentUpon>FormForTest.cs</DependentUpon>
+    <Compile Include="AnalyserDescriptionForm.Designer.cs">
+      <DependentUpon>AnalyserDescriptionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnalyserDescriptionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnalyserDescriptionUserControl.Designer.cs">
+      <DependentUpon>AnalyserDescriptionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyserKeyWord.cs" />
+    <Compile Include="AutoSaveManager.cs" />
     <Compile Include="OptionTerminalDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +98,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\TerminalConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>TerminalConfiguration.settings</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,10 +123,15 @@
     <Compile Include="SerialPortConfiguration.Designer.cs">
       <DependentUpon>SerialPortConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="UARTOperator.cs" />
     <Compile Include="UIInterface.cs" />
-    <EmbeddedResource Include="FormForTest.resx">
-      <DependentUpon>FormForTest.cs</DependentUpon>
+    <EmbeddedResource Include="AnalyserDescriptionForm.resx">
+      <DependentUpon>AnalyserDescriptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyserDescriptionUserControl.resx">
+      <DependentUpon>AnalyserDescriptionUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionTerminalDisplay.resx">
       <DependentUpon>OptionTerminalDisplay.cs</DependentUpon>
@@ -148,6 +165,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Properties\TerminalConfiguration.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>TerminalConfiguration.Designer.cs</LastGenOutput>
+    </None>
     <None Include="SADCom_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

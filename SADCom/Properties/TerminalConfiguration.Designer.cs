@@ -13,49 +13,61 @@ namespace SADCom.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class TerminalConfiguration : global::System.Configuration.ApplicationSettingsBase {
         
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        private static TerminalConfiguration defaultInstance = ((TerminalConfiguration)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new TerminalConfiguration())));
         
-        public static Settings Default {
+        public static TerminalConfiguration Default {
             get {
                 return defaultInstance;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Lucida Console, 10pt")]
         public global::System.Drawing.Font terminalFont {
             get {
                 return ((global::System.Drawing.Font)(this["terminalFont"]));
             }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1, 36, 86")]
-        public global::System.Drawing.Color terminalBackground {
-            get {
-                return ((global::System.Drawing.Color)(this["terminalBackground"]));
+            set {
+                this["terminalFont"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color terminalForeColor {
             get {
                 return ((global::System.Drawing.Color)(this["terminalForeColor"]));
             }
+            set {
+                this["terminalForeColor"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("90")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1, 36, 86")]
+        public global::System.Drawing.Color terminalBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["terminalBackground"]));
+            }
+            set {
+                this["terminalBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int terminalOpacity {
             get {
                 return ((int)(this["terminalOpacity"]));
+            }
+            set {
+                this["terminalOpacity"] = value;
             }
         }
     }

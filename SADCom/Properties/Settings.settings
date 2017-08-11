@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SADCom.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="terminalFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Lucida Console, 10pt</Value>
+    </Setting>
+    <Setting Name="terminalBackground" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">1, 36, 86</Value>
+    </Setting>
+    <Setting Name="terminalForeColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="terminalOpacity" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
