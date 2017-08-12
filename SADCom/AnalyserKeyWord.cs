@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SADCom {
-	//[Serializable]
+	[Serializable]
 	public class AnalyserKeyWord {
 
 		private String msKeyWord = "";
@@ -22,7 +22,7 @@ namespace SADCom {
 		private String msSubstitutionWords = "";
 		public String SubstitutionWords { get => msSubstitutionWords; set => msSubstitutionWords = value; }
 
-		private Font mfKeyWordFont = Properties.TerminalConfiguration.Default.terminalFont;
+		private Font mfKeyWordFont = Resources.TerminalConfiguration.Default.terminalFont;
 		public Font KeyWordFont {
 			get {
 				return mfKeyWordFont;
@@ -32,7 +32,7 @@ namespace SADCom {
 			}
 		}
 
-		private Color mcKeyWordColor = Properties.TerminalConfiguration.Default.terminalForeColor;
+		private Color mcKeyWordColor = Resources.TerminalConfiguration.Default.terminalForeColor;
 		public Color KeyWordColor {
 			get {
 				return mcKeyWordColor;
@@ -45,9 +45,9 @@ namespace SADCom {
 		private Boolean mbNotifiedLogTerminal = false;
 		public Boolean NotifiedLogTerminal { get => mbNotifiedLogTerminal; set => mbNotifiedLogTerminal = value; }
 
-		public AnalyserKeyWord() : this("", Properties.TerminalConfiguration.Default.terminalFont, Properties.TerminalConfiguration.Default.terminalForeColor, false) { }
-		public AnalyserKeyWord(String keyWord) : this(keyWord, Properties.TerminalConfiguration.Default.terminalFont, Properties.TerminalConfiguration.Default.terminalForeColor, false) { }
-		public AnalyserKeyWord(String keyWord, Font font) : this(keyWord, font, Properties.TerminalConfiguration.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord() : this("", Resources.TerminalConfiguration.Default.terminalFont, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord(String keyWord) : this(keyWord, Resources.TerminalConfiguration.Default.terminalFont, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord(String keyWord, Font font) : this(keyWord, font, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
 		public AnalyserKeyWord(String keyWord, Font font, Color color) : this(keyWord, font, color, false) { }
 
 		public AnalyserKeyWord(String keyWord, Font font, Color color, Boolean NotifiedLogTerminal) {
@@ -55,6 +55,8 @@ namespace SADCom {
 			this.KeyWordFont = font;
 			this.KeyWordColor = color;
 		}
+
+		
 
 	}
 }

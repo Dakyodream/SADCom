@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SADCom {
 
@@ -39,24 +40,24 @@ namespace SADCom {
 			FontDialog fontDialog = new FontDialog();
 			fontDialog.ShowColor = true;
 			
-			fontDialog.Font = Properties.TerminalConfiguration.Default.terminalFont;
-			fontDialog.Color = Properties.TerminalConfiguration.Default.terminalForeColor;
+			fontDialog.Font = Resources.TerminalConfiguration.Default.terminalFont;
+			fontDialog.Color = Resources.TerminalConfiguration.Default.terminalForeColor;
 
 			if(fontDialog.ShowDialog() != DialogResult.Cancel) {
-				Properties.TerminalConfiguration.Default.terminalFont = fontDialog.Font; 
-				Properties.TerminalConfiguration.Default.terminalForeColor = fontDialog.Color;
+				Resources.TerminalConfiguration.Default.terminalFont = fontDialog.Font; 
+				Resources.TerminalConfiguration.Default.terminalForeColor = fontDialog.Color;
 
-				this.rtbColorExample.Font = Properties.TerminalConfiguration.Default.terminalFont;
-				this.rtbColorExample.ForeColor = Properties.TerminalConfiguration.Default.terminalForeColor;
+				this.rtbColorExample.Font = Resources.TerminalConfiguration.Default.terminalFont;
+				this.rtbColorExample.ForeColor = Resources.TerminalConfiguration.Default.terminalForeColor;
 			}
 		}
 
 		private void pbTerminalBackgroundColor_Click(object sender, EventArgs e) {
 			ColorDialog colorDialog = new ColorDialog();
-			colorDialog.Color = Properties.TerminalConfiguration.Default.terminalBackground;
+			colorDialog.Color = Resources.TerminalConfiguration.Default.terminalBackground;
 
 			if(colorDialog.ShowDialog() != DialogResult.Cancel) {
-				Properties.TerminalConfiguration.Default.terminalBackground = colorDialog.Color;
+				Resources.TerminalConfiguration.Default.terminalBackground = colorDialog.Color;
 			}
 		}
 
@@ -89,15 +90,15 @@ namespace SADCom {
 
 
 			//color
-			Properties.TerminalConfiguration.Default.terminalFont = Properties.Settings.Default.terminalFont;
-			Properties.TerminalConfiguration.Default.terminalForeColor = Properties.Settings.Default.terminalForeColor;
-			Properties.TerminalConfiguration.Default.terminalBackground = Properties.Settings.Default.terminalBackground;
-			Properties.TerminalConfiguration.Default.terminalOpacity = Properties.Settings.Default.terminalOpacity;
+			Resources.TerminalConfiguration.Default.terminalFont = Properties.Settings.Default.terminalFont;
+			Resources.TerminalConfiguration.Default.terminalForeColor = Properties.Settings.Default.terminalForeColor;
+			Resources.TerminalConfiguration.Default.terminalBackground = Properties.Settings.Default.terminalBackground;
+			Resources.TerminalConfiguration.Default.terminalOpacity = Properties.Settings.Default.terminalOpacity;
 
-			this.rtbColorExample.Font = Properties.TerminalConfiguration.Default.terminalFont;
-			this.rtbColorExample.ForeColor = Properties.TerminalConfiguration.Default.terminalForeColor;
-			this.rtbColorExample.BackColor = Properties.TerminalConfiguration.Default.terminalBackground;
-			this.tbOpacity.Value = Properties.TerminalConfiguration.Default.terminalOpacity;
+			this.rtbColorExample.Font = Resources.TerminalConfiguration.Default.terminalFont;
+			this.rtbColorExample.ForeColor = Resources.TerminalConfiguration.Default.terminalForeColor;
+			this.rtbColorExample.BackColor = Resources.TerminalConfiguration.Default.terminalBackground;
+			this.tbOpacity.Value = Resources.TerminalConfiguration.Default.terminalOpacity;
 
 			this.lMinOpacity.Text = this.tbOpacity.Minimum + "%";
 			this.lMaxOpacity.Text = this.tbOpacity.Maximum + "%";
@@ -109,7 +110,7 @@ namespace SADCom {
 
 		private void tbOpacity_ValueChanged(object sender, EventArgs e) {
 			this.lOpacityCurrentLvl.Text = this.tbOpacity.Value + "%";
-			Properties.TerminalConfiguration.Default.terminalOpacity = this.tbOpacity.Value;
+			Resources.TerminalConfiguration.Default.terminalOpacity = this.tbOpacity.Value;
 			opacityEvent?.Invoke(this, e, this.tbOpacity.Value);
 		}
 
@@ -119,13 +120,45 @@ namespace SADCom {
 		}
 
 		private void pbFileAnalyser_Click(object sender, EventArgs e) {
+			OpenFileDialog openFileDialog = new OpenFileDialog();
 
+			openFileDialog.Filter = "binaire|*.bin";
+
+			if(Resources.TerminalConfiguration.Default.addrFileAnalyserDescription.Length == 0) {
+				if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles")) {
+					Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles");
+				}
+				openFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles";
+			} else {
+				openFileDialog.InitialDirectory = Resources.TerminalConfiguration.Default.addrFileAnalyserDescription;
+			}
+
+			if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog.FileName.Length > 0) {
+				this.tbLocationFileAnalyser.Text = openFileDialog.FileName;
+			}
+
+			if(this.tbLocationFileAnalyser.Text.Length > 0) {
+				AnalyserDescriptionForm analyserDescriptionForm = new AnalyserDescriptionForm(this.tbLocationFileAnalyser.Text);
+
+				analyserDescriptionForm.Show();
+				analyserDescriptionForm.NewFileCreateEvent += AnalyserDescriptionForm_NewFileCreateEvent;
+			}
 		}
 
 		private void pbCreateNewFileAnalyser_Click(object sender, EventArgs e) {
 			AnalyserDescriptionForm analyserDescriptionForm = new AnalyserDescriptionForm();
 
 			analyserDescriptionForm.Show();
+			analyserDescriptionForm.NewFileCreateEvent += AnalyserDescriptionForm_NewFileCreateEvent;
+		
+		}
+
+		private void AnalyserDescriptionForm_NewFileCreateEvent(object sender, EventArgs e) {
+
+			if(Resources.TerminalConfiguration.Default.addrFileAnalyserDescription.Length > 0) {
+				this.tbLocationFileAnalyser.Text = Resources.TerminalConfiguration.Default.addrFileAnalyserDescription;
+				this.Update();
+			}
 		}
 
 		private void pbOutputDataAnalyser_Click(object sender, EventArgs e) {

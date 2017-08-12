@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="AnalyserKeyWord.cs" />
     <Compile Include="AutoSaveManager.cs" />
+    <Compile Include="FileAnalyserDescription.cs" />
     <Compile Include="OptionTerminalDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,7 +99,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\TerminalConfiguration.Designer.cs">
+    <Compile Include="Resources\TerminalConfiguration.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>TerminalConfiguration.settings</DependentUpon>
@@ -165,7 +166,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Properties\TerminalConfiguration.settings">
+    <None Include="Resources\TerminalConfiguration.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>TerminalConfiguration.Designer.cs</LastGenOutput>
     </None>

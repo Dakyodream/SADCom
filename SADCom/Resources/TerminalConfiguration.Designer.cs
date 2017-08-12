@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SADCom.Properties {
+namespace SADCom.Resources {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -68,6 +68,18 @@ namespace SADCom.Properties {
             }
             set {
                 this["terminalOpacity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string addrFileAnalyserDescription {
+            get {
+                return ((string)(this["addrFileAnalyserDescription"]));
+            }
+            set {
+                this["addrFileAnalyserDescription"] = value;
             }
         }
     }
