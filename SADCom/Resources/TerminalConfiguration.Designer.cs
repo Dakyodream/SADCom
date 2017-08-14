@@ -82,5 +82,17 @@ namespace SADCom.Resources {
                 this["addrFileAnalyserDescription"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string addrLogFileAnalyser {
+            get {
+                return ((string)(this["addrLogFileAnalyser"]));
+            }
+            set {
+                this["addrLogFileAnalyser"] = value;
+            }
+        }
     }
 }

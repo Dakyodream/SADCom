@@ -1,9 +1,10 @@
-﻿namespace SADCom {
+﻿namespace SADCom.Configuration {
 	partial class SerialPortConfiguration {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
+	
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -51,7 +52,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.optionTerminalDisplay = new SADCom.OptionTerminalDisplay();
+			this.optionTerminalDisplay = new OptionTerminalDisplay();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();

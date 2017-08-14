@@ -124,6 +124,7 @@
     <Compile Include="SerialPortConfiguration.Designer.cs">
       <DependentUpon>SerialPortConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="SessionConfigurations.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UARTOperator.cs" />
     <Compile Include="UIInterface.cs" />

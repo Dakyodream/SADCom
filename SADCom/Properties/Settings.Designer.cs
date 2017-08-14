@@ -23,39 +23,51 @@ namespace SADCom.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Lucida Console, 10pt")]
         public global::System.Drawing.Font terminalFont {
             get {
                 return ((global::System.Drawing.Font)(this["terminalFont"]));
             }
+            set {
+                this["terminalFont"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1, 36, 86")]
         public global::System.Drawing.Color terminalBackground {
             get {
                 return ((global::System.Drawing.Color)(this["terminalBackground"]));
             }
+            set {
+                this["terminalBackground"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color terminalForeColor {
             get {
                 return ((global::System.Drawing.Color)(this["terminalForeColor"]));
             }
+            set {
+                this["terminalForeColor"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("90")]
         public int terminalOpacity {
             get {
                 return ((int)(this["terminalOpacity"]));
+            }
+            set {
+                this["terminalOpacity"] = value;
             }
         }
     }

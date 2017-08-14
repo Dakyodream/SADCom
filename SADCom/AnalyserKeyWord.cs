@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SADCom {
 	[Serializable]
 	public class AnalyserKeyWord {
-
+		
 		private String msKeyWord = "";
 		public String KeyWord {
 			get {
@@ -22,7 +22,7 @@ namespace SADCom {
 		private String msSubstitutionWords = "";
 		public String SubstitutionWords { get => msSubstitutionWords; set => msSubstitutionWords = value; }
 
-		private Font mfKeyWordFont = Resources.TerminalConfiguration.Default.terminalFont;
+		private Font mfKeyWordFont = Properties.Settings.Default.terminalFont;
 		public Font KeyWordFont {
 			get {
 				return mfKeyWordFont;
@@ -32,7 +32,7 @@ namespace SADCom {
 			}
 		}
 
-		private Color mcKeyWordColor = Resources.TerminalConfiguration.Default.terminalForeColor;
+		private Color mcKeyWordColor = Properties.Settings.Default.terminalForeColor;
 		public Color KeyWordColor {
 			get {
 				return mcKeyWordColor;
@@ -45,10 +45,10 @@ namespace SADCom {
 		private Boolean mbNotifiedLogTerminal = false;
 		public Boolean NotifiedLogTerminal { get => mbNotifiedLogTerminal; set => mbNotifiedLogTerminal = value; }
 
-		public AnalyserKeyWord() : this("", Resources.TerminalConfiguration.Default.terminalFont, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
-		public AnalyserKeyWord(String keyWord) : this(keyWord, Resources.TerminalConfiguration.Default.terminalFont, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
-		public AnalyserKeyWord(String keyWord, Font font) : this(keyWord, font, Resources.TerminalConfiguration.Default.terminalForeColor, false) { }
-		public AnalyserKeyWord(String keyWord, Font font, Color color) : this(keyWord, font, color, false) { }
+		public AnalyserKeyWord() : this("", Properties.Settings.Default.terminalFont, Properties.Settings.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord(String keyWord) : this( keyWord, Properties.Settings.Default.terminalFont, Properties.Settings.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord(String keyWord, Font font) : this( keyWord, font, Properties.Settings.Default.terminalForeColor, false) { }
+		public AnalyserKeyWord(String keyWord, Font font, Color color) : this( keyWord, font, color, false) { }
 
 		public AnalyserKeyWord(String keyWord, Font font, Color color, Boolean NotifiedLogTerminal) {
 			this.KeyWord = keyWord;

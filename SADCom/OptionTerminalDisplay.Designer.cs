@@ -1,4 +1,4 @@
-﻿namespace SADCom {
+﻿namespace SADCom.Configuration {
 	partial class OptionTerminalDisplay {
 		/// <summary> 
 		/// Variable nécessaire au concepteur.
@@ -39,21 +39,26 @@
 			this.pbTerminalBackgroundColor = new System.Windows.Forms.Button();
 			this.lOpacity = new System.Windows.Forms.Label();
 			this.tlbBufferLength = new System.Windows.Forms.TableLayoutPanel();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.numMaxLengthBuffer = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tlpTimeStamp = new System.Windows.Forms.TableLayoutPanel();
 			this.cbDataTimeStamp = new System.Windows.Forms.ComboBox();
-			this.tlbDataAnalyser = new System.Windows.Forms.TableLayoutPanel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.pbOutputDataAnalyser = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
+			this.tlbDataAnalyser = new System.Windows.Forms.TableLayoutPanel();
+			this.tbOutputAnalyserLogFile = new System.Windows.Forms.TextBox();
+			this.pbOutputDataAnalyser = new System.Windows.Forms.Button();
+			this.pbClearFileAnalyser = new System.Windows.Forms.Button();
+			this.pbClearbOutputAnalyserLogFile = new System.Windows.Forms.Button();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.pbSelectFileAnalyser = new System.Windows.Forms.Button();
 			this.tlpTerminalColor.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tbOpacity)).BeginInit();
 			this.tlbBufferLength.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numMaxLengthBuffer)).BeginInit();
 			this.tlpTimeStamp.SuspendLayout();
 			this.tlbDataAnalyser.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// cbTimeStamp
@@ -86,11 +91,11 @@
 			this.pbFileAnalyser.AutoSize = true;
 			this.pbFileAnalyser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pbFileAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
-			this.pbFileAnalyser.Location = new System.Drawing.Point(224, 3);
+			this.pbFileAnalyser.Location = new System.Drawing.Point(35, 3);
 			this.pbFileAnalyser.Name = "pbFileAnalyser";
-			this.pbFileAnalyser.Size = new System.Drawing.Size(213, 23);
+			this.pbFileAnalyser.Size = new System.Drawing.Size(170, 23);
 			this.pbFileAnalyser.TabIndex = 4;
-			this.pbFileAnalyser.Text = "Fichier d\'analyse";
+			this.pbFileAnalyser.Text = "Modifier le fichier d\'analyse";
 			this.pbFileAnalyser.UseVisualStyleBackColor = true;
 			this.pbFileAnalyser.Click += new System.EventHandler(this.pbFileAnalyser_Click);
 			// 
@@ -99,9 +104,9 @@
 			this.pbCreateNewFileAnalyser.AutoSize = true;
 			this.pbCreateNewFileAnalyser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pbCreateNewFileAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
-			this.pbCreateNewFileAnalyser.Location = new System.Drawing.Point(224, 32);
+			this.pbCreateNewFileAnalyser.Location = new System.Drawing.Point(235, 32);
 			this.pbCreateNewFileAnalyser.Name = "pbCreateNewFileAnalyser";
-			this.pbCreateNewFileAnalyser.Size = new System.Drawing.Size(213, 23);
+			this.pbCreateNewFileAnalyser.Size = new System.Drawing.Size(202, 23);
 			this.pbCreateNewFileAnalyser.TabIndex = 5;
 			this.pbCreateNewFileAnalyser.Text = "Crée un nouveaux fichier d\'analyse";
 			this.pbCreateNewFileAnalyser.UseVisualStyleBackColor = true;
@@ -110,10 +115,11 @@
 			// tbLocationFileAnalyser
 			// 
 			this.tbLocationFileAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tbLocationFileAnalyser.Location = new System.Drawing.Point(18, 5);
+			this.tbLocationFileAnalyser.Location = new System.Drawing.Point(29, 5);
 			this.tbLocationFileAnalyser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
 			this.tbLocationFileAnalyser.Name = "tbLocationFileAnalyser";
 			this.tbLocationFileAnalyser.ReadOnly = true;
+			this.tbLocationFileAnalyser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.tbLocationFileAnalyser.Size = new System.Drawing.Size(200, 20);
 			this.tbLocationFileAnalyser.TabIndex = 6;
 			// 
@@ -136,7 +142,7 @@
 			this.tlpTerminalColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlpTerminalColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlpTerminalColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tlpTerminalColor.Size = new System.Drawing.Size(440, 103);
+			this.tlpTerminalColor.Size = new System.Drawing.Size(440, 97);
 			this.tlpTerminalColor.TabIndex = 8;
 			// 
 			// tableLayoutPanel1
@@ -152,12 +158,13 @@
 			this.tableLayoutPanel1.Controls.Add(this.lOpacityCurrentLvl, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.tbOpacity, 1, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(153, 61);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(150, 58);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 39);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(291, 39);
 			this.tableLayoutPanel1.TabIndex = 12;
 			// 
 			// lMinOpacity
@@ -176,7 +183,7 @@
 			this.lMaxOpacity.AutoSize = true;
 			this.lMaxOpacity.Dock = System.Windows.Forms.DockStyle.Left;
 			this.lMaxOpacity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.lMaxOpacity.Location = new System.Drawing.Point(248, 0);
+			this.lMaxOpacity.Location = new System.Drawing.Point(254, 0);
 			this.lMaxOpacity.Name = "lMaxOpacity";
 			this.lMaxOpacity.Size = new System.Drawing.Size(33, 26);
 			this.lMaxOpacity.TabIndex = 16;
@@ -190,7 +197,7 @@
 			this.lOpacityCurrentLvl.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.lOpacityCurrentLvl.Location = new System.Drawing.Point(43, 26);
 			this.lOpacityCurrentLvl.Name = "lOpacityCurrentLvl";
-			this.lOpacityCurrentLvl.Size = new System.Drawing.Size(199, 13);
+			this.lOpacityCurrentLvl.Size = new System.Drawing.Size(205, 13);
 			this.lOpacityCurrentLvl.TabIndex = 17;
 			this.lOpacityCurrentLvl.Text = "50%";
 			this.lOpacityCurrentLvl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -203,7 +210,7 @@
 			this.tbOpacity.MaximumSize = new System.Drawing.Size(0, 20);
 			this.tbOpacity.Minimum = 30;
 			this.tbOpacity.Name = "tbOpacity";
-			this.tbOpacity.Size = new System.Drawing.Size(199, 20);
+			this.tbOpacity.Size = new System.Drawing.Size(205, 20);
 			this.tbOpacity.TabIndex = 14;
 			this.tbOpacity.TickFrequency = 10;
 			this.tbOpacity.Value = 100;
@@ -252,7 +259,7 @@
 			this.lOpacity.Location = new System.Drawing.Point(3, 61);
 			this.lOpacity.Margin = new System.Windows.Forms.Padding(3);
 			this.lOpacity.Name = "lOpacity";
-			this.lOpacity.Size = new System.Drawing.Size(44, 39);
+			this.lOpacity.Size = new System.Drawing.Size(44, 33);
 			this.lOpacity.TabIndex = 13;
 			this.lOpacity.Text = "Opacité";
 			this.lOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,40 +272,40 @@
 			this.tlbBufferLength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
 			this.tlbBufferLength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
 			this.tlbBufferLength.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
-			this.tlbBufferLength.Controls.Add(this.numericUpDown1, 1, 0);
+			this.tlbBufferLength.Controls.Add(this.numMaxLengthBuffer, 1, 0);
 			this.tlbBufferLength.Controls.Add(this.label1, 0, 0);
 			this.tlbBufferLength.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tlbBufferLength.Location = new System.Drawing.Point(0, 235);
+			this.tlbBufferLength.Location = new System.Drawing.Point(0, 229);
 			this.tlbBufferLength.Name = "tlbBufferLength";
 			this.tlbBufferLength.RowCount = 1;
 			this.tlbBufferLength.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tlbBufferLength.Size = new System.Drawing.Size(440, 26);
 			this.tlbBufferLength.TabIndex = 9;
 			// 
-			// numericUpDown1
+			// numMaxLengthBuffer
 			// 
-			this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.numericUpDown1.Increment = new decimal(new int[] {
+			this.numMaxLengthBuffer.Dock = System.Windows.Forms.DockStyle.Top;
+			this.numMaxLengthBuffer.Increment = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-			this.numericUpDown1.Location = new System.Drawing.Point(253, 3);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
+			this.numMaxLengthBuffer.Location = new System.Drawing.Point(253, 3);
+			this.numMaxLengthBuffer.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
-			this.numericUpDown1.Minimum = new decimal(new int[] {
+			this.numMaxLengthBuffer.Minimum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(144, 20);
-			this.numericUpDown1.TabIndex = 0;
-			this.numericUpDown1.ThousandsSeparator = true;
-			this.numericUpDown1.Value = new decimal(new int[] {
+			this.numMaxLengthBuffer.Name = "numMaxLengthBuffer";
+			this.numMaxLengthBuffer.Size = new System.Drawing.Size(144, 20);
+			this.numMaxLengthBuffer.TabIndex = 0;
+			this.numMaxLengthBuffer.ThousandsSeparator = true;
+			this.numMaxLengthBuffer.Value = new decimal(new int[] {
             2147483647,
             0,
             0,
@@ -342,20 +349,34 @@
 			this.cbDataTimeStamp.Name = "cbDataTimeStamp";
 			this.cbDataTimeStamp.Size = new System.Drawing.Size(135, 21);
 			this.cbDataTimeStamp.TabIndex = 3;
+			this.cbDataTimeStamp.SelectedIndexChanged += new System.EventHandler(this.cbDataTimeStamp_SelectedIndexChanged);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+			this.label2.Location = new System.Drawing.Point(309, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(53, 27);
+			this.label2.TabIndex = 4;
+			this.label2.Text = "secondes";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tlbDataAnalyser
 			// 
 			this.tlbDataAnalyser.AutoSize = true;
 			this.tlbDataAnalyser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.tlbDataAnalyser.ColumnCount = 3;
-			this.tlbDataAnalyser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+			this.tlbDataAnalyser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
 			this.tlbDataAnalyser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
 			this.tlbDataAnalyser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.tlbDataAnalyser.Controls.Add(this.pbFileAnalyser, 2, 0);
 			this.tlbDataAnalyser.Controls.Add(this.tbLocationFileAnalyser, 1, 0);
 			this.tlbDataAnalyser.Controls.Add(this.pbCreateNewFileAnalyser, 2, 1);
-			this.tlbDataAnalyser.Controls.Add(this.textBox1, 1, 2);
+			this.tlbDataAnalyser.Controls.Add(this.tbOutputAnalyserLogFile, 1, 2);
 			this.tlbDataAnalyser.Controls.Add(this.pbOutputDataAnalyser, 2, 2);
+			this.tlbDataAnalyser.Controls.Add(this.pbClearFileAnalyser, 0, 0);
+			this.tlbDataAnalyser.Controls.Add(this.pbClearbOutputAnalyserLogFile, 0, 2);
+			this.tlbDataAnalyser.Controls.Add(this.tableLayoutPanel2, 2, 0);
 			this.tlbDataAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tlbDataAnalyser.Location = new System.Drawing.Point(0, 44);
 			this.tlbDataAnalyser.Margin = new System.Windows.Forms.Padding(0);
@@ -368,39 +389,84 @@
 			this.tlbDataAnalyser.Size = new System.Drawing.Size(440, 88);
 			this.tlbDataAnalyser.TabIndex = 11;
 			// 
-			// textBox1
+			// tbOutputAnalyserLogFile
 			// 
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.textBox1.Location = new System.Drawing.Point(18, 63);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(200, 20);
-			this.textBox1.TabIndex = 7;
+			this.tbOutputAnalyserLogFile.Dock = System.Windows.Forms.DockStyle.Top;
+			this.tbOutputAnalyserLogFile.Location = new System.Drawing.Point(29, 63);
+			this.tbOutputAnalyserLogFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+			this.tbOutputAnalyserLogFile.Name = "tbOutputAnalyserLogFile";
+			this.tbOutputAnalyserLogFile.ReadOnly = true;
+			this.tbOutputAnalyserLogFile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.tbOutputAnalyserLogFile.Size = new System.Drawing.Size(200, 20);
+			this.tbOutputAnalyserLogFile.TabIndex = 7;
 			// 
 			// pbOutputDataAnalyser
 			// 
 			this.pbOutputDataAnalyser.AutoSize = true;
 			this.pbOutputDataAnalyser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pbOutputDataAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
-			this.pbOutputDataAnalyser.Location = new System.Drawing.Point(224, 61);
+			this.pbOutputDataAnalyser.Location = new System.Drawing.Point(235, 61);
 			this.pbOutputDataAnalyser.Name = "pbOutputDataAnalyser";
-			this.pbOutputDataAnalyser.Size = new System.Drawing.Size(213, 23);
+			this.pbOutputDataAnalyser.Size = new System.Drawing.Size(202, 23);
 			this.pbOutputDataAnalyser.TabIndex = 8;
 			this.pbOutputDataAnalyser.Text = "Sortie d\'analyse";
 			this.pbOutputDataAnalyser.UseVisualStyleBackColor = true;
 			this.pbOutputDataAnalyser.Click += new System.EventHandler(this.pbOutputDataAnalyser_Click);
 			// 
-			// label2
+			// pbClearFileAnalyser
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.label2.Location = new System.Drawing.Point(309, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(53, 27);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "secondes";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.pbClearFileAnalyser.AutoSize = true;
+			this.pbClearFileAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pbClearFileAnalyser.Location = new System.Drawing.Point(3, 3);
+			this.pbClearFileAnalyser.Name = "pbClearFileAnalyser";
+			this.pbClearFileAnalyser.Size = new System.Drawing.Size(20, 23);
+			this.pbClearFileAnalyser.TabIndex = 9;
+			this.pbClearFileAnalyser.Text = "x";
+			this.pbClearFileAnalyser.UseVisualStyleBackColor = true;
+			this.pbClearFileAnalyser.Click += new System.EventHandler(this.pbClearFileAnalyser_Click);
+			// 
+			// pbClearbOutputAnalyserLogFile
+			// 
+			this.pbClearbOutputAnalyserLogFile.AutoSize = true;
+			this.pbClearbOutputAnalyserLogFile.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pbClearbOutputAnalyserLogFile.Location = new System.Drawing.Point(3, 61);
+			this.pbClearbOutputAnalyserLogFile.Name = "pbClearbOutputAnalyserLogFile";
+			this.pbClearbOutputAnalyserLogFile.Size = new System.Drawing.Size(20, 23);
+			this.pbClearbOutputAnalyserLogFile.TabIndex = 10;
+			this.pbClearbOutputAnalyserLogFile.Text = "x";
+			this.pbClearbOutputAnalyserLogFile.UseVisualStyleBackColor = true;
+			this.pbClearbOutputAnalyserLogFile.Click += new System.EventHandler(this.pbClearbOutputAnalyserLogFile_Click);
+			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.AutoSize = true;
+			this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.Controls.Add(this.pbFileAnalyser, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.pbSelectFileAnalyser, 0, 0);
+			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(232, 0);
+			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 1;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(208, 29);
+			this.tableLayoutPanel2.TabIndex = 11;
+			// 
+			// pbSelectFileAnalyser
+			// 
+			this.pbSelectFileAnalyser.AutoSize = true;
+			this.pbSelectFileAnalyser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pbSelectFileAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pbSelectFileAnalyser.Location = new System.Drawing.Point(3, 3);
+			this.pbSelectFileAnalyser.Name = "pbSelectFileAnalyser";
+			this.pbSelectFileAnalyser.Size = new System.Drawing.Size(26, 23);
+			this.pbSelectFileAnalyser.TabIndex = 5;
+			this.pbSelectFileAnalyser.Text = "...";
+			this.pbSelectFileAnalyser.UseVisualStyleBackColor = true;
+			this.pbSelectFileAnalyser.Click += new System.EventHandler(this.pbSelectFileAnalyser_Click);
 			// 
 			// OptionTerminalDisplay
 			// 
@@ -414,7 +480,7 @@
 			this.Controls.Add(this.tlpTimeStamp);
 			this.MinimumSize = new System.Drawing.Size(440, 0);
 			this.Name = "OptionTerminalDisplay";
-			this.Size = new System.Drawing.Size(440, 268);
+			this.Size = new System.Drawing.Size(440, 280);
 			this.tlpTerminalColor.ResumeLayout(false);
 			this.tlpTerminalColor.PerformLayout();
 			this.tableLayoutPanel1.ResumeLayout(false);
@@ -422,11 +488,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.tbOpacity)).EndInit();
 			this.tlbBufferLength.ResumeLayout(false);
 			this.tlbBufferLength.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numMaxLengthBuffer)).EndInit();
 			this.tlpTimeStamp.ResumeLayout(false);
 			this.tlpTimeStamp.PerformLayout();
 			this.tlbDataAnalyser.ResumeLayout(false);
 			this.tlbDataAnalyser.PerformLayout();
+			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableLayoutPanel2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -442,12 +510,12 @@
 		private System.Windows.Forms.TableLayoutPanel tlpTerminalColor;
 		private System.Windows.Forms.Button pbTeminalFont;
 		private System.Windows.Forms.TableLayoutPanel tlbBufferLength;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown numMaxLengthBuffer;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TableLayoutPanel tlpTimeStamp;
 		private System.Windows.Forms.ComboBox cbDataTimeStamp;
 		private System.Windows.Forms.TableLayoutPanel tlbDataAnalyser;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbOutputAnalyserLogFile;
 		private System.Windows.Forms.Button pbOutputDataAnalyser;
 		private System.Windows.Forms.RichTextBox rtbColorExample;
 		private System.Windows.Forms.Button pbTerminalBackgroundColor;
@@ -458,5 +526,9 @@
 		private System.Windows.Forms.Label lMaxOpacity;
 		private System.Windows.Forms.Label lOpacityCurrentLvl;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button pbClearFileAnalyser;
+		private System.Windows.Forms.Button pbClearbOutputAnalyserLogFile;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.Button pbSelectFileAnalyser;
 	}
 }

@@ -11,10 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SADCom {
+namespace SADCom.Configuration {
 	public partial class SerialPortConfiguration : Form {
 
 		private List<SerialPortConfigSave> mListConfig;
+
+		private SessionConfigurations mSessionConfigurations = new SessionConfigurations();
 
 		private string saveDirectory;
 		private string configFileSystem;
@@ -25,12 +27,24 @@ namespace SADCom {
 				return mSerialPort;
 			}
 		}
-	
 
-		public SerialPortConfiguration() {
+		/// <summary>
+		/// For the vew disigner only. With it, parameter are not transfered to serial port shell. 
+		/// </summary>
+		public SerialPortConfiguration() : this(new SessionConfigurations()) { }
+		
+		/// <summary>
+		/// True constructor. 
+		/// </summary>
+		/// <param name="sessionConfigurations">Object use for transfered the configutation and global parametter</param>
+		public SerialPortConfiguration(SessionConfigurations sessionConfigurations) {
+			this.mSessionConfigurations = sessionConfigurations;
+
 			InitializeComponent();
 
-			
+			this.optionTerminalDisplay.SessionConfigurations = this.mSessionConfigurations;
+
+
 			try {
 				saveDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 				configFileSystem = Path.Combine(saveDirectory, "saveConfiguration.bin");
@@ -102,9 +116,7 @@ namespace SADCom {
 
 			//deserialize
 			try {
-
 				if(File.Exists(configFileSystem)) {
-
 					using(Stream stream = File.Open(configFileSystem, FileMode.Open)) {
 						var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
@@ -307,6 +319,7 @@ namespace SADCom {
 
 				this.mSerialPort = serialPortConnexion;
 
+				this.DialogResult = DialogResult.OK;
 				this.Close();
 			} catch(UnauthorizedAccessException unauthorizedAccessException) {
 				MessageBox.Show("Connexion non authorisé, veuillez réitérer ultérieurement.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
@@ -315,6 +328,11 @@ namespace SADCom {
 			}
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void pbOptionalConfiguration_Click(object sender, EventArgs e) {
 			this.splitContainer1.Panel2Collapsed = !this.splitContainer1.Panel2Collapsed;
 

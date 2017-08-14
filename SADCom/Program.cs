@@ -12,12 +12,17 @@ namespace SADCom {
 			Application.SetCompatibleTextRenderingDefault(false);
 			
 
-			SerialPortConfiguration configForm = new SerialPortConfiguration();
-			Application.Run(configForm);
+			//SerialPortConfiguration configForm = new SerialPortConfiguration();
+			SerialPortShell shellForm = new SerialPortShell();
 
-			if(configForm.serialPort != null) {
-				Application.Run(new SerialPortShell(configForm.serialPort));
+			if(!shellForm.IsDisposed) {
+				Application.Run(shellForm);
 			}
+			
+
+			//if(configForm.serialPort != null) {
+			//	Application.Run(new SerialPortShell(configForm.serialPort));
+			//}
 
 		}
 	}

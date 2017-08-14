@@ -18,6 +18,8 @@ namespace SADCom {
 		public event NewDescriptionEventHandler NewDescriptionEvent;
 		public event AnalyserDescriptionDeletedEventHandler AnalyserDescriptionDeletedEvent;
 
+		private SessionConfigurations sessionConfigurations;
+
 		private bool bDescriptionNeverFill = true;
 
 		private AnalyserKeyWord mAnalyserKeyWord = new AnalyserKeyWord();
@@ -33,15 +35,21 @@ namespace SADCom {
 				this.rtbResult.Font = this.mAnalyserKeyWord.KeyWordFont;
 				this.tbKeyWord.Text = this.mAnalyserKeyWord.KeyWord;
 				this.tbSubstitutionWords.Text = this.mAnalyserKeyWord.SubstitutionWords;
+				this.cbOutputOnLogShell.Checked = this.mAnalyserKeyWord.NotifiedLogTerminal;
 
 				this.tbSubstitutionWords.Enabled = true;
 				this.pbFontText.Enabled = true;
 				this.pbDelete.Enabled = true;
+				this.cbOutputOnLogShell.Enabled = true;
 			}
 		}
 
-		public AnalyserDescriptionUserControl() {
+
+		public AnalyserDescriptionUserControl() : this(new SessionConfigurations()) { }
+		public AnalyserDescriptionUserControl(SessionConfigurations sessionConfigurations) {
 			InitializeComponent();
+
+			this.sessionConfigurations = sessionConfigurations;
 
 			this.rtbResult.BackColor = Resources.TerminalConfiguration.Default.terminalBackground;
 			this.rtbResult.ForeColor = this.mAnalyserKeyWord.KeyWordColor;
@@ -50,6 +58,7 @@ namespace SADCom {
 			this.tbSubstitutionWords.Enabled = false;
 			this.pbFontText.Enabled = false;
 			this.pbDelete.Enabled = false;
+			this.cbOutputOnLogShell.Enabled = false;
 
 			bDescriptionNeverFill = true;
 		}
@@ -82,6 +91,8 @@ namespace SADCom {
 				this.tbSubstitutionWords.Enabled = true;
 				this.pbFontText.Enabled = true;
 				this.pbDelete.Enabled = true;
+				this.cbOutputOnLogShell.Enabled = true;
+
 			}
 
 			if(this.tbSubstitutionWords.Text.Length == 0) {
@@ -98,6 +109,10 @@ namespace SADCom {
 
 		private void bDelete_Click(object sender, EventArgs e) {
 			this.AnalyserDescriptionDeletedEvent?.Invoke(this, null);
+		}
+
+		private void cbOutputOnLogShell_CheckedChanged(object sender, EventArgs e) {
+			this.AnalyserKeyWord.NotifiedLogTerminal = this.cbOutputOnLogShell.Checked;
 		}
 	}
 }

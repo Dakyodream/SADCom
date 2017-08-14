@@ -9,36 +9,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SADCom {
-
-	public delegate void NewFileCreateHandler(object sender, EventArgs e);
-
+namespace SADCom.Configuration {
 
 	public partial class AnalyserDescriptionForm : Form {
 
-		public event NewFileCreateHandler NewFileCreateEvent;
+		private SessionConfigurations mSessionConfigurations;
 
 		private FileAnalyserDescription mFileOfAnalyserDescription;
 
 		private Size mSizeOfCstForms;
 
 
-		public AnalyserDescriptionForm() : this("") { }
-		public AnalyserDescriptionForm(string addrFileAnalyserDescription) {
+		public AnalyserDescriptionForm() : this(new SessionConfigurations(), "") { }
+		public AnalyserDescriptionForm(SessionConfigurations sessionConfigurations) : this(sessionConfigurations, "") { }
+		public AnalyserDescriptionForm(SessionConfigurations sessionConfigurations, string addrFileAnalyserDescription) {
 			InitializeComponent();
+
+			this.mSessionConfigurations = sessionConfigurations;
 
 			this.mFileOfAnalyserDescription = new FileAnalyserDescription();
 
 
-			this.mSizeOfCstForms = new Size(this.Size.Width - this.pAutoscrollPanel.Size.Width,
-			this.Size.Height - this.pAutoscrollPanel.Size.Height);
+			this.mSizeOfCstForms = new Size(this.Size.Width, this.Size.Height - this.pAutoscrollPanel.Size.Height);
 
 			
 
 
 			if(addrFileAnalyserDescription.Length > 0) {
 				if(File.Exists(addrFileAnalyserDescription)){
-					Resources.TerminalConfiguration.Default.addrFileAnalyserDescription = addrFileAnalyserDescription;
+					this.mSessionConfigurations.AddrFileAnalyserDescription = addrFileAnalyserDescription;
 
 					try {
 
@@ -69,19 +68,13 @@ namespace SADCom {
 								}
 
 							}
-
-
-
-
 						}
 					} catch {
-						MessageBox.Show("Erreur critique à l'initialisation2", "Configuration", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+						MessageBox.Show("Desérialisation du fichier d'analyse des données impossible.", "Configuration", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+						this.Close();
 					}
-
-
 				}
 			}
-
 			this.NewAnalyserDescription();
 		}
 
@@ -99,8 +92,11 @@ namespace SADCom {
 
 			analyserDescriptionUserControl.AnalyserDescriptionDeletedEvent += AnalyserDescriptionUserControl_AnalyserDescriptionDeletedEvent;
 
-
-			this.pannelOfDescription.Controls.Add(analyserDescriptionUserControl);			
+			try {
+				this.pannelOfDescription.Controls.Add(analyserDescriptionUserControl);
+			} catch {
+				throw new Exception("Cant add analyserDescriptionUserControl in pannelOfDescription.");
+			}
 			this.mFileOfAnalyserDescription.AddDescription(analyserDescriptionUserControl.AnalyserKeyWord);
 			
 			if(this.pannelOfDescription.Size.Height > this.pAutoscrollPanel.Size.Height) {
@@ -135,39 +131,47 @@ namespace SADCom {
 			saveFileDialog.Filter = "binaire|*.bin";
 			saveFileDialog.Title = "Fichier de description";
 
-			if(Resources.TerminalConfiguration.Default.addrFileAnalyserDescription.Length == 0) {
-				if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles")) {
-					Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles");
-				}
-				saveFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles";
-			} else {
-				saveFileDialog.InitialDirectory = Resources.TerminalConfiguration.Default.addrFileAnalyserDescription;
-			}
-
-
-			if(saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog.FileName.Length > 0) {
-
-				Resources.TerminalConfiguration.Default.addrFileAnalyserDescription = saveFileDialog.FileName;
-
-				//serialize
-				try {
-					using(Stream stream = File.Open(saveFileDialog.FileName, FileMode.Create)) {
-						var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-
-						bformatter.Serialize(stream, this.mFileOfAnalyserDescription);
+			try {
+				if(Resources.TerminalConfiguration.Default.addrFileAnalyserDescription.Length == 0) {
+					if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles")) {
+						Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles");
 					}
-				} catch(Exception exception) {
-					MessageBox.Show("Erreur détéctée lors la sauvegarde des données de configuration : \n" + exception.ToString(), "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+					saveFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\AnalyserDescriptionFiles";
+				} else {
+					saveFileDialog.InitialDirectory = Resources.TerminalConfiguration.Default.addrFileAnalyserDescription;
 				}
 
-				NewFileCreateEvent?.Invoke(this, null);
-			}
 
-			this.Close();
+				if(saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog.FileName.Length > 0) {
+
+					//serialize
+					try {
+						using(Stream stream = File.Open(saveFileDialog.FileName, FileMode.Create)) {
+							var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+							bformatter.Serialize(stream, this.mFileOfAnalyserDescription);
+						}
+					} catch(Exception exception) {
+						MessageBox.Show("Erreur détéctée lors la sauvegarde des données de configuration : \n" + exception.ToString(), "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+					}
+
+					this.mSessionConfigurations.AddrFileAnalyserDescription = saveFileDialog.FileName;
+					this.DialogResult = DialogResult.OK; ;
+				}
+
+				this.Close();
+			} catch {
+				throw new Exception("Can't save the file use by the analyser data.");
+			}
 		}
 
 		private void pbExit_Click(object sender, EventArgs e) {
-			this.Close();
+			try { 
+				this.DialogResult = DialogResult.Ignore;
+				this.Close();
+			} catch {
+				throw new Exception("Can't close the analyser description dialog.");
+			}
 		}
 	}
 }
