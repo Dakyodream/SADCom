@@ -168,14 +168,16 @@ namespace SADCom.Configuration {
 			if(this.tbLocationFileAnalyser.Text.Length > 0) {
 				AnalyserDescriptionForm analyserDescriptionForm = new AnalyserDescriptionForm(mSessionConfigurations, this.tbLocationFileAnalyser.Text);
 
-				if(analyserDescriptionForm.ShowDialog() == DialogResult.OK) {
-					if(mSessionConfigurations.AddrFileAnalyserDescription.Length > 0) {
-						this.tbLocationFileAnalyser.Text = mSessionConfigurations.AddrFileAnalyserDescription;
+				if(!analyserDescriptionForm.IsDisposed) {
+					if(analyserDescriptionForm.ShowDialog() == DialogResult.OK) {
+						if(mSessionConfigurations.AddrFileAnalyserDescription.Length > 0) {
+							this.tbLocationFileAnalyser.Text = mSessionConfigurations.AddrFileAnalyserDescription;
+						}
 					}
 				}
 			}
 		}
-		
+
 		/// <summary>
 		/// Call to create a new File;
 		/// </summary>

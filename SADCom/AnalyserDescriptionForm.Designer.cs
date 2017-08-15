@@ -33,8 +33,8 @@
 			this.pbSave = new System.Windows.Forms.Button();
 			this.pbExit = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
-			this.tableLayoutPanel2.SuspendLayout();
 			this.pAutoscrollPanel.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -47,7 +47,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label3, 3, 0);
@@ -116,7 +116,7 @@
 			this.pAutoscrollPanel.Location = new System.Drawing.Point(0, 13);
 			this.pAutoscrollPanel.MinimumSize = new System.Drawing.Size(20, 20);
 			this.pAutoscrollPanel.Name = "pAutoscrollPanel";
-			this.pAutoscrollPanel.Size = new System.Drawing.Size(680, 270);
+			this.pAutoscrollPanel.Size = new System.Drawing.Size(680, 241);
 			this.pAutoscrollPanel.TabIndex = 4;
 			// 
 			// tableLayoutPanel2
@@ -146,7 +146,7 @@
 			this.pbSave.Name = "pbSave";
 			this.pbSave.Size = new System.Drawing.Size(144, 23);
 			this.pbSave.TabIndex = 0;
-			this.pbSave.Text = "Valider et sauvegarder";
+			this.pbSave.Text = "&Valider et sauvegarder";
 			this.pbSave.UseVisualStyleBackColor = true;
 			this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
 			// 
@@ -159,7 +159,7 @@
 			this.pbExit.Name = "pbExit";
 			this.pbExit.Size = new System.Drawing.Size(144, 23);
 			this.pbExit.TabIndex = 1;
-			this.pbExit.Text = "Quitter sans sauvegarder";
+			this.pbExit.Text = "&Quitter sans sauvegarder";
 			this.pbExit.UseVisualStyleBackColor = true;
 			this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
 			// 
@@ -167,13 +167,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(680, 283);
 			this.Controls.Add(this.pAutoscrollPanel);
 			this.Controls.Add(this.tableLayoutPanel2);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "AnalyserDescriptionForm";
-			this.Text = "AnalyserDescriptionForm";
+			this.ShowIcon = false;
+			this.Text = "Editeur de régle d\'analyse des données";
 			this.ResizeEnd += new System.EventHandler(this.AnalyserDescriptionForm_ResizeEnd);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();

@@ -1,4 +1,4 @@
-﻿namespace SADCom {
+﻿namespace SADCom.Configuration {
 	partial class AnalyserDescriptionUserControl {
 		/// <summary> 
 		/// Variable nécessaire au concepteur.

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SADCom {
+namespace SADCom.Configuration {
 	
 	/// <summary>
 	/// Event use by <see cref="AnalyserDescriptionUserControl"/> when a new analyser description is available.
@@ -78,7 +78,7 @@ namespace SADCom {
 		}
 
 		/// <summary>
-		/// Constructor void for the for disigner viewer or a new AnalyserDescriptionUserControl object.
+		/// Constructor void for the disigner viewer or a new AnalyserDescriptionUserControl object.
 		/// </summary>
 		public AnalyserDescriptionUserControl() : this(new SessionConfigurations()) { }
 		/// <summary>
