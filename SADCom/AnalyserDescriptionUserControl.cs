@@ -13,7 +13,7 @@ namespace SADCom.Configuration {
 	/// <summary>
 	/// Event use by <see cref="AnalyserDescriptionUserControl"/> when a new analyser description is available.
 	/// </summary>
-	/// <param name="sender">the object sending the event</param>
+	/// <param name="sender">The object sending the event</param>
 	/// <param name="e">not use (null)</param>
 	public delegate void AnalyserDescriptionDeletedEventHandler(object sender, EventArgs e);
 	/// <summary>

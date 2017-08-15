@@ -119,7 +119,7 @@ namespace SADCom.Configuration {
 
 				} else {
 					DialogResult resultOfMessageBox = DialogResult.Cancel;
-					resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + this.msAddrOfFileRule + "\" n'existe pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + this.msAddrOfFileRule + "\" n'exist pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 					if(resultOfMessageBox != DialogResult.Yes) {
 						this.Close();
@@ -243,7 +243,5 @@ namespace SADCom.Configuration {
 			}
 		}
 	
-
-
 	}
 }

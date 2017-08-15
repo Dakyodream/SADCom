@@ -69,7 +69,7 @@
 			this.cbTimeStamp.Margin = new System.Windows.Forms.Padding(0);
 			this.cbTimeStamp.Name = "cbTimeStamp";
 			this.cbTimeStamp.Size = new System.Drawing.Size(165, 27);
-			this.cbTimeStamp.TabIndex = 2;
+			this.cbTimeStamp.TabIndex = 0;
 			this.cbTimeStamp.Text = "horodatage des données";
 			this.cbTimeStamp.UseVisualStyleBackColor = true;
 			this.cbTimeStamp.CheckedChanged += new System.EventHandler(this.cbTimeStamp_CheckedChanged);
@@ -81,7 +81,7 @@
 			this.cbDataAnalyser.Location = new System.Drawing.Point(0, 27);
 			this.cbDataAnalyser.Name = "cbDataAnalyser";
 			this.cbDataAnalyser.Size = new System.Drawing.Size(440, 17);
-			this.cbDataAnalyser.TabIndex = 3;
+			this.cbDataAnalyser.TabIndex = 1;
 			this.cbDataAnalyser.Text = "Activation de l\'analyseur de données";
 			this.cbDataAnalyser.UseVisualStyleBackColor = true;
 			this.cbDataAnalyser.CheckedChanged += new System.EventHandler(this.cbDataAnalyser_CheckedChanged);
@@ -94,8 +94,8 @@
 			this.pbFileAnalyser.Location = new System.Drawing.Point(35, 3);
 			this.pbFileAnalyser.Name = "pbFileAnalyser";
 			this.pbFileAnalyser.Size = new System.Drawing.Size(170, 23);
-			this.pbFileAnalyser.TabIndex = 4;
-			this.pbFileAnalyser.Text = "Modifier le fichier d\'analyse";
+			this.pbFileAnalyser.TabIndex = 1;
+			this.pbFileAnalyser.Text = "&Modifier le fichier d\'analyse";
 			this.pbFileAnalyser.UseVisualStyleBackColor = true;
 			this.pbFileAnalyser.Click += new System.EventHandler(this.pbFileAnalyser_Click);
 			// 
@@ -107,8 +107,8 @@
 			this.pbCreateNewFileAnalyser.Location = new System.Drawing.Point(235, 32);
 			this.pbCreateNewFileAnalyser.Name = "pbCreateNewFileAnalyser";
 			this.pbCreateNewFileAnalyser.Size = new System.Drawing.Size(202, 23);
-			this.pbCreateNewFileAnalyser.TabIndex = 5;
-			this.pbCreateNewFileAnalyser.Text = "Crée un nouveaux fichier d\'analyse";
+			this.pbCreateNewFileAnalyser.TabIndex = 3;
+			this.pbCreateNewFileAnalyser.Text = "&Crée un nouveaux fichier d\'analyse";
 			this.pbCreateNewFileAnalyser.UseVisualStyleBackColor = true;
 			this.pbCreateNewFileAnalyser.Click += new System.EventHandler(this.pbCreateNewFileAnalyser_Click);
 			// 
@@ -121,7 +121,8 @@
 			this.tbLocationFileAnalyser.ReadOnly = true;
 			this.tbLocationFileAnalyser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.tbLocationFileAnalyser.Size = new System.Drawing.Size(200, 20);
-			this.tbLocationFileAnalyser.TabIndex = 6;
+			this.tbLocationFileAnalyser.TabIndex = 1;
+			this.tbLocationFileAnalyser.TextChanged += new System.EventHandler(this.tbLocationFileAnalyser_TextChanged);
 			// 
 			// tlpTerminalColor
 			// 
@@ -143,7 +144,7 @@
 			this.tlpTerminalColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlpTerminalColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlpTerminalColor.Size = new System.Drawing.Size(440, 97);
-			this.tlpTerminalColor.TabIndex = 8;
+			this.tlpTerminalColor.TabIndex = 3;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -165,7 +166,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(291, 39);
-			this.tableLayoutPanel1.TabIndex = 12;
+			this.tableLayoutPanel1.TabIndex = 4;
 			// 
 			// lMinOpacity
 			// 
@@ -174,7 +175,7 @@
 			this.lMinOpacity.Location = new System.Drawing.Point(10, 0);
 			this.lMinOpacity.Name = "lMinOpacity";
 			this.lMinOpacity.Size = new System.Drawing.Size(27, 26);
-			this.lMinOpacity.TabIndex = 15;
+			this.lMinOpacity.TabIndex = 0;
 			this.lMinOpacity.Text = "30%";
 			this.lMinOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
@@ -186,7 +187,7 @@
 			this.lMaxOpacity.Location = new System.Drawing.Point(254, 0);
 			this.lMaxOpacity.Name = "lMaxOpacity";
 			this.lMaxOpacity.Size = new System.Drawing.Size(33, 26);
-			this.lMaxOpacity.TabIndex = 16;
+			this.lMaxOpacity.TabIndex = 2;
 			this.lMaxOpacity.Text = "100%";
 			this.lMaxOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -198,7 +199,7 @@
 			this.lOpacityCurrentLvl.Location = new System.Drawing.Point(43, 26);
 			this.lOpacityCurrentLvl.Name = "lOpacityCurrentLvl";
 			this.lOpacityCurrentLvl.Size = new System.Drawing.Size(205, 13);
-			this.lOpacityCurrentLvl.TabIndex = 17;
+			this.lOpacityCurrentLvl.TabIndex = 3;
 			this.lOpacityCurrentLvl.Text = "50%";
 			this.lOpacityCurrentLvl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
@@ -211,10 +212,11 @@
 			this.tbOpacity.Minimum = 30;
 			this.tbOpacity.Name = "tbOpacity";
 			this.tbOpacity.Size = new System.Drawing.Size(205, 20);
-			this.tbOpacity.TabIndex = 14;
+			this.tbOpacity.TabIndex = 1;
 			this.tbOpacity.TickFrequency = 10;
 			this.tbOpacity.Value = 100;
 			this.tbOpacity.ValueChanged += new System.EventHandler(this.tbOpacity_ValueChanged);
+			this.tbOpacity.Leave += new System.EventHandler(this.tbOpacity_MouseCaptureChanged);
 			this.tbOpacity.MouseCaptureChanged += new System.EventHandler(this.tbOpacity_MouseCaptureChanged);
 			// 
 			// pbTeminalFont
@@ -223,8 +225,8 @@
 			this.pbTeminalFont.Location = new System.Drawing.Point(3, 3);
 			this.pbTeminalFont.Name = "pbTeminalFont";
 			this.pbTeminalFont.Size = new System.Drawing.Size(144, 23);
-			this.pbTeminalFont.TabIndex = 10;
-			this.pbTeminalFont.Text = "Text && color";
+			this.pbTeminalFont.TabIndex = 0;
+			this.pbTeminalFont.Text = "&Text && color";
 			this.pbTeminalFont.UseVisualStyleBackColor = true;
 			this.pbTeminalFont.Click += new System.EventHandler(this.pbTeminalFont_Click);
 			// 
@@ -237,7 +239,7 @@
 			this.tlpTerminalColor.SetRowSpan(this.rtbColorExample, 2);
 			this.rtbColorExample.ShortcutsEnabled = false;
 			this.rtbColorExample.Size = new System.Drawing.Size(285, 52);
-			this.rtbColorExample.TabIndex = 11;
+			this.rtbColorExample.TabIndex = 2;
 			this.rtbColorExample.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi neque. Maecen" +
     "as ac sapien nec risus consectetur faucibus. ";
 			// 
@@ -247,8 +249,8 @@
 			this.pbTerminalBackgroundColor.Location = new System.Drawing.Point(3, 32);
 			this.pbTerminalBackgroundColor.Name = "pbTerminalBackgroundColor";
 			this.pbTerminalBackgroundColor.Size = new System.Drawing.Size(144, 23);
-			this.pbTerminalBackgroundColor.TabIndex = 12;
-			this.pbTerminalBackgroundColor.Text = "Background color";
+			this.pbTerminalBackgroundColor.TabIndex = 1;
+			this.pbTerminalBackgroundColor.Text = "&Background color";
 			this.pbTerminalBackgroundColor.UseVisualStyleBackColor = true;
 			this.pbTerminalBackgroundColor.Click += new System.EventHandler(this.pbTerminalBackgroundColor_Click);
 			// 
@@ -260,7 +262,7 @@
 			this.lOpacity.Margin = new System.Windows.Forms.Padding(3);
 			this.lOpacity.Name = "lOpacity";
 			this.lOpacity.Size = new System.Drawing.Size(44, 33);
-			this.lOpacity.TabIndex = 13;
+			this.lOpacity.TabIndex = 3;
 			this.lOpacity.Text = "Opacité";
 			this.lOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -280,7 +282,7 @@
 			this.tlbBufferLength.RowCount = 1;
 			this.tlbBufferLength.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tlbBufferLength.Size = new System.Drawing.Size(440, 26);
-			this.tlbBufferLength.TabIndex = 9;
+			this.tlbBufferLength.TabIndex = 4;
 			// 
 			// numMaxLengthBuffer
 			// 
@@ -303,7 +305,7 @@
             0});
 			this.numMaxLengthBuffer.Name = "numMaxLengthBuffer";
 			this.numMaxLengthBuffer.Size = new System.Drawing.Size(144, 20);
-			this.numMaxLengthBuffer.TabIndex = 0;
+			this.numMaxLengthBuffer.TabIndex = 1;
 			this.numMaxLengthBuffer.ThousandsSeparator = true;
 			this.numMaxLengthBuffer.Value = new decimal(new int[] {
             2147483647,
@@ -318,7 +320,7 @@
 			this.label1.Location = new System.Drawing.Point(3, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(244, 26);
-			this.label1.TabIndex = 1;
+			this.label1.TabIndex = 0;
 			this.label1.Text = "Taille du buffer (en nombre de caractères)";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -339,7 +341,7 @@
 			this.tlpTimeStamp.RowCount = 1;
 			this.tlpTimeStamp.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlpTimeStamp.Size = new System.Drawing.Size(440, 27);
-			this.tlpTimeStamp.TabIndex = 10;
+			this.tlpTimeStamp.TabIndex = 0;
 			// 
 			// cbDataTimeStamp
 			// 
@@ -348,7 +350,7 @@
 			this.cbDataTimeStamp.Location = new System.Drawing.Point(168, 3);
 			this.cbDataTimeStamp.Name = "cbDataTimeStamp";
 			this.cbDataTimeStamp.Size = new System.Drawing.Size(135, 21);
-			this.cbDataTimeStamp.TabIndex = 3;
+			this.cbDataTimeStamp.TabIndex = 1;
 			this.cbDataTimeStamp.SelectedIndexChanged += new System.EventHandler(this.cbDataTimeStamp_SelectedIndexChanged);
 			// 
 			// label2
@@ -358,7 +360,7 @@
 			this.label2.Location = new System.Drawing.Point(309, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(53, 27);
-			this.label2.TabIndex = 4;
+			this.label2.TabIndex = 2;
 			this.label2.Text = "secondes";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -387,7 +389,7 @@
 			this.tlbDataAnalyser.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tlbDataAnalyser.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tlbDataAnalyser.Size = new System.Drawing.Size(440, 88);
-			this.tlbDataAnalyser.TabIndex = 11;
+			this.tlbDataAnalyser.TabIndex = 2;
 			// 
 			// tbOutputAnalyserLogFile
 			// 
@@ -398,7 +400,7 @@
 			this.tbOutputAnalyserLogFile.ReadOnly = true;
 			this.tbOutputAnalyserLogFile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.tbOutputAnalyserLogFile.Size = new System.Drawing.Size(200, 20);
-			this.tbOutputAnalyserLogFile.TabIndex = 7;
+			this.tbOutputAnalyserLogFile.TabIndex = 5;
 			// 
 			// pbOutputDataAnalyser
 			// 
@@ -408,8 +410,8 @@
 			this.pbOutputDataAnalyser.Location = new System.Drawing.Point(235, 61);
 			this.pbOutputDataAnalyser.Name = "pbOutputDataAnalyser";
 			this.pbOutputDataAnalyser.Size = new System.Drawing.Size(202, 23);
-			this.pbOutputDataAnalyser.TabIndex = 8;
-			this.pbOutputDataAnalyser.Text = "Sortie d\'analyse";
+			this.pbOutputDataAnalyser.TabIndex = 6;
+			this.pbOutputDataAnalyser.Text = "&Sortie d\'analyse";
 			this.pbOutputDataAnalyser.UseVisualStyleBackColor = true;
 			this.pbOutputDataAnalyser.Click += new System.EventHandler(this.pbOutputDataAnalyser_Click);
 			// 
@@ -420,7 +422,7 @@
 			this.pbClearFileAnalyser.Location = new System.Drawing.Point(3, 3);
 			this.pbClearFileAnalyser.Name = "pbClearFileAnalyser";
 			this.pbClearFileAnalyser.Size = new System.Drawing.Size(20, 23);
-			this.pbClearFileAnalyser.TabIndex = 9;
+			this.pbClearFileAnalyser.TabIndex = 0;
 			this.pbClearFileAnalyser.Text = "x";
 			this.pbClearFileAnalyser.UseVisualStyleBackColor = true;
 			this.pbClearFileAnalyser.Click += new System.EventHandler(this.pbClearFileAnalyser_Click);
@@ -432,7 +434,7 @@
 			this.pbClearbOutputAnalyserLogFile.Location = new System.Drawing.Point(3, 61);
 			this.pbClearbOutputAnalyserLogFile.Name = "pbClearbOutputAnalyserLogFile";
 			this.pbClearbOutputAnalyserLogFile.Size = new System.Drawing.Size(20, 23);
-			this.pbClearbOutputAnalyserLogFile.TabIndex = 10;
+			this.pbClearbOutputAnalyserLogFile.TabIndex = 4;
 			this.pbClearbOutputAnalyserLogFile.Text = "x";
 			this.pbClearbOutputAnalyserLogFile.UseVisualStyleBackColor = true;
 			this.pbClearbOutputAnalyserLogFile.Click += new System.EventHandler(this.pbClearbOutputAnalyserLogFile_Click);
@@ -453,7 +455,7 @@
 			this.tableLayoutPanel2.RowCount = 1;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(208, 29);
-			this.tableLayoutPanel2.TabIndex = 11;
+			this.tableLayoutPanel2.TabIndex = 2;
 			// 
 			// pbSelectFileAnalyser
 			// 
@@ -463,7 +465,7 @@
 			this.pbSelectFileAnalyser.Location = new System.Drawing.Point(3, 3);
 			this.pbSelectFileAnalyser.Name = "pbSelectFileAnalyser";
 			this.pbSelectFileAnalyser.Size = new System.Drawing.Size(26, 23);
-			this.pbSelectFileAnalyser.TabIndex = 5;
+			this.pbSelectFileAnalyser.TabIndex = 0;
 			this.pbSelectFileAnalyser.Text = "...";
 			this.pbSelectFileAnalyser.UseVisualStyleBackColor = true;
 			this.pbSelectFileAnalyser.Click += new System.EventHandler(this.pbSelectFileAnalyser_Click);

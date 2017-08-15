@@ -448,7 +448,7 @@
     <value>124, 27</value>
   </data>
   <data name="lParity.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lParity.Text" xml:space="preserve">
     <value>Parité :</value>
@@ -484,7 +484,7 @@
     <value>124, 27</value>
   </data>
   <data name="lDataBits.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lDataBits.Text" xml:space="preserve">
     <value>Bits de données :</value>
@@ -520,7 +520,7 @@
     <value>124, 27</value>
   </data>
   <data name="lStopBits.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lStopBits.Text" xml:space="preserve">
     <value>Bits de stop :</value>
@@ -556,7 +556,7 @@
     <value>124, 28</value>
   </data>
   <data name="lFlowControl.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="lFlowControl.Text" xml:space="preserve">
     <value>Contrôle de flux :</value>
@@ -586,7 +586,7 @@
     <value>158, 21</value>
   </data>
   <data name="cbBaudRate.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbBaudRate.Name" xml:space="preserve">
     <value>cbBaudRate</value>
@@ -610,7 +610,7 @@
     <value>158, 21</value>
   </data>
   <data name="cbDataBits.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cbDataBits.Name" xml:space="preserve">
     <value>cbDataBits</value>
@@ -634,7 +634,7 @@
     <value>158, 21</value>
   </data>
   <data name="cbStopBits.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;cbStopBits.Name" xml:space="preserve">
     <value>cbStopBits</value>
@@ -682,7 +682,7 @@
     <value>158, 21</value>
   </data>
   <data name="cbParity.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbParity.Name" xml:space="preserve">
     <value>cbParity</value>
@@ -772,7 +772,7 @@
     <value>300, 23</value>
   </data>
   <data name="pbStartConnexion.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="pbStartConnexion.Text" xml:space="preserve">
     <value>Lancer la connexion</value>
@@ -808,7 +808,7 @@
     <value>300, 23</value>
   </data>
   <data name="pbOptionalConfiguration.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="pbOptionalConfiguration.Text" xml:space="preserve">
     <value>Options avancées</value>
@@ -982,7 +982,7 @@
     <value>300</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
     <value>splitContainer1</value>

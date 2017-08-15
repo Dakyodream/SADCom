@@ -304,27 +304,32 @@ namespace SADCom.Configuration {
 			SerialPort serialPortConnexion = new SerialPort();
 			this.mSerialPort = null;
 
-			try {
-				serialPortConnexion = new SerialPort();
-				serialPortConnexion.PortName = ((SerialPortState)this.cbListOfPorts.SelectedItem).PortName;
-				serialPortConnexion.BaudRate = ((int)this.cbBaudRate.SelectedItem);
-				serialPortConnexion.Parity = ((Parity)this.cbParity.SelectedItem);
-				serialPortConnexion.DataBits = ((int)this.cbDataBits.SelectedItem);
-				serialPortConnexion.StopBits = ((StopBits)this.cbStopBits.SelectedItem);
-				serialPortConnexion.Handshake = ((Handshake)this.cbFlowControl.SelectedItem);
+			if(this.optionTerminalDisplay.CheckOptionTerminal()) {
 
-				serialPortConnexion.Open();
-				serialPortConnexion.Close();
-				serialPortConnexion.Dispose();
 
-				this.mSerialPort = serialPortConnexion;
+				try {
+					serialPortConnexion = new SerialPort();
+					serialPortConnexion.PortName = ((SerialPortState)this.cbListOfPorts.SelectedItem).PortName;
+					serialPortConnexion.BaudRate = ((int)this.cbBaudRate.SelectedItem);
+					serialPortConnexion.Parity = ((Parity)this.cbParity.SelectedItem);
+					serialPortConnexion.DataBits = ((int)this.cbDataBits.SelectedItem);
+					serialPortConnexion.StopBits = ((StopBits)this.cbStopBits.SelectedItem);
+					serialPortConnexion.Handshake = ((Handshake)this.cbFlowControl.SelectedItem);
 
-				this.DialogResult = DialogResult.OK;
-				this.Close();
-			} catch(UnauthorizedAccessException unauthorizedAccessException) {
-				MessageBox.Show("Connexion non authorisé, veuillez réitérer ultérieurement.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-			} catch {
-				MessageBox.Show("Erreur de connexion. Une modification des paramètre peuvent être nécéssaire.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+					serialPortConnexion.Open();
+					serialPortConnexion.Close();
+					serialPortConnexion.Dispose();
+
+					this.mSerialPort = serialPortConnexion;
+
+					this.DialogResult = DialogResult.OK;
+					this.Close();
+				} catch(UnauthorizedAccessException unauthorizedAccessException) {
+					MessageBox.Show("Connexion non authorisé, veuillez réitérer ultérieurement.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+				} catch {
+					MessageBox.Show("Erreur de connexion. Une modification des paramètre peuvent être nécéssaire.", "Analyse des ports", MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+				}
+
 			}
 		}
 
