@@ -844,7 +844,7 @@
     <value>Top</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 317</value>
+    <value>0, 311</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 100</value>
@@ -871,7 +871,7 @@
     <value>Top</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 217</value>
+    <value>0, 211</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 100</value>
@@ -919,7 +919,7 @@
     <value>440, 0</value>
   </data>
   <data name="optionTerminalDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 198</value>
+    <value>500, 192</value>
   </data>
   <data name="optionTerminalDisplay.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -928,7 +928,7 @@
     <value>optionTerminalDisplay</value>
   </data>
   <data name="&gt;&gt;optionTerminalDisplay.Type" xml:space="preserve">
-    <value>SADCom.OptionTerminalDisplay, SADCom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SADCom.Configuration.OptionTerminalDisplay, SADCom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;optionTerminalDisplay.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -943,7 +943,7 @@
     <value>0, 0</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 217</value>
+    <value>506, 211</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

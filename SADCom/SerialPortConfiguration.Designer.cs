@@ -25,6 +25,7 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialPortConfiguration));
+			SADCom.SessionConfigurations sessionConfigurations1 = new SADCom.SessionConfigurations();
 			this.gbSerialPort = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pbRefreshScan = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.optionTerminalDisplay = new OptionTerminalDisplay();
+			this.optionTerminalDisplay = new SADCom.Configuration.OptionTerminalDisplay();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();
@@ -272,6 +273,18 @@
 			// 
 			resources.ApplyResources(this.optionTerminalDisplay, "optionTerminalDisplay");
 			this.optionTerminalDisplay.Name = "optionTerminalDisplay";
+			sessionConfigurations1.AddrFileAnalyserDescription = "";
+			sessionConfigurations1.AddrLogFileAnalyser = "";
+			sessionConfigurations1.DataAnalyserEnable = false;
+			sessionConfigurations1.MaxBufferLength = 2147483647;
+			sessionConfigurations1.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
+			sessionConfigurations1.TerminalFont = new System.Drawing.Font("Lucida Console", 10F);
+			sessionConfigurations1.TerminalForeColor = System.Drawing.Color.White;
+			sessionConfigurations1.TerminalOpacity = 90;
+			sessionConfigurations1.TerminalOpacityFloat = 0.9D;
+			sessionConfigurations1.Timestamp = 1D;
+			sessionConfigurations1.TimestampIsEnable = false;
+			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations1;
 			// 
 			// SerialPortConfiguration
 			// 
