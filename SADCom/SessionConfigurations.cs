@@ -190,6 +190,40 @@ namespace SADCom {
 			}
 		}
 
+
+		// data file
+		private String msAddrDataFile;
+		public String AddrDataFile {
+			get {
+				mutSessionConfig.WaitOne();
+				String sData = this.msAddrDataFile;
+				mutSessionConfig.ReleaseMutex();
+				return sData;
+			}
+			set {
+				mutSessionConfig.WaitOne();
+				this.msAddrDataFile = value;
+				mutSessionConfig.ReleaseMutex();
+			}
+		}
+
+		private bool mbWriteTimestampOnDataFile;
+		public bool WriteTimestampOnDataFile {
+			get {
+				mutSessionConfig.WaitOne();
+				bool bReturn = this.mbWriteTimestampOnDataFile;
+				mutSessionConfig.ReleaseMutex();
+
+				return bReturn;
+			}
+			set {
+				mutSessionConfig.WaitOne();
+				this.mbWriteTimestampOnDataFile = value;
+				mutSessionConfig.ReleaseMutex();
+			}
+		}
+
+
 		public SessionConfigurations() {
 			//timestamp
 			TimestampIsEnable = false;
@@ -210,6 +244,10 @@ namespace SADCom {
 
 			//buffer length
 			MaxBufferLength = Int32.MaxValue;
+
+			// data file
+			AddrDataFile = "";
+			WriteTimestampOnDataFile = false;
 
 		}
 

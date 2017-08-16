@@ -26,6 +26,7 @@
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialPortConfiguration));
 			SADCom.SessionConfigurations sessionConfigurations1 = new SADCom.SessionConfigurations();
+			SADCom.SessionConfigurations sessionConfigurations2 = new SADCom.SessionConfigurations();
 			this.gbSerialPort = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pbRefreshScan = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
 			this.pbOptionalConfiguration = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.saveLogFileUC = new SADCom.SaveDataFileUC();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.optionTerminalDisplay = new SADCom.Configuration.OptionTerminalDisplay();
 			this.gbSerialPort.SuspendLayout();
@@ -64,6 +66,7 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -259,8 +262,28 @@
 			// groupBox2
 			// 
 			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Controls.Add(this.saveLogFileUC);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
+			// 
+			// saveLogFileUC
+			// 
+			resources.ApplyResources(this.saveLogFileUC, "saveLogFileUC");
+			this.saveLogFileUC.Name = "saveLogFileUC";
+			sessionConfigurations1.AddrDataFile = "";
+			sessionConfigurations1.AddrFileAnalyserDescription = "";
+			sessionConfigurations1.AddrLogFileAnalyser = "";
+			sessionConfigurations1.DataAnalyserEnable = false;
+			sessionConfigurations1.MaxBufferLength = 2147483647;
+			sessionConfigurations1.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
+			sessionConfigurations1.TerminalFont = new System.Drawing.Font("Lucida Console", 10F);
+			sessionConfigurations1.TerminalForeColor = System.Drawing.Color.White;
+			sessionConfigurations1.TerminalOpacity = 90;
+			sessionConfigurations1.TerminalOpacityFloat = 0.9D;
+			sessionConfigurations1.Timestamp = 1D;
+			sessionConfigurations1.TimestampIsEnable = false;
+			sessionConfigurations1.WriteTimestampOnDataFile = false;
+			this.saveLogFileUC.SessionConfigurations = sessionConfigurations1;
 			// 
 			// groupBox1
 			// 
@@ -273,18 +296,20 @@
 			// 
 			resources.ApplyResources(this.optionTerminalDisplay, "optionTerminalDisplay");
 			this.optionTerminalDisplay.Name = "optionTerminalDisplay";
-			sessionConfigurations1.AddrFileAnalyserDescription = "";
-			sessionConfigurations1.AddrLogFileAnalyser = "";
-			sessionConfigurations1.DataAnalyserEnable = false;
-			sessionConfigurations1.MaxBufferLength = 2147483647;
-			sessionConfigurations1.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
-			sessionConfigurations1.TerminalFont = new System.Drawing.Font("Lucida Console", 10F);
-			sessionConfigurations1.TerminalForeColor = System.Drawing.Color.White;
-			sessionConfigurations1.TerminalOpacity = 90;
-			sessionConfigurations1.TerminalOpacityFloat = 0.9D;
-			sessionConfigurations1.Timestamp = 1D;
-			sessionConfigurations1.TimestampIsEnable = false;
-			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations1;
+			sessionConfigurations2.AddrDataFile = "";
+			sessionConfigurations2.AddrFileAnalyserDescription = "";
+			sessionConfigurations2.AddrLogFileAnalyser = "";
+			sessionConfigurations2.DataAnalyserEnable = false;
+			sessionConfigurations2.MaxBufferLength = 2147483647;
+			sessionConfigurations2.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
+			sessionConfigurations2.TerminalFont = new System.Drawing.Font("Lucida Console", 10F);
+			sessionConfigurations2.TerminalForeColor = System.Drawing.Color.White;
+			sessionConfigurations2.TerminalOpacity = 90;
+			sessionConfigurations2.TerminalOpacityFloat = 0.9D;
+			sessionConfigurations2.Timestamp = 1D;
+			sessionConfigurations2.TimestampIsEnable = false;
+			sessionConfigurations2.WriteTimestampOnDataFile = false;
+			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations2;
 			// 
 			// SerialPortConfiguration
 			// 
@@ -306,6 +331,8 @@
 			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
@@ -342,5 +369,6 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private OptionTerminalDisplay optionTerminalDisplay;
+		private SaveDataFileUC saveLogFileUC;
 	}
 }

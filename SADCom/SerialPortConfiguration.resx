@@ -844,7 +844,7 @@
     <value>Top</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 311</value>
+    <value>0, 276</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 100</value>
@@ -867,6 +867,42 @@
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="saveLogFileUC.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="saveLogFileUC.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="saveLogFileUC.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="saveLogFileUC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="saveLogFileUC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 46</value>
+  </data>
+  <data name="saveLogFileUC.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;saveLogFileUC.Name" xml:space="preserve">
+    <value>saveLogFileUC</value>
+  </data>
+  <data name="&gt;&gt;saveLogFileUC.Type" xml:space="preserve">
+    <value>SADCom.SaveDataFileUC, SADCom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;saveLogFileUC.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;saveLogFileUC.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -874,7 +910,7 @@
     <value>0, 211</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 100</value>
+    <value>506, 65</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

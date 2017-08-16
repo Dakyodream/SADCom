@@ -68,9 +68,10 @@
 			this.cbTimeStamp.Location = new System.Drawing.Point(0, 0);
 			this.cbTimeStamp.Margin = new System.Windows.Forms.Padding(0);
 			this.cbTimeStamp.Name = "cbTimeStamp";
+			this.cbTimeStamp.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
 			this.cbTimeStamp.Size = new System.Drawing.Size(165, 27);
 			this.cbTimeStamp.TabIndex = 0;
-			this.cbTimeStamp.Text = "horodatage des données";
+			this.cbTimeStamp.Text = "Horodatage des données";
 			this.cbTimeStamp.UseVisualStyleBackColor = true;
 			this.cbTimeStamp.CheckedChanged += new System.EventHandler(this.cbTimeStamp_CheckedChanged);
 			// 
@@ -80,6 +81,7 @@
 			this.cbDataAnalyser.Dock = System.Windows.Forms.DockStyle.Top;
 			this.cbDataAnalyser.Location = new System.Drawing.Point(0, 27);
 			this.cbDataAnalyser.Name = "cbDataAnalyser";
+			this.cbDataAnalyser.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
 			this.cbDataAnalyser.Size = new System.Drawing.Size(440, 17);
 			this.cbDataAnalyser.TabIndex = 1;
 			this.cbDataAnalyser.Text = "Activation de l\'analyseur de données";

@@ -55,7 +55,44 @@ namespace SADCom.Configuration {
 		/// <summary>
 		/// Contain the configuration of this session. See <see cref="mSessionConfigurations"/>.
 		/// </summary>
-		public SessionConfigurations SessionConfigurations { get => this.mSessionConfigurations; set => this.mSessionConfigurations = value; }
+		public SessionConfigurations SessionConfigurations {
+			get => this.mSessionConfigurations;
+			set {
+				this.mSessionConfigurations = value;
+
+				//TimeStamp
+				double dOldValue = this.mSessionConfigurations.Timestamp;
+				this.cbDataTimeStamp.Enabled = this.mSessionConfigurations.TimestampIsEnable;
+
+				//génère l'événement indexChanged, ce qui modifie la valeur initial de this.mSessionConfigurations.Timestamp, d'où l'utilisation d'un buffer intermediaire
+				if(!this.cbDataTimeStamp.Items.Contains(dOldValue)) {
+					dOldValue = 1;
+				}
+				int iReturn = 0;
+
+				try {
+					iReturn = this.cbDataTimeStamp.Items.IndexOf(dOldValue);
+					this.cbDataTimeStamp.SelectedIndex = iReturn;
+				} catch {
+					throw new Exception("OptionTerminalDisplay can't be buid due to cbDataTimeStamp.");
+				}
+
+				this.mSessionConfigurations.Timestamp = dOldValue;
+
+
+				//DataAnalyser
+				this.cbDataAnalyser.Checked = this.mSessionConfigurations.DataAnalyserEnable;
+				this.tlbDataAnalyser.Visible = this.mSessionConfigurations.DataAnalyserEnable;
+
+				//color
+				this.rtbColorExample.Font = mSessionConfigurations.TerminalFont;
+				this.rtbColorExample.ForeColor = mSessionConfigurations.TerminalForeColor;
+				this.rtbColorExample.BackColor = mSessionConfigurations.TerminalBackground;
+				this.tbOpacity.Value = mSessionConfigurations.TerminalOpacity;
+
+				this.numMaxLengthBuffer.Value = this.mSessionConfigurations.MaxBufferLength;
+			}
+		}
 
 
 		/// <summary>
@@ -69,8 +106,6 @@ namespace SADCom.Configuration {
 		public OptionTerminalDisplay(SessionConfigurations sessionConfigurations) {
 			InitializeComponent();
 		
-			this.mSessionConfigurations = sessionConfigurations;
-
 			//default value
 			//TimeStamp
 			List<double> listOfData = new List<double>();
@@ -81,40 +116,13 @@ namespace SADCom.Configuration {
 			listOfData.Add(10);
 			listOfData.Add(100);
 
-			double dOldValue = this.mSessionConfigurations.Timestamp;
-			this.cbDataTimeStamp.Enabled = this.mSessionConfigurations.TimestampIsEnable;
-
-			//génère l'événement indexChanged, ce qui modifie la valeur initial de this.mSessionConfigurations.Timestamp, d'où l'utilisation d'un buffer intermediaire
 			this.cbDataTimeStamp.DataSource = listOfData;
-			if(!this.cbDataTimeStamp.Items.Contains(dOldValue)) {
-				dOldValue = 1;
-			}
-			int iReturn = 0;
-
-			try {
-				iReturn = this.cbDataTimeStamp.Items.IndexOf(dOldValue);
-				this.cbDataTimeStamp.SelectedIndex = iReturn;
-			} catch {
-				throw new Exception("OptionTerminalDisplay can't be buid due to cbDataTimeStamp.");
-			}
-
-			this.mSessionConfigurations.Timestamp = dOldValue;
-
-
-			//DataAnalyser
-			this.cbDataAnalyser.Checked = this.mSessionConfigurations.DataAnalyserEnable;
-			this.tlbDataAnalyser.Visible = this.mSessionConfigurations.DataAnalyserEnable;
 
 			//color
-			this.rtbColorExample.Font = mSessionConfigurations.TerminalFont;
-			this.rtbColorExample.ForeColor = mSessionConfigurations.TerminalForeColor;
-			this.rtbColorExample.BackColor = mSessionConfigurations.TerminalBackground;
-			this.tbOpacity.Value = mSessionConfigurations.TerminalOpacity;
-
 			this.lMinOpacity.Text = this.tbOpacity.Minimum + "%";
 			this.lMaxOpacity.Text = this.tbOpacity.Maximum + "%";
 
-			this.numMaxLengthBuffer.Value = this.mSessionConfigurations.MaxBufferLength;
+			SessionConfigurations = sessionConfigurations;
 		}
 
 		//Timestamp

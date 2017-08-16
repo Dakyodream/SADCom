@@ -43,6 +43,7 @@ namespace SADCom.Configuration {
 			InitializeComponent();
 
 			this.optionTerminalDisplay.SessionConfigurations = this.mSessionConfigurations;
+			this.saveLogFileUC.SessionConfigurations = this.mSessionConfigurations;
 
 
 			try {

@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="SaveLogFileUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SaveLogFileUC.Designer.cs">
+      <DependentUpon>SaveLogFileUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerialDataToSave.cs" />
     <Compile Include="SerialPortConfigSave.cs" />
     <Compile Include="SerialPortShell.cs">
@@ -151,6 +157,9 @@
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveLogFileUC.resx">
+      <DependentUpon>SaveLogFileUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SerialPortConfiguration.resx">
       <DependentUpon>SerialPortConfiguration.cs</DependentUpon>
