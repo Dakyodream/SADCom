@@ -13,11 +13,11 @@ namespace SADCom.Configuration {
 	/// <summary>
 	/// Event use by <see cref="AnalyserDescriptionUserControl"/> when a new analyser description is available.
 	/// </summary>
-	/// <param name="sender">The object sending the event</param>
+	/// <param name="sender">The object sending the event.</param>
 	/// <param name="e">not use (null)</param>
 	public delegate void AnalyserDescriptionDeletedEventHandler(object sender, EventArgs e);
 	/// <summary>
-	/// Event use by <see cref="AnalyserDescriptionUserControl"/> when an analyser description must be delet.
+	/// Event call to indicate to the form to create a new object because it's still now.
 	/// </summary>
 	/// <param name="sender">the object sending the event</param>
 	/// <param name="e">not use (null)</param>
@@ -63,6 +63,10 @@ namespace SADCom.Configuration {
 			set {
 				this.mAnalyserKeyWord = value;
 
+				if(this.mAnalyserKeyWord == null) {
+					this.mAnalyserKeyWord = new AnalyserKeyWord();
+				}
+
 				//this.rtbResult.BackColor = Resources.TerminalConfiguration.Default.terminalBackground;
 				this.rtbResult.ForeColor = this.mAnalyserKeyWord.KeyWordColor;
 				this.rtbResult.Font = this.mAnalyserKeyWord.KeyWordFont;
@@ -77,15 +81,17 @@ namespace SADCom.Configuration {
 			}
 		}
 
-		/// <summary>
-		/// Constructor void for the disigner viewer or a new AnalyserDescriptionUserControl object.
-		/// </summary>
-		public AnalyserDescriptionUserControl() : this(new SessionConfigurations()) { }
+
 		/// <summary>
 		/// Constructor use if <see cref="sessionConfigurations"/> isn't empty (need to know the application configuration for this session).
 		/// </summary>
 		/// <param name="sessionConfigurations">Session configuration.</param>
-		public AnalyserDescriptionUserControl(SessionConfigurations sessionConfigurations) {
+		//public AnalyserDescriptionUserControl(SessionConfigurations sessionConfigurations) {
+
+		/// <summary>
+		/// Constructor void for the disigner viewer or a new AnalyserDescriptionUserControl object.
+		/// </summary>
+		public AnalyserDescriptionUserControl() { 
 			InitializeComponent();
 
 			// Create the ToolTip and associate with the Form container.
@@ -106,7 +112,8 @@ namespace SADCom.Configuration {
 			toolTip.SetToolTip(this.rtbResult, "Rendu final sur le terminal des données ou le terminal \"log\".");
 			toolTip.SetToolTip(this.pbDelete, "Supprimer cette règle.");
 
-			this.mSessionConfigurations = sessionConfigurations;
+			///this.mSessionConfigurations = sessionConfigurations;
+			this.mSessionConfigurations = new SessionConfigurations(); ;
 
 
 			this.mAnalyserKeyWord.KeyWordColor = this.mSessionConfigurations.TerminalForeColor;

@@ -10,7 +10,7 @@ namespace SADCom.UserButton {
 	/// Use to save the list of buttonConfigurations.
 	/// </summary>
 	[Serializable]
-	class ButtonsConfigurations {
+	public class ButtonsConfigurations {
 
 		/// <summary>
 		/// List of user button use to send custom request.

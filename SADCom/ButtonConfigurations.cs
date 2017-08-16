@@ -10,7 +10,7 @@ namespace SADCom.UserButton {
 	/// Use to save the user request button.
 	/// </summary>
 	[Serializable]
-	class ButtonConfigurations {
+	public class ButtonConfigurations {
 
 		/// <summary>
 		/// Contain the button name.

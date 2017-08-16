@@ -1,4 +1,4 @@
-﻿namespace SADCom {
+﻿namespace SADCom.UserButton {
 	partial class CustomButtonDesignerUC {
 		/// <summary> 
 		/// Variable nécessaire au concepteur.
@@ -110,31 +110,32 @@
 			this.numUpDownPeriodOfRequest.DecimalPlaces = 6;
 			this.numUpDownPeriodOfRequest.Dock = System.Windows.Forms.DockStyle.Top;
 			this.numUpDownPeriodOfRequest.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            196608});
+			5,
+			0,
+			0,
+			196608});
 			this.numUpDownPeriodOfRequest.Location = new System.Drawing.Point(345, 0);
 			this.numUpDownPeriodOfRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.numUpDownPeriodOfRequest.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+			10000,
+			0,
+			0,
+			0});
 			this.numUpDownPeriodOfRequest.MaximumSize = new System.Drawing.Size(100, 0);
 			this.numUpDownPeriodOfRequest.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
+			1,
+			0,
+			0,
+			393216});
 			this.numUpDownPeriodOfRequest.Name = "numUpDownPeriodOfRequest";
 			this.numUpDownPeriodOfRequest.Size = new System.Drawing.Size(92, 20);
 			this.numUpDownPeriodOfRequest.TabIndex = 4;
 			this.numUpDownPeriodOfRequest.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
+			1,
+			0,
+			0,
+			196608});
+			this.numUpDownPeriodOfRequest.ValueChanged += new System.EventHandler(this.numUpDownPeriodOfRequest_ValueChanged);
 			// 
 			// CustomButtonDesignerUC
 			// 
