@@ -108,6 +108,10 @@ namespace SADCom.UserButton {
 			if(bDescriptionNeverFill) {
 				bDescriptionNeverFill = false;
 				NewCustomButtonEvent?.Invoke(this, null);
+
+				this.tbRequest.Enabled = true;
+				this.cbPeriodicRequest.Enabled = true;
+				this.numUpDownPeriodOfRequest.Enabled = this.cbPeriodicRequest.Checked;
 			}
 			if(this.tbButtonName.Text.Length <= 0 || this.tbButtonName.Text.Trim().Length <= 0) {
 				this.mButtonConfig.ButtonName = "Button";

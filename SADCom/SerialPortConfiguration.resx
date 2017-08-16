@@ -163,7 +163,7 @@
     <value>30, 3</value>
   </data>
   <data name="cbListOfPorts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 21</value>
+    <value>267, 21</value>
   </data>
   <data name="cbListOfPorts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -190,7 +190,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 27</value>
+    <value>300, 27</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -223,7 +223,7 @@
     <value>0, 46</value>
   </data>
   <data name="gbSerialPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 46</value>
+    <value>306, 46</value>
   </data>
   <data name="gbSerialPort.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -319,7 +319,7 @@
     <value>57, 3</value>
   </data>
   <data name="cbProfil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+    <value>240, 21</value>
   </data>
   <data name="cbProfil.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -346,7 +346,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 29</value>
+    <value>300, 29</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -373,7 +373,7 @@
     <value>0, 46</value>
   </data>
   <data name="gbProfil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 48</value>
+    <value>306, 48</value>
   </data>
   <data name="gbProfil.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -583,7 +583,7 @@
     <value>133, 3</value>
   </data>
   <data name="cbBaudRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>164, 21</value>
   </data>
   <data name="cbBaudRate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -607,7 +607,7 @@
     <value>133, 57</value>
   </data>
   <data name="cbDataBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>164, 21</value>
   </data>
   <data name="cbDataBits.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -631,7 +631,7 @@
     <value>133, 84</value>
   </data>
   <data name="cbStopBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>164, 21</value>
   </data>
   <data name="cbStopBits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -655,7 +655,7 @@
     <value>133, 111</value>
   </data>
   <data name="cbFlowControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>164, 21</value>
   </data>
   <data name="cbFlowControl.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -679,7 +679,7 @@
     <value>133, 30</value>
   </data>
   <data name="cbParity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>164, 21</value>
   </data>
   <data name="cbParity.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -706,7 +706,7 @@
     <value>5</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 136</value>
+    <value>300, 136</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -739,7 +739,7 @@
     <value>0, 155</value>
   </data>
   <data name="gbConfigConnexion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 155</value>
+    <value>306, 155</value>
   </data>
   <data name="gbConfigConnexion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -769,7 +769,7 @@
     <value>0, 272</value>
   </data>
   <data name="pbStartConnexion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 23</value>
+    <value>306, 23</value>
   </data>
   <data name="pbStartConnexion.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -805,7 +805,7 @@
     <value>0, 249</value>
   </data>
   <data name="pbOptionalConfiguration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 23</value>
+    <value>306, 23</value>
   </data>
   <data name="pbOptionalConfiguration.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -840,6 +840,42 @@
   <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
     <value>255</value>
   </data>
+  <data name="groupBox3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="optionCustomButtonUC1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optionCustomButtonUC1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="optionCustomButtonUC1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="optionCustomButtonUC1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="optionCustomButtonUC1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 55</value>
+  </data>
+  <data name="optionCustomButtonUC1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;optionCustomButtonUC1.Name" xml:space="preserve">
+    <value>optionCustomButtonUC1</value>
+  </data>
+  <data name="&gt;&gt;optionCustomButtonUC1.Type" xml:space="preserve">
+    <value>SADCom.OptionCustomButtonUC, SADCom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;optionCustomButtonUC1.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;optionCustomButtonUC1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -847,7 +883,7 @@
     <value>0, 276</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 100</value>
+    <value>517, 74</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -886,7 +922,7 @@
     <value>3, 16</value>
   </data>
   <data name="saveLogFileUC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 46</value>
+    <value>511, 46</value>
   </data>
   <data name="saveLogFileUC.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -910,7 +946,7 @@
     <value>0, 211</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 65</value>
+    <value>517, 65</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -955,7 +991,7 @@
     <value>440, 0</value>
   </data>
   <data name="optionTerminalDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 192</value>
+    <value>511, 192</value>
   </data>
   <data name="optionTerminalDisplay.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -979,7 +1015,7 @@
     <value>0, 0</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 211</value>
+    <value>517, 211</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1012,10 +1048,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 516</value>
+    <value>827, 516</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>300</value>
+    <value>306</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1039,7 +1075,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>820, 526</value>
+    <value>837, 526</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>280, 322</value>

@@ -99,6 +99,12 @@
       <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
     </Compile>
     <Compile Include="FileAnalyserDescription.cs" />
+    <Compile Include="OptionCustomButtonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OptionCustomButtonUC.Designer.cs">
+      <DependentUpon>OptionCustomButtonUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionTerminalDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomButtonDesignerUC.resx">
       <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionCustomButtonUC.resx">
+      <DependentUpon>OptionCustomButtonUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionTerminalDisplay.resx">
       <DependentUpon>OptionTerminalDisplay.cs</DependentUpon>

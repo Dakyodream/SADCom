@@ -56,6 +56,7 @@
 			this.saveLogFileUC = new SADCom.SaveDataFileUC();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.optionTerminalDisplay = new SADCom.Configuration.OptionTerminalDisplay();
+			this.optionCustomButtonUC1 = new SADCom.OptionCustomButtonUC();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();
@@ -66,6 +67,7 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -256,6 +258,7 @@
 			// groupBox3
 			// 
 			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Controls.Add(this.optionCustomButtonUC1);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
@@ -273,6 +276,7 @@
 			sessionConfigurations1.AddrDataFile = "";
 			sessionConfigurations1.AddrFileAnalyserDescription = "";
 			sessionConfigurations1.AddrLogFileAnalyser = "";
+			sessionConfigurations1.AddrOfCustomButtonFileDescription = "";
 			sessionConfigurations1.DataAnalyserEnable = false;
 			sessionConfigurations1.MaxBufferLength = 2147483647;
 			sessionConfigurations1.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
@@ -299,6 +303,7 @@
 			sessionConfigurations2.AddrDataFile = "";
 			sessionConfigurations2.AddrFileAnalyserDescription = "";
 			sessionConfigurations2.AddrLogFileAnalyser = "";
+			sessionConfigurations2.AddrOfCustomButtonFileDescription = "";
 			sessionConfigurations2.DataAnalyserEnable = false;
 			sessionConfigurations2.MaxBufferLength = 2147483647;
 			sessionConfigurations2.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
@@ -310,6 +315,11 @@
 			sessionConfigurations2.TimestampIsEnable = false;
 			sessionConfigurations2.WriteTimestampOnDataFile = false;
 			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations2;
+			// 
+			// optionCustomButtonUC1
+			// 
+			resources.ApplyResources(this.optionCustomButtonUC1, "optionCustomButtonUC1");
+			this.optionCustomButtonUC1.Name = "optionCustomButtonUC1";
 			// 
 			// SerialPortConfiguration
 			// 
@@ -331,6 +341,8 @@
 			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
@@ -370,5 +382,6 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private OptionTerminalDisplay optionTerminalDisplay;
 		private SaveDataFileUC saveLogFileUC;
+		private OptionCustomButtonUC optionCustomButtonUC1;
 	}
 }

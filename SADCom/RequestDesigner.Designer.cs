@@ -39,6 +39,7 @@
 			// 
 			// pAutoscroll
 			// 
+			this.pAutoscroll.AutoScroll = true;
 			this.pAutoscroll.Controls.Add(this.pCustomButtonDesigner);
 			this.pAutoscroll.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pAutoscroll.Location = new System.Drawing.Point(0, 13);
@@ -48,6 +49,7 @@
 			// 
 			// pCustomButtonDesigner
 			// 
+			this.pCustomButtonDesigner.AutoScroll = true;
 			this.pCustomButtonDesigner.AutoSize = true;
 			this.pCustomButtonDesigner.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pCustomButtonDesigner.Dock = System.Windows.Forms.DockStyle.Top;
