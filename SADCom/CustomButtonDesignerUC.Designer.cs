@@ -38,11 +38,11 @@
 			this.tableLayoutPanel1.AutoSize = true;
 			this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.tableLayoutPanel1.ColumnCount = 5;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
 			this.tableLayoutPanel1.Controls.Add(this.pbDeletButton, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbButtonName, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbRequest, 2, 0);
@@ -50,6 +50,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.numUpDownPeriodOfRequest, 4, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -63,9 +64,10 @@
 			this.pbDeletButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pbDeletButton.Location = new System.Drawing.Point(0, 0);
 			this.pbDeletButton.Margin = new System.Windows.Forms.Padding(0);
-			this.pbDeletButton.MaximumSize = new System.Drawing.Size(0, 20);
+			this.pbDeletButton.MaximumSize = new System.Drawing.Size(20, 20);
+			this.pbDeletButton.MinimumSize = new System.Drawing.Size(20, 20);
 			this.pbDeletButton.Name = "pbDeletButton";
-			this.pbDeletButton.Size = new System.Drawing.Size(22, 20);
+			this.pbDeletButton.Size = new System.Drawing.Size(20, 20);
 			this.pbDeletButton.TabIndex = 0;
 			this.pbDeletButton.Text = "x";
 			this.pbDeletButton.UseVisualStyleBackColor = true;
@@ -74,20 +76,20 @@
 			// tbButtonName
 			// 
 			this.tbButtonName.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tbButtonName.Location = new System.Drawing.Point(22, 0);
+			this.tbButtonName.Location = new System.Drawing.Point(20, 0);
 			this.tbButtonName.Margin = new System.Windows.Forms.Padding(0);
 			this.tbButtonName.Name = "tbButtonName";
-			this.tbButtonName.Size = new System.Drawing.Size(153, 20);
+			this.tbButtonName.Size = new System.Drawing.Size(154, 20);
 			this.tbButtonName.TabIndex = 1;
 			this.tbButtonName.TextChanged += new System.EventHandler(this.tbButtonName_TextChanged);
 			// 
 			// tbRequest
 			// 
 			this.tbRequest.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tbRequest.Location = new System.Drawing.Point(175, 0);
+			this.tbRequest.Location = new System.Drawing.Point(174, 0);
 			this.tbRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.tbRequest.Name = "tbRequest";
-			this.tbRequest.Size = new System.Drawing.Size(153, 20);
+			this.tbRequest.Size = new System.Drawing.Size(154, 20);
 			this.tbRequest.TabIndex = 2;
 			this.tbRequest.TextChanged += new System.EventHandler(this.tbRequest_TextChanged);
 			// 
@@ -110,31 +112,31 @@
 			this.numUpDownPeriodOfRequest.DecimalPlaces = 6;
 			this.numUpDownPeriodOfRequest.Dock = System.Windows.Forms.DockStyle.Top;
 			this.numUpDownPeriodOfRequest.Increment = new decimal(new int[] {
-			5,
-			0,
-			0,
-			196608});
+            5,
+            0,
+            0,
+            196608});
 			this.numUpDownPeriodOfRequest.Location = new System.Drawing.Point(345, 0);
 			this.numUpDownPeriodOfRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.numUpDownPeriodOfRequest.Maximum = new decimal(new int[] {
-			10000,
-			0,
-			0,
-			0});
+            10000,
+            0,
+            0,
+            0});
 			this.numUpDownPeriodOfRequest.MaximumSize = new System.Drawing.Size(100, 0);
 			this.numUpDownPeriodOfRequest.Minimum = new decimal(new int[] {
-			1,
-			0,
-			0,
-			393216});
+            1,
+            0,
+            0,
+            393216});
 			this.numUpDownPeriodOfRequest.Name = "numUpDownPeriodOfRequest";
 			this.numUpDownPeriodOfRequest.Size = new System.Drawing.Size(92, 20);
 			this.numUpDownPeriodOfRequest.TabIndex = 4;
 			this.numUpDownPeriodOfRequest.Value = new decimal(new int[] {
-			1,
-			0,
-			0,
-			196608});
+            1,
+            0,
+            0,
+            196608});
 			this.numUpDownPeriodOfRequest.ValueChanged += new System.EventHandler(this.numUpDownPeriodOfRequest_ValueChanged);
 			// 
 			// CustomButtonDesignerUC
@@ -143,7 +145,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "CustomButtonDesignerUC";
-			this.Size = new System.Drawing.Size(437, 68);
+			this.Size = new System.Drawing.Size(437, 60);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numUpDownPeriodOfRequest)).EndInit();

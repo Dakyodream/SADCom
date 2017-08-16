@@ -35,7 +35,7 @@ namespace SADCom.UserButton {
 		/// Use to add a button on list.
 		/// </summary>
 		/// <param name="button">Button to add on list/</param>
-		public void AddDescription(ButtonConfigurations button) {
+		public void AddButton(ButtonConfigurations button) {
 			if(this.mListOfUserButton == null) {
 				this.mListOfUserButton = new List<ButtonConfigurations>();
 			}
@@ -49,7 +49,7 @@ namespace SADCom.UserButton {
 		/// Use to remove a button on list.
 		/// </summary>
 		/// <param name="button">Button to remove on list.</param>
-		public void RemoveDescription(ButtonConfigurations button) {
+		public void RemoveButton(ButtonConfigurations button) {
 			if(this.mListOfUserButton != null) {
 				if(this.mListOfUserButton.Contains(button)) {
 					this.mListOfUserButton.Remove(button);

@@ -105,7 +105,7 @@
 			this.pannelOfDescription.MinimumSize = new System.Drawing.Size(20, 20);
 			this.pannelOfDescription.Name = "pannelOfDescription";
 			this.pannelOfDescription.Size = new System.Drawing.Size(680, 20);
-			this.pannelOfDescription.TabIndex = 3;
+			this.pannelOfDescription.TabIndex = 0;
 			// 
 			// pAutoscrollPanel
 			// 
@@ -117,7 +117,7 @@
 			this.pAutoscrollPanel.MinimumSize = new System.Drawing.Size(20, 20);
 			this.pAutoscrollPanel.Name = "pAutoscrollPanel";
 			this.pAutoscrollPanel.Size = new System.Drawing.Size(680, 241);
-			this.pAutoscrollPanel.TabIndex = 4;
+			this.pAutoscrollPanel.TabIndex = 1;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -136,7 +136,7 @@
 			this.tableLayoutPanel2.RowCount = 1;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(680, 29);
-			this.tableLayoutPanel2.TabIndex = 0;
+			this.tableLayoutPanel2.TabIndex = 2;
 			// 
 			// pbSave
 			// 

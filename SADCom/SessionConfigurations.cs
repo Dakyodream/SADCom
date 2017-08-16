@@ -223,6 +223,21 @@ namespace SADCom {
 			}
 		}
 
+		// custom button
+		private String msAddrOfCustomButtonFileDescription;
+		public String AddrOfCustomButtonFileDescription {
+			get {
+				mutSessionConfig.WaitOne();
+				String sData = this.msAddrOfCustomButtonFileDescription;
+				mutSessionConfig.ReleaseMutex();
+				return sData;
+			}
+			set {
+				mutSessionConfig.WaitOne();
+				this.msAddrOfCustomButtonFileDescription = value;
+				mutSessionConfig.ReleaseMutex();
+			}
+		}
 
 		public SessionConfigurations() {
 			//timestamp
@@ -248,6 +263,9 @@ namespace SADCom {
 			// data file
 			AddrDataFile = "";
 			WriteTimestampOnDataFile = false;
+
+			// custom button
+			AddrOfCustomButtonFileDescription = "";
 
 		}
 

@@ -38,7 +38,7 @@ namespace SADCom.Configuration {
 
 
 		/// <summary>
-		/// Constructor void for the disigner viewer.
+		/// Void constructor for the disigner viewer.
 		/// </summary>
 		public AnalyserDescriptionForm() : this(new SessionConfigurations(), "") { }
 		/// <summary>
@@ -104,6 +104,7 @@ namespace SADCom.Configuration {
 								analyserDescriptionUserControl.Margin = new System.Windows.Forms.Padding(0);
 
 								analyserDescriptionUserControl.AnalyserKeyWord = keyWord;
+								analyserDescriptionUserControl.AnalyserDescriptionDeletedEvent += AnalyserDescriptionUserControl_AnalyserDescriptionDeletedEvent;
 
 								this.pannelOfDescription.Controls.Add(analyserDescriptionUserControl);
 
