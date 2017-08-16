@@ -90,6 +90,14 @@
     </Compile>
     <Compile Include="AnalyserKeyWord.cs" />
     <Compile Include="AutoSaveManager.cs" />
+    <Compile Include="ButtonConfigurations.cs" />
+    <Compile Include="ButtonsConfigurations.cs" />
+    <Compile Include="CustomButtonDesignerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomButtonDesignerUC.Designer.cs">
+      <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileAnalyserDescription.cs" />
     <Compile Include="OptionTerminalDisplay.cs">
       <SubType>UserControl</SubType>
@@ -99,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestDesigner.Designer.cs">
+      <DependentUpon>RequestDesigner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\TerminalConfiguration.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -141,6 +155,9 @@
     <EmbeddedResource Include="AnalyserDescriptionUserControl.resx">
       <DependentUpon>AnalyserDescriptionUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomButtonDesignerUC.resx">
+      <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptionTerminalDisplay.resx">
       <DependentUpon>OptionTerminalDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +171,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RequestDesigner.resx">
+      <DependentUpon>RequestDesigner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>

@@ -95,7 +95,7 @@ namespace SADCom.Configuration {
 					}
 
 					try {					
-						foreach(AnalyserKeyWord keyWord in this.mFileOfAnalyserDescription.listOfKeyWords) {
+						foreach(AnalyserKeyWord keyWord in this.mFileOfAnalyserDescription.ListOfKeyWords) {
 							if(keyWord.KeyWord.Length > 0) {
 								AnalyserDescriptionUserControl analyserDescriptionUserControl = new AnalyserDescriptionUserControl();
 								analyserDescriptionUserControl.AutoSize = true;

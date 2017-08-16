@@ -101,5 +101,43 @@ namespace SADCom {
 			this.KeyWordColor = color;
 		}
 
+
+		// override object.Equals
+		public override bool Equals(object obj) {
+			AnalyserKeyWord analyserKeyWord;
+			bool bReturn = true;
+
+			if(obj == null || GetType() != obj.GetType()) {
+				return false;
+			} else {
+				analyserKeyWord = (AnalyserKeyWord)obj;
+
+				bReturn &= this.KeyWord.Equals(analyserKeyWord.KeyWord);
+				bReturn &= this.SubstitutionWords.Equals(analyserKeyWord.SubstitutionWords);
+				bReturn &= this.KeyWordFont.Equals(analyserKeyWord.KeyWordFont);
+				bReturn &= this.KeyWordColor.Equals(analyserKeyWord.KeyWordColor);
+				bReturn &= this.NotifiedLogTerminal.Equals(analyserKeyWord.NotifiedLogTerminal);
+			}
+
+			bReturn &= base.Equals(obj);
+
+			return bReturn;
+		}
+
+		// override object.GetHashCode
+		public override int GetHashCode() {
+			int iReturnValue;
+			iReturnValue = base.GetHashCode();
+
+			iReturnValue ^= this.KeyWord.GetHashCode();
+			iReturnValue ^= this.SubstitutionWords.GetHashCode();
+			iReturnValue ^= this.KeyWordFont.GetHashCode();
+			iReturnValue ^= this.KeyWordColor.GetHashCode();
+			iReturnValue ^= this.NotifiedLogTerminal.GetHashCode();
+
+			return iReturnValue;
+		}
+
+
 	}
 }
