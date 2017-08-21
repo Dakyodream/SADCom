@@ -92,11 +92,23 @@
     <Compile Include="AutoSaveManager.cs" />
     <Compile Include="ButtonConfigurations.cs" />
     <Compile Include="ButtonsConfigurations.cs" />
+    <Compile Include="CustomButtonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomButtonUC.Designer.cs">
+      <DependentUpon>CustomButtonUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomButtonDesignerUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomButtonDesignerUC.Designer.cs">
       <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomButtonFull_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomButtonFull_UC.Designer.cs">
+      <DependentUpon>CustomButtonFull_UC.cs</DependentUpon>
     </Compile>
     <Compile Include="FileAnalyserDescription.cs" />
     <Compile Include="OptionCustomButtonUC.cs">
@@ -161,8 +173,14 @@
     <EmbeddedResource Include="AnalyserDescriptionUserControl.resx">
       <DependentUpon>AnalyserDescriptionUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomButtonUC.resx">
+      <DependentUpon>CustomButtonUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomButtonDesignerUC.resx">
       <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomButtonFull_UC.resx">
+      <DependentUpon>CustomButtonFull_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionCustomButtonUC.resx">
       <DependentUpon>OptionCustomButtonUC.cs</DependentUpon>
@@ -237,6 +255,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Data.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenLight.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedLight.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SilverLight.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowLight.wmf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,6 +83,26 @@ namespace SADCom.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GreenLight {
+            get {
+                object obj = ResourceManager.GetObject("GreenLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedLight {
+            get {
+                object obj = ResourceManager.GetObject("RedLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Refresh {
             get {
                 object obj = ResourceManager.GetObject("Refresh", resourceCulture);
@@ -106,6 +126,26 @@ namespace SADCom.Properties {
         internal static System.Drawing.Bitmap SendData {
             get {
                 object obj = ResourceManager.GetObject("SendData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SilverLight {
+            get {
+                object obj = ResourceManager.GetObject("SilverLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YellowLight {
+            get {
+                object obj = ResourceManager.GetObject("YellowLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -27,7 +27,7 @@ namespace SADCom.UserButton {
 		private ButtonsConfigurations mButtonsConfigurations;
 
 		/// <summary>
-		/// Use to manage the size form for show an integer number of CustomButtonDesignerUC.
+		/// Use to manage the size form for show an integer number of CustomButtonUC.
 		/// </summary>
 		private Size mSizeOfCstForms;
 
@@ -95,7 +95,7 @@ namespace SADCom.UserButton {
 						foreach(ButtonConfigurations buttonConfig in this.mButtonsConfigurations.ListOfUserButton) {
 							if(buttonConfig.ButtonName.Length > 0) {
 
-								CustomButtonDesignerUC customButtonDesignerUC = new CustomButtonDesignerUC();
+								CustomButtonUC customButtonDesignerUC = new CustomButtonUC();
 								customButtonDesignerUC.AutoSize = true;
 								customButtonDesignerUC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 								customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -134,7 +134,7 @@ namespace SADCom.UserButton {
 		/// Use to create a new custom button. 
 		/// </summary>
 		private void NewCustomButton() {
-			CustomButtonDesignerUC customButtonDesignerUC = new CustomButtonDesignerUC();
+			CustomButtonUC customButtonDesignerUC = new CustomButtonUC();
 			customButtonDesignerUC.AutoSize = true;
 			customButtonDesignerUC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -156,7 +156,7 @@ namespace SADCom.UserButton {
 		}
 
 		/// <summary>
-		/// Create a new CustomButtonDesignerUC. 
+		/// Create a new CustomButtonUC. 
 		/// </summary>
 		/// <param name="sender">Object send the event, but not used.</param>
 		/// <param name="e">Not used.</param>
@@ -167,12 +167,12 @@ namespace SADCom.UserButton {
 		/// <summary>
 		/// Remove from button list the button associate to customButtonDesignerUC that send this event.
 		/// </summary>
-		/// <param name="sender">Object <see cref="CustomButtonDesignerUC"/> send the event</param>
+		/// <param name="sender">Object <see cref="CustomButtonUC"/> send the event</param>
 		/// <param name="e">Not used.</param>
 		private void CustomButtonDesignerUC_CustomButtonDeletedEvent(object sender, EventArgs e) {
-			if(sender.GetType() == typeof(CustomButtonDesignerUC)) {
-				this.mButtonsConfigurations.RemoveButton(((CustomButtonDesignerUC)sender).ButtonConfig);
-				this.pCustomButtonDesigner.Controls.Remove((CustomButtonDesignerUC)sender);
+			if(sender.GetType() == typeof(CustomButtonUC)) {
+				this.mButtonsConfigurations.RemoveButton(((CustomButtonUC)sender).ButtonConfig);
+				this.pCustomButtonDesigner.Controls.Remove((CustomButtonUC)sender);
 			}
 		}
 
@@ -233,7 +233,7 @@ namespace SADCom.UserButton {
 		}
 
 		/// <summary>
-		/// Manage the size on order to have an integer number of visible CustomButtonDesignerUC (+- manage the autoscroll).
+		/// Manage the size on order to have an integer number of visible CustomButtonUC (+- manage the autoscroll).
 		/// </summary>
 		/// <param name="sender">Not used.</param>
 		/// <param name="e">Not sed.</param>

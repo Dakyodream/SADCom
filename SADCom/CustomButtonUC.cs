@@ -10,20 +10,22 @@ using System.Windows.Forms;
 
 namespace SADCom.UserButton {
 
-	///// <summary>
-	///// Call when the user want to delet an custom request button
-	///// </summary>
-	///// <param name="sender">The object sending the event.</param>
-	///// <param name="e">Not used (null).</param>
-	//public delegate void CustomButtonDeletedEventHandler(object sender, EventArgs e);
-	///// <summary>
-	///// Call when this user control are still. Call to create a new user control.
-	///// </summary>
-	///// <param name="sender">The object sending the event.</param>
-	///// <param name="e">Not used (null).</param>
-	//public delegate void NewCustomButtonEventHandler(object sender, EventArgs e);
+	/// <summary>
+	/// Call when the user want to delet an custom request button
+	/// </summary>
+	/// <param name="sender">The object sending the event.</param>
+	/// <param name="e">Not used (null).</param>
+	public delegate void CustomButtonDeletedEventHandler(object sender, EventArgs e);
+	/// <summary>
+	/// Call when this user control are still. Call to create a new user control.
+	/// </summary>
+	/// <param name="sender">The object sending the event.</param>
+	/// <param name="e">Not used (null).</param>
+	public delegate void NewCustomButtonEventHandler(object sender, EventArgs e);
 
-	public partial class CustomButtonDesignerUC : UserControl {
+	public enum SendCmdState{ ConnexionDisabled = 0, ConnexionEnabled,  TransmissionFailed, TransmissionSucces};
+
+	public partial class CustomButtonUC : UserControl {
 
 		/// <summary>
 		/// See to indicate the this objet must be deleted. See <see cref="CustomButtonDeletedEvent"/>.
@@ -33,6 +35,34 @@ namespace SADCom.UserButton {
 		/// Call for creat a new empty object. See <see cref="NewCustomButtonEvent"/>.
 		/// </summary>
 		public event NewCustomButtonEventHandler NewCustomButtonEvent;
+
+		//use to update / clear the state TransmissionFailed & TransmissionSucces of the system
+		private Timer mTimerForCmdState = new Timer();
+
+		private SendCmdState mCmdState = SendCmdState.ConnexionDisabled;
+		private SendCmdState mOldCmdState = SendCmdState.ConnexionDisabled;
+		public SendCmdState CmdState {
+			get {
+				return this.mCmdState;
+			}
+			set {
+				if(this.mTimerForCmdState.Enabled) {
+					this.mTimerForCmdState.Stop();
+				}
+
+				if(value > SendCmdState.ConnexionEnabled) {
+					this.mTimerForCmdState.Interval = 1000;
+					if(this.mCmdState <= SendCmdState.ConnexionEnabled) {
+						this.mOldCmdState = this.mCmdState;
+					}
+					this.mTimerForCmdState.Start();
+				}
+
+				this.mCmdState = value;
+				this.UpdateCmdStateLight();
+			}
+		}
+
 
 		/// <summary>
 		/// Use for detecte the first fill of name button.
@@ -68,16 +98,20 @@ namespace SADCom.UserButton {
 				this.cbPeriodicRequest.Enabled = true;
 				this.numUpDownPeriodOfRequest.Enabled = this.cbPeriodicRequest.Checked;
 
+
 			}
 		}
 
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public CustomButtonDesignerUC() {
+		public CustomButtonUC() {
 			InitializeComponent();
 
 			this.mButtonConfig = new ButtonConfigurations();
+
+			this.mTimerForCmdState.Tick += MTimerForCmdState_Tick;
+
 
 			ToolTip toolTip = new ToolTip();
 			toolTip.AutoPopDelay = 5000;
@@ -93,10 +127,20 @@ namespace SADCom.UserButton {
 			toolTip.SetToolTip(this.cbPeriodicRequest, "A checker pour rendre la requête periodique.");
 			toolTip.SetToolTip(this.numUpDownPeriodOfRequest, "Periode d'envoie des données en seconde.");
 
-
 			this.tbRequest.Enabled = false;
 			this.cbPeriodicRequest.Enabled = false;
 			this.numUpDownPeriodOfRequest.Enabled = false;
+			this.pbDeletButton.Enabled = false;
+
+
+			this.EnableTextBoxButtonName(true);
+			this.UpdateCmdStateLight();
+			
+		}
+
+		private void MTimerForCmdState_Tick(object sender, EventArgs e) {
+			this.mTimerForCmdState.Stop();
+			this.CmdState = this.mOldCmdState;
 		}
 
 		/// <summary>
@@ -109,18 +153,20 @@ namespace SADCom.UserButton {
 				bDescriptionNeverFill = false;
 				NewCustomButtonEvent?.Invoke(this, null);
 
+
+				this.pbDeletButton.Enabled = true;
 				this.tbRequest.Enabled = true;
 				this.cbPeriodicRequest.Enabled = true;
 				this.numUpDownPeriodOfRequest.Enabled = this.cbPeriodicRequest.Checked;
 			}
 			if(this.tbButtonName.Text.Length <= 0 || this.tbButtonName.Text.Trim().Length <= 0) {
 				this.mButtonConfig.ButtonName = "Button";
-				this.tbButtonName.Text = this.mButtonConfig.ButtonName;
-
 			} else {
 				this.mButtonConfig.ButtonName = this.tbButtonName.Text;
-				this.tbButtonName.Text = this.mButtonConfig.ButtonName;
 			}
+
+			this.tbButtonName.Text = this.mButtonConfig.ButtonName;
+			this.pbCmd.Text = this.mButtonConfig.ButtonName; ;
 		}
 
 		/// <summary>
@@ -160,6 +206,89 @@ namespace SADCom.UserButton {
 			if(this.mButtonConfig.IsPeriodicRequest) {
 				this.mButtonConfig.PeriodicInterval = (double)this.numUpDownPeriodOfRequest.Value;
 			}
+		}
+
+		private void tlsiEditButtonName_Click(object sender, EventArgs e) {
+			EnableTextBoxButtonName(true);
+			this.tbButtonName.Focus();
+		}
+
+		private void tbButtonName_ControlRemoved(object sender, ControlEventArgs e) {
+			EnableTextBoxButtonName(false);
+		}
+
+		private void tbButtonName_Validated(object sender, EventArgs e) {
+			EnableTextBoxButtonName(false);
+		}
+
+		private void tbButtonName_KeyPress(object sender, KeyPressEventArgs e) {
+			if(e.KeyChar == (char)13) {
+				EnableTextBoxButtonName(false);
+			}
+		}
+
+		private void EnableTextBoxButtonName(bool enable) {
+			if(bDescriptionNeverFill || enable == true) {
+				this.pbCmd.Visible = false;
+				this.tbButtonName.Visible = true;
+				if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+					this.tableLayoutPanel1.ColumnStyles[1].Width = 0f;
+					this.tableLayoutPanel1.ColumnStyles[2].Width = 50f;
+					this.tableLayoutPanel1.ColumnStyles[3].Width = 50f;
+				}
+				
+			} else {
+				this.pbCmd.Visible = true;
+				this.tbButtonName.Visible = false;
+				if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+					this.tableLayoutPanel1.ColumnStyles[1].Width = 50f;
+					this.tableLayoutPanel1.ColumnStyles[2].Width = 0f;
+					this.tableLayoutPanel1.ColumnStyles[3].Width = 50f;
+				}
+			}
+		}
+
+		private void UpdateCmdStateLight() {
+			switch(this.mCmdState) {
+				case SendCmdState.ConnexionDisabled:
+					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+						this.tableLayoutPanel1.ColumnStyles[6].Width = 20f;
+						this.tableLayoutPanel1.ColumnStyles[7].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[8].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+					}
+					break;
+				case SendCmdState.ConnexionEnabled:
+					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+						this.tableLayoutPanel1.ColumnStyles[6].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[7].Width = 20f;
+						this.tableLayoutPanel1.ColumnStyles[8].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+					}
+					break;
+				case SendCmdState.TransmissionFailed:
+					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+						this.tableLayoutPanel1.ColumnStyles[6].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[7].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[8].Width = 20f;
+						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+					}
+					break;
+				case SendCmdState.TransmissionSucces:
+					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
+						this.tableLayoutPanel1.ColumnStyles[6].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[7].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[8].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[9].Width = 20f;
+					}
+					break;
+			}
+
+			
+		}
+
+		private void pbCmd_Click(object sender, EventArgs e) {
+			CmdState = SendCmdState.TransmissionSucces;
 		}
 	}
 }
