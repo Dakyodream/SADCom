@@ -252,26 +252,26 @@ namespace SADCom.UserButton {
 			switch(this.mCmdState) {
 				case SendCmdState.ConnexionDisabled:
 					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
-						this.tableLayoutPanel1.ColumnStyles[6].Width = 20f;
 						this.tableLayoutPanel1.ColumnStyles[7].Width = 0f;
 						this.tableLayoutPanel1.ColumnStyles[8].Width = 0f;
 						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[6].Width = 20f;
 					}
 					break;
 				case SendCmdState.ConnexionEnabled:
 					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
 						this.tableLayoutPanel1.ColumnStyles[6].Width = 0f;
-						this.tableLayoutPanel1.ColumnStyles[7].Width = 20f;
 						this.tableLayoutPanel1.ColumnStyles[8].Width = 0f;
 						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[7].Width = 20f;
 					}
 					break;
 				case SendCmdState.TransmissionFailed:
 					if(this.tableLayoutPanel1.ColumnStyles.Count >= 10) {
 						this.tableLayoutPanel1.ColumnStyles[6].Width = 0f;
 						this.tableLayoutPanel1.ColumnStyles[7].Width = 0f;
-						this.tableLayoutPanel1.ColumnStyles[8].Width = 20f;
 						this.tableLayoutPanel1.ColumnStyles[9].Width = 0f;
+						this.tableLayoutPanel1.ColumnStyles[8].Width = 20f;
 					}
 					break;
 				case SendCmdState.TransmissionSucces:
