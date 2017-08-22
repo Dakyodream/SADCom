@@ -103,7 +103,7 @@ namespace SADCom.UserButton {
 
 								customButtonDesignerUC.ButtonConfig = buttonConfig;
 
-								customButtonDesignerUC.CustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
+								customButtonDesignerUC.OnCustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
 
 								this.pCustomButtonDesigner.Controls.Add(customButtonDesignerUC);
 
@@ -140,8 +140,8 @@ namespace SADCom.UserButton {
 			customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
 			customButtonDesignerUC.Margin = new System.Windows.Forms.Padding(0);
 
-			customButtonDesignerUC.NewCustomButtonEvent += CustomButtonDesignerUC_NewCustomButtonEvent;
-			customButtonDesignerUC.CustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
+			customButtonDesignerUC.OnNewCustomButtonEvent += CustomButtonDesignerUC_NewCustomButtonEvent;
+			customButtonDesignerUC.OnCustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
 
 			try {
 				this.pCustomButtonDesigner.Controls.Add(customButtonDesignerUC);

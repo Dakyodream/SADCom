@@ -98,18 +98,6 @@
     <Compile Include="CustomButtonUC.Designer.cs">
       <DependentUpon>CustomButtonUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomButtonDesignerUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomButtonDesignerUC.Designer.cs">
-      <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomButtonFull_UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomButtonFull_UC.Designer.cs">
-      <DependentUpon>CustomButtonFull_UC.cs</DependentUpon>
-    </Compile>
     <Compile Include="FileAnalyserDescription.cs" />
     <Compile Include="OptionCustomButtonUC.cs">
       <SubType>UserControl</SubType>
@@ -175,12 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomButtonUC.resx">
       <DependentUpon>CustomButtonUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomButtonDesignerUC.resx">
-      <DependentUpon>CustomButtonDesignerUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomButtonFull_UC.resx">
-      <DependentUpon>CustomButtonFull_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionCustomButtonUC.resx">
       <DependentUpon>OptionCustomButtonUC.cs</DependentUpon>
@@ -267,6 +249,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\YellowLight.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
