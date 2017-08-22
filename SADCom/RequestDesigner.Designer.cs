@@ -54,9 +54,9 @@
 			this.pCustomButtonDesigner.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pCustomButtonDesigner.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pCustomButtonDesigner.Location = new System.Drawing.Point(0, 0);
-			this.pCustomButtonDesigner.MinimumSize = new System.Drawing.Size(0, 20);
+			this.pCustomButtonDesigner.MinimumSize = new System.Drawing.Size(0, 23);
 			this.pCustomButtonDesigner.Name = "pCustomButtonDesigner";
-			this.pCustomButtonDesigner.Size = new System.Drawing.Size(576, 20);
+			this.pCustomButtonDesigner.Size = new System.Drawing.Size(576, 23);
 			this.pCustomButtonDesigner.TabIndex = 0;
 			// 
 			// tableLayoutPanel1

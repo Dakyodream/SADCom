@@ -45,13 +45,13 @@
 			this.tableLayoutPanel1.AutoSize = true;
 			this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.tableLayoutPanel1.ColumnCount = 7;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
 			this.tableLayoutPanel1.Controls.Add(this.pbCmd, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbButtonName, 2, 0);
 			this.tableLayoutPanel1.Controls.Add(this.pbDeletButton, 0, 0);
@@ -65,23 +65,21 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(714, 20);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(714, 23);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// pbCmd
 			// 
 			this.pbCmd.AutoSize = true;
-			this.pbCmd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.pbCmd.ContextMenuStrip = this.cmsCmdButtonMenu;
 			this.pbCmd.Dock = System.Windows.Forms.DockStyle.Top;
-			this.pbCmd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.pbCmd.Location = new System.Drawing.Point(20, 0);
+			this.pbCmd.Location = new System.Drawing.Point(23, 0);
 			this.pbCmd.Margin = new System.Windows.Forms.Padding(0);
-			this.pbCmd.MaximumSize = new System.Drawing.Size(0, 20);
+			this.pbCmd.MaximumSize = new System.Drawing.Size(0, 23);
 			this.pbCmd.Name = "pbCmd";
-			this.pbCmd.Size = new System.Drawing.Size(187, 20);
+			this.pbCmd.Size = new System.Drawing.Size(185, 23);
 			this.pbCmd.TabIndex = 2;
-			this.pbCmd.Text = "button1";
+			this.pbCmd.Text = "jlh";
 			this.pbCmd.UseVisualStyleBackColor = false;
 			this.pbCmd.Click += new System.EventHandler(this.pbCmd_Click);
 			// 
@@ -101,12 +99,15 @@
 			// 
 			// tbButtonName
 			// 
+			this.tbButtonName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbButtonName.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tbButtonName.Location = new System.Drawing.Point(207, 0);
+			this.tbButtonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.tbButtonName.Location = new System.Drawing.Point(208, 0);
 			this.tbButtonName.Margin = new System.Windows.Forms.Padding(0);
 			this.tbButtonName.Name = "tbButtonName";
-			this.tbButtonName.Size = new System.Drawing.Size(187, 20);
+			this.tbButtonName.Size = new System.Drawing.Size(185, 23);
 			this.tbButtonName.TabIndex = 1;
+			this.tbButtonName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.tbButtonName.TextChanged += new System.EventHandler(this.tbButtonName_TextChanged);
 			this.tbButtonName.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.tbButtonName_ControlRemoved);
 			this.tbButtonName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbButtonName_KeyPress);
@@ -119,10 +120,10 @@
 			this.pbDeletButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pbDeletButton.Location = new System.Drawing.Point(0, 0);
 			this.pbDeletButton.Margin = new System.Windows.Forms.Padding(0);
-			this.pbDeletButton.MaximumSize = new System.Drawing.Size(20, 20);
-			this.pbDeletButton.MinimumSize = new System.Drawing.Size(20, 20);
+			this.pbDeletButton.MaximumSize = new System.Drawing.Size(23, 23);
+			this.pbDeletButton.MinimumSize = new System.Drawing.Size(23, 23);
 			this.pbDeletButton.Name = "pbDeletButton";
-			this.pbDeletButton.Size = new System.Drawing.Size(20, 20);
+			this.pbDeletButton.Size = new System.Drawing.Size(23, 23);
 			this.pbDeletButton.TabIndex = 0;
 			this.pbDeletButton.Text = "x";
 			this.pbDeletButton.UseVisualStyleBackColor = true;
@@ -132,11 +133,12 @@
 			// 
 			this.pbConnexionStateLight.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pbConnexionStateLight.Image = global::SADCom.Properties.Resources.SilverLight;
-			this.pbConnexionStateLight.Location = new System.Drawing.Point(691, 0);
+			this.pbConnexionStateLight.Location = new System.Drawing.Point(688, 0);
 			this.pbConnexionStateLight.Margin = new System.Windows.Forms.Padding(0);
-			this.pbConnexionStateLight.MaximumSize = new System.Drawing.Size(20, 20);
+			this.pbConnexionStateLight.MaximumSize = new System.Drawing.Size(23, 23);
+			this.pbConnexionStateLight.MinimumSize = new System.Drawing.Size(23, 23);
 			this.pbConnexionStateLight.Name = "pbConnexionStateLight";
-			this.pbConnexionStateLight.Size = new System.Drawing.Size(20, 20);
+			this.pbConnexionStateLight.Size = new System.Drawing.Size(23, 23);
 			this.pbConnexionStateLight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pbConnexionStateLight.TabIndex = 1;
 			this.pbConnexionStateLight.TabStop = false;
@@ -146,6 +148,7 @@
 			this.numUpDownPeriodOfRequest.AutoSize = true;
 			this.numUpDownPeriodOfRequest.DecimalPlaces = 3;
 			this.numUpDownPeriodOfRequest.Dock = System.Windows.Forms.DockStyle.Top;
+			this.numUpDownPeriodOfRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.numUpDownPeriodOfRequest.Increment = new decimal(new int[] {
             5,
             0,
@@ -165,7 +168,7 @@
             0,
             196608});
 			this.numUpDownPeriodOfRequest.Name = "numUpDownPeriodOfRequest";
-			this.numUpDownPeriodOfRequest.Size = new System.Drawing.Size(93, 20);
+			this.numUpDownPeriodOfRequest.Size = new System.Drawing.Size(93, 23);
 			this.numUpDownPeriodOfRequest.TabIndex = 4;
 			this.numUpDownPeriodOfRequest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.numUpDownPeriodOfRequest.Value = new decimal(new int[] {
@@ -179,10 +182,11 @@
 			// 
 			this.cbPeriodicRequest.AutoSize = true;
 			this.cbPeriodicRequest.Dock = System.Windows.Forms.DockStyle.Top;
-			this.cbPeriodicRequest.Location = new System.Drawing.Point(581, 0);
+			this.cbPeriodicRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.cbPeriodicRequest.Location = new System.Drawing.Point(578, 0);
 			this.cbPeriodicRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.cbPeriodicRequest.Name = "cbPeriodicRequest";
-			this.cbPeriodicRequest.Padding = new System.Windows.Forms.Padding(2, 3, 0, 0);
+			this.cbPeriodicRequest.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
 			this.cbPeriodicRequest.Size = new System.Drawing.Size(17, 17);
 			this.cbPeriodicRequest.TabIndex = 3;
 			this.cbPeriodicRequest.UseVisualStyleBackColor = true;
@@ -191,10 +195,11 @@
 			// tbRequest
 			// 
 			this.tbRequest.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tbRequest.Location = new System.Drawing.Point(394, 0);
+			this.tbRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.tbRequest.Location = new System.Drawing.Point(393, 0);
 			this.tbRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.tbRequest.Name = "tbRequest";
-			this.tbRequest.Size = new System.Drawing.Size(187, 20);
+			this.tbRequest.Size = new System.Drawing.Size(185, 23);
 			this.tbRequest.TabIndex = 2;
 			this.tbRequest.TextChanged += new System.EventHandler(this.tbRequest_TextChanged);
 			// 

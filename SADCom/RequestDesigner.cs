@@ -238,7 +238,7 @@ namespace SADCom.UserButton {
 		/// <param name="sender">Not used.</param>
 		/// <param name="e">Not sed.</param>
 		private void RequestDesigner_ResizeEnd(object sender, EventArgs e) {
-			int iHeight = this.mSizeOfCstForms.Height + ((this.pAutoscroll.Size.Height / 20) * 20);
+			int iHeight = this.mSizeOfCstForms.Height + ((this.pAutoscroll.Size.Height / 23) * 23);
 			this.Size = new Size(this.Size.Width, iHeight);
 		}
 

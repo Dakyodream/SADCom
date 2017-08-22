@@ -355,8 +355,7 @@ namespace SADCom.UserButton {
 		private void pbCmd_Click(object sender, EventArgs e) {
 			if(this.cbPeriodicRequest.Checked) {
 				if(!this.mTimerForPeriodicalRequest.Enabled) {
-					this.mTimerForPeriodicalRequest.Interval = (int)(this.numUpDownPeriodOfRequest.Value * 1000);
-					
+					this.mTimerForPeriodicalRequest.Interval = (int)(this.numUpDownPeriodOfRequest.Value * 1000);					
 					this.mTimerForPeriodicalRequest.Start();
 
 					this.pbDeletButton.Enabled = false;
@@ -364,9 +363,9 @@ namespace SADCom.UserButton {
 					this.tbRequest.Enabled = false;
 					this.cbPeriodicRequest.Enabled = false;
 					this.numUpDownPeriodOfRequest.Enabled = false;
+
 					cButtonSendBackColor = this.pbCmd.BackColor;
 					this.pbCmd.BackColor = SystemColors.ActiveCaption;
-
 				} else {
 					this.mTimerForPeriodicalRequest.Stop();
 
@@ -404,6 +403,29 @@ namespace SADCom.UserButton {
 			}
 		}
 
-		
+
+		public void ReduceTheForm(bool ReduceIt) {
+			//manage control accessibility 
+			this.tbRequest.Visible = !ReduceIt;
+			this.cbPeriodicRequest.Visible = !ReduceIt;
+			this.numUpDownPeriodOfRequest.Visible = !ReduceIt;
+			this.pbDeletButton.Visible = !ReduceIt;
+
+			if(ReduceIt) {
+				this.tableLayoutPanel1.ColumnStyles[0].Width = 0f;
+				this.tableLayoutPanel1.ColumnStyles[1].Width = 100f;
+				this.tableLayoutPanel1.ColumnStyles[2].Width = 0f;
+				this.tableLayoutPanel1.ColumnStyles[3].Width = 0f;
+				this.tableLayoutPanel1.ColumnStyles[4].Width = 0f;
+				this.tableLayoutPanel1.ColumnStyles[5].Width = 0f;
+			} else {
+				this.tableLayoutPanel1.ColumnStyles[0].Width = 20f;
+				this.tableLayoutPanel1.ColumnStyles[1].Width = 50f;
+				this.tableLayoutPanel1.ColumnStyles[2].Width = 0f;
+				this.tableLayoutPanel1.ColumnStyles[3].Width = 50f;
+				this.tableLayoutPanel1.ColumnStyles[4].Width = 17f;
+				this.tableLayoutPanel1.ColumnStyles[5].Width = 93f;
+			}
+		}
 	}
 }
