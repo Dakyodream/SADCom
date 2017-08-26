@@ -77,56 +77,57 @@ namespace SADCom.UserButton {
 			this.mSizeOfCstForms = new Size(this.Size.Width, this.Size.Height - this.pAutoscroll.Size.Height);
 
 			//Detect if we are in edit mode.
-			if(this.msAddrOfCustomButtonFileDescription.Length > 0) {
-				if(File.Exists(this.msAddrOfCustomButtonFileDescription)) {
+			//if(this.msAddrOfCustomButtonFileDescription.Length > 0) {
+			//	if(File.Exists(this.msAddrOfCustomButtonFileDescription)) {
 
-					try {
-						using(Stream stream = File.Open(this.msAddrOfCustomButtonFileDescription, FileMode.Open)) {
-							var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+			//		try {
+			//			using(Stream stream = File.Open(this.msAddrOfCustomButtonFileDescription, FileMode.Open)) {
+			//				var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-							this.mButtonsConfigurations = (ButtonsConfigurations)bformatter.Deserialize(stream);
-						}
-					} catch {
-						MessageBox.Show("Le fichier séléctionné est n'est pas reconnu par le système. Veuilliez réitérer avec un nouveau fichier ou en crée un nouveau.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-						this.Close();
-					}
+			//				this.mButtonsConfigurations = (ButtonsConfigurations)bformatter.Deserialize(stream);
+			//			}
+			//		} catch {
+			//			MessageBox.Show("Le fichier séléctionné est n'est pas reconnu par le système. Veuilliez réitérer avec un nouveau fichier ou en crée un nouveau.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+			//			this.Close();
+			//		}
 
-					try {
-						foreach(ButtonConfigurations buttonConfig in this.mButtonsConfigurations.ListOfUserButton) {
-							if(buttonConfig.ButtonName.Length > 0) {
+			//		try {
+			//			foreach(ButtonConfigurations buttonConfig in this.mButtonsConfigurations.ListOfUserButton) {
+			//				if(buttonConfig.ButtonName.Length > 0) {
 
-								CustomButtonUC customButtonDesignerUC = new CustomButtonUC();
-								customButtonDesignerUC.AutoSize = true;
-								customButtonDesignerUC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-								customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
-								customButtonDesignerUC.Margin = new System.Windows.Forms.Padding(0);
+			//					CustomButtonUC customButtonDesignerUC = new CustomButtonUC();
+			//					customButtonDesignerUC.AutoSize = true;
+			//					customButtonDesignerUC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			//					customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
+			//					customButtonDesignerUC.Margin = new System.Windows.Forms.Padding(0);
 
-								customButtonDesignerUC.ButtonConfig = buttonConfig;
+			//					customButtonDesignerUC.ButtonConfig = buttonConfig;
 
-								customButtonDesignerUC.OnCustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
+			//					customButtonDesignerUC.OnCustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
 
-								this.pCustomButtonDesigner.Controls.Add(customButtonDesignerUC);
+			//					this.pCustomButtonDesigner.Controls.Add(customButtonDesignerUC);
 
 
-								if(this.pCustomButtonDesigner.Size.Height > this.pAutoscroll.Size.Height) {
-									this.pAutoscroll.AutoScrollPosition = new Point(this.pCustomButtonDesigner.Size);
-								}
-							}
-						}
-					} catch {
-						MessageBox.Show("Une erreur est survenue lors de la reconstruction des régles. Si l'erreur persiste, crée un nouveau fichier.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-						this.Close();
-					}
+			//					if(this.pCustomButtonDesigner.Size.Height > this.pAutoscroll.Size.Height) {
+			//						this.pAutoscroll.AutoScrollPosition = new Point(this.pCustomButtonDesigner.Size);
+			//					}
+			//				}
+			//			}
+			//		} catch {
+			//			MessageBox.Show("Une erreur est survenue lors de la reconstruction des régles. Si l'erreur persiste, crée un nouveau fichier.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+			//			this.Close();
+			//		}
 
-				} else {
-					DialogResult resultOfMessageBox = DialogResult.Cancel;
-					resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + this.msAddrOfCustomButtonFileDescription + "\" n'exist pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			//	} else {
+			//		DialogResult resultOfMessageBox = DialogResult.Cancel;
+			//		resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + this.msAddrOfCustomButtonFileDescription + "\" n'exist pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-					if(resultOfMessageBox != DialogResult.Yes) {
-						this.Close();
-					}
-				}
-			}
+			//		if(resultOfMessageBox != DialogResult.Yes) {
+			//			this.Close();
+			//		}
+			//	}
+			//}
+			this.loadFileDescription();
 			this.NewCustomButton();
 		}
 
@@ -182,39 +183,12 @@ namespace SADCom.UserButton {
 		/// <param name="sender">Not used.</param>
 		/// <param name="e">Not used.</param>
 		private void pbSaveAndExit_Click(object sender, EventArgs e) {
-			SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-			saveFileDialog.Filter = "binaire|*.bin";
-			saveFileDialog.Title = "Fichier décrivant les boutton personalisés.";
-
-			if(this.msAddrOfCustomButtonFileDescription.Length != 0) {
-				saveFileDialog.InitialDirectory = Path.GetDirectoryName(this.msAddrOfCustomButtonFileDescription);
-				saveFileDialog.FileName = Path.GetFileName(this.msAddrOfCustomButtonFileDescription);
+			if(this.SaveFileDescription() == true) {
+				this.DialogResult = DialogResult.OK;
+				this.Close();
 			} else {
-				try {
-					if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles")) {
-						Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles");
-					}
-					saveFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles";
-				} catch {
-					saveFileDialog.InitialDirectory = "";
-				}
-			}
-
-			if(saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog.FileName.Length > 0) {
-				//serialize
-				try {
-					using(Stream stream = File.Open(saveFileDialog.FileName, FileMode.Create)) {
-						var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-						bformatter.Serialize(stream, this.mButtonsConfigurations);
-					}
-
-					this.mSessionConfigurations.AddrOfCustomButtonFileDescription = saveFileDialog.FileName;
-					this.DialogResult = DialogResult.OK;
-					this.Close();
-				} catch {
-					MessageBox.Show("Erreur détéctée lors la sauvegarde des données de configuration. Réitéré la sauvegarde ou quitter sans sauvegarder.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-				}
+				this.DialogResult = DialogResult.Abort;
+				this.Close();
 			}
 		}
 
@@ -272,6 +246,165 @@ namespace SADCom.UserButton {
 			}
 		}
 
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
+			this.SaveFileDescription();
+		}
 		
+		private bool SaveFileDescription(){
+			bool bReturn = false;
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+			saveFileDialog.Filter = "binaire|*.bin";
+			saveFileDialog.Title = "Fichier décrivant les boutton personalisés.";
+
+			if(this.msAddrOfCustomButtonFileDescription.Length != 0) {
+				saveFileDialog.InitialDirectory = Path.GetDirectoryName(this.msAddrOfCustomButtonFileDescription);
+				saveFileDialog.FileName = Path.GetFileName(this.msAddrOfCustomButtonFileDescription);
+			} else {
+				try {
+					if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles")) {
+						Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles");
+					}
+					saveFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles";
+				} catch {
+					saveFileDialog.InitialDirectory = "";
+				}
+			}
+
+			if(saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog.FileName.Length > 0) {
+				//serialize
+				try {
+					using(Stream stream = File.Open(saveFileDialog.FileName, FileMode.Create)) {
+						var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+						bformatter.Serialize(stream, this.mButtonsConfigurations);
+					}
+
+					this.mSessionConfigurations.AddrOfCustomButtonFileDescription = saveFileDialog.FileName;
+					bReturn = true;
+				} catch {
+					MessageBox.Show("Erreur détéctée lors la sauvegarde des données de configuration. Réitéré la sauvegarde ou quitter sans sauvegarder.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+				}
+			}
+			return bReturn;
+		}
+
+
+		private void openToolStripMenuItem_Click(object sender, EventArgs e) {
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			ButtonsConfigurations buttonsConfigurations = new ButtonsConfigurations();
+
+			if(mSessionConfigurations.AddrOfCustomButtonFileDescription.Length != 0) {
+				openFileDialog.InitialDirectory = Path.GetDirectoryName(mSessionConfigurations.AddrOfCustomButtonFileDescription);
+				openFileDialog.FileName = Path.GetFileName(mSessionConfigurations.AddrOfCustomButtonFileDescription);
+
+			} else { //default path
+				try {
+					if(!Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles")) {
+						Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles");
+					}
+					openFileDialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\CustomButtonDescriptionFiles";
+				} catch {
+					//if the user are not acces to directory returned by System.IO.Directory.GetCurrentDirectory()
+					openFileDialog.InitialDirectory = "";
+				}
+			}
+
+			try {
+				openFileDialog.Filter = "binaire|*.bin";
+			} catch {
+				throw new ArgumentException("The filter in pbSearchCustomButtonFile_Click cause an argumentException.");
+			}
+
+			if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog.FileName.Length > 0) {
+				if(openFileDialog.FileName.Length > 0) {
+					if(File.Exists(openFileDialog.FileName)) {
+						try {
+							using(Stream stream = File.Open(openFileDialog.FileName, FileMode.Open)) {
+								var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+								buttonsConfigurations = (ButtonsConfigurations)bformatter.Deserialize(stream);
+							}
+							this.mSessionConfigurations.AddrOfCustomButtonFileDescription = openFileDialog.FileName;
+							this.msAddrOfCustomButtonFileDescription= this.mSessionConfigurations.AddrOfCustomButtonFileDescription;
+						} catch {
+							MessageBox.Show("Le fichier séléctionné est n'est pas reconnu par le système. Veuilliez réitérer avec un nouveau fichier ou en crée un nouveau.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+						}
+					} else {
+						DialogResult resultOfMessageBox = DialogResult.Cancel;
+						resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + openFileDialog.FileName + "\" n'exist pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+						return;
+					}
+				}
+
+			}
+
+			this.loadFileDescription();
+			this.NewCustomButton();
+
+		}
+
+		private void loadFileDescription() {
+			this.mButtonsConfigurations = new ButtonsConfigurations();
+			this.pCustomButtonDesigner.Controls.Clear();
+
+			if(this.msAddrOfCustomButtonFileDescription.Length > 0) {
+				if(File.Exists(this.msAddrOfCustomButtonFileDescription)) {
+
+					try {
+						using(Stream stream = File.Open(this.msAddrOfCustomButtonFileDescription, FileMode.Open)) {
+							var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+							this.mButtonsConfigurations = (ButtonsConfigurations)bformatter.Deserialize(stream);
+						}
+					} catch {
+						MessageBox.Show("Le fichier séléctionné est n'est pas reconnu par le système. Veuilliez réitérer avec un nouveau fichier ou en crée un nouveau.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+						this.Close();
+					}
+
+					try {
+						foreach(ButtonConfigurations buttonConfig in this.mButtonsConfigurations.ListOfUserButton) {
+							if(buttonConfig.ButtonName.Length > 0) {
+
+								CustomButtonUC customButtonDesignerUC = new CustomButtonUC();
+								customButtonDesignerUC.AutoSize = true;
+								customButtonDesignerUC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+								customButtonDesignerUC.Dock = System.Windows.Forms.DockStyle.Bottom;
+								customButtonDesignerUC.Margin = new System.Windows.Forms.Padding(0);
+
+								customButtonDesignerUC.ButtonConfig = buttonConfig;
+
+								customButtonDesignerUC.OnCustomButtonDeletedEvent += CustomButtonDesignerUC_CustomButtonDeletedEvent;
+
+								this.pCustomButtonDesigner.Controls.Add(customButtonDesignerUC);
+
+
+								if(this.pCustomButtonDesigner.Size.Height > this.pAutoscroll.Size.Height) {
+									this.pAutoscroll.AutoScrollPosition = new Point(this.pCustomButtonDesigner.Size);
+								}
+							}
+						}
+					} catch {
+						MessageBox.Show("Une erreur est survenue lors de la reconstruction des régles. Si l'erreur persiste, crée un nouveau fichier.", this.Text, MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+						this.Close();
+					}
+
+				} else {
+					DialogResult resultOfMessageBox = DialogResult.Cancel;
+					resultOfMessageBox = MessageBox.Show("Le fichier à l'adresse suivante \"" + this.msAddrOfCustomButtonFileDescription + "\" n'exist pas.\nDésirez vous crée un nouveau fichier ?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+					if(resultOfMessageBox != DialogResult.Yes) {
+						this.Close();
+					}
+				}
+			}
+
+		}
+
+			private void newToolStripMenuItem_Click(object sender, EventArgs e) {
+			this.mButtonsConfigurations = new ButtonsConfigurations();
+			this.msAddrOfCustomButtonFileDescription = "";
+			this.pCustomButtonDesigner.Controls.Clear();
+			this.NewCustomButton();
+		}
 	}
 }
