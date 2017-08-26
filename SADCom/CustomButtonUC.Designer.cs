@@ -77,9 +77,9 @@
 			this.pbCmd.Margin = new System.Windows.Forms.Padding(0);
 			this.pbCmd.MaximumSize = new System.Drawing.Size(0, 23);
 			this.pbCmd.Name = "pbCmd";
-			this.pbCmd.Size = new System.Drawing.Size(185, 23);
+			this.pbCmd.Size = new System.Drawing.Size(186, 23);
 			this.pbCmd.TabIndex = 2;
-			this.pbCmd.Text = "jlh";
+			this.pbCmd.Text = "Button";
 			this.pbCmd.UseVisualStyleBackColor = false;
 			this.pbCmd.Click += new System.EventHandler(this.pbCmd_Click);
 			// 
@@ -102,10 +102,10 @@
 			this.tbButtonName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbButtonName.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tbButtonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.tbButtonName.Location = new System.Drawing.Point(208, 0);
+			this.tbButtonName.Location = new System.Drawing.Point(209, 0);
 			this.tbButtonName.Margin = new System.Windows.Forms.Padding(0);
 			this.tbButtonName.Name = "tbButtonName";
-			this.tbButtonName.Size = new System.Drawing.Size(185, 23);
+			this.tbButtonName.Size = new System.Drawing.Size(186, 23);
 			this.tbButtonName.TabIndex = 1;
 			this.tbButtonName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.tbButtonName.TextChanged += new System.EventHandler(this.tbButtonName_TextChanged);
@@ -120,10 +120,10 @@
 			this.pbDeletButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pbDeletButton.Location = new System.Drawing.Point(0, 0);
 			this.pbDeletButton.Margin = new System.Windows.Forms.Padding(0);
-			this.pbDeletButton.MaximumSize = new System.Drawing.Size(23, 23);
-			this.pbDeletButton.MinimumSize = new System.Drawing.Size(23, 23);
+			this.pbDeletButton.MaximumSize = new System.Drawing.Size(22, 23);
+			this.pbDeletButton.MinimumSize = new System.Drawing.Size(22, 23);
 			this.pbDeletButton.Name = "pbDeletButton";
-			this.pbDeletButton.Size = new System.Drawing.Size(23, 23);
+			this.pbDeletButton.Size = new System.Drawing.Size(22, 23);
 			this.pbDeletButton.TabIndex = 0;
 			this.pbDeletButton.Text = "x";
 			this.pbDeletButton.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
 			// 
 			this.pbConnexionStateLight.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pbConnexionStateLight.Image = global::SADCom.Properties.Resources.SilverLight;
-			this.pbConnexionStateLight.Location = new System.Drawing.Point(688, 0);
+			this.pbConnexionStateLight.Location = new System.Drawing.Point(691, 0);
 			this.pbConnexionStateLight.Margin = new System.Windows.Forms.Padding(0);
 			this.pbConnexionStateLight.MaximumSize = new System.Drawing.Size(23, 23);
 			this.pbConnexionStateLight.MinimumSize = new System.Drawing.Size(23, 23);
@@ -183,11 +183,11 @@
 			this.cbPeriodicRequest.AutoSize = true;
 			this.cbPeriodicRequest.Dock = System.Windows.Forms.DockStyle.Top;
 			this.cbPeriodicRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.cbPeriodicRequest.Location = new System.Drawing.Point(578, 0);
+			this.cbPeriodicRequest.Location = new System.Drawing.Point(581, 0);
 			this.cbPeriodicRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.cbPeriodicRequest.Name = "cbPeriodicRequest";
 			this.cbPeriodicRequest.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
-			this.cbPeriodicRequest.Size = new System.Drawing.Size(17, 17);
+			this.cbPeriodicRequest.Size = new System.Drawing.Size(17, 19);
 			this.cbPeriodicRequest.TabIndex = 3;
 			this.cbPeriodicRequest.UseVisualStyleBackColor = true;
 			this.cbPeriodicRequest.CheckedChanged += new System.EventHandler(this.cbPeriodicRequest_CheckedChanged);
@@ -196,10 +196,10 @@
 			// 
 			this.tbRequest.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tbRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.tbRequest.Location = new System.Drawing.Point(393, 0);
+			this.tbRequest.Location = new System.Drawing.Point(395, 0);
 			this.tbRequest.Margin = new System.Windows.Forms.Padding(0);
 			this.tbRequest.Name = "tbRequest";
-			this.tbRequest.Size = new System.Drawing.Size(185, 23);
+			this.tbRequest.Size = new System.Drawing.Size(186, 23);
 			this.tbRequest.TabIndex = 2;
 			this.tbRequest.TextChanged += new System.EventHandler(this.tbRequest_TextChanged);
 			// 

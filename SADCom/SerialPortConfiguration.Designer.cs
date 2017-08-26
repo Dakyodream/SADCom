@@ -27,6 +27,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerialPortConfiguration));
 			SADCom.SessionConfigurations sessionConfigurations1 = new SADCom.SessionConfigurations();
 			SADCom.SessionConfigurations sessionConfigurations2 = new SADCom.SessionConfigurations();
+			SADCom.SessionConfigurations sessionConfigurations3 = new SADCom.SessionConfigurations();
 			this.gbSerialPort = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pbRefreshScan = new System.Windows.Forms.Button();
@@ -52,11 +53,11 @@
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.pbOptionalConfiguration = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.optionCustomButtonUC1 = new SADCom.OptionCustomButtonUC();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.saveLogFileUC = new SADCom.SaveDataFileUC();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.optionTerminalDisplay = new SADCom.Configuration.OptionTerminalDisplay();
-			this.optionCustomButtonUC1 = new SADCom.OptionCustomButtonUC();
 			this.gbSerialPort.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.gbProfil.SuspendLayout();
@@ -262,17 +263,10 @@
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
-			// groupBox2
+			// optionCustomButtonUC1
 			// 
-			resources.ApplyResources(this.groupBox2, "groupBox2");
-			this.groupBox2.Controls.Add(this.saveLogFileUC);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.TabStop = false;
-			// 
-			// saveLogFileUC
-			// 
-			resources.ApplyResources(this.saveLogFileUC, "saveLogFileUC");
-			this.saveLogFileUC.Name = "saveLogFileUC";
+			resources.ApplyResources(this.optionCustomButtonUC1, "optionCustomButtonUC1");
+			this.optionCustomButtonUC1.Name = "optionCustomButtonUC1";
 			sessionConfigurations1.AddrDataFile = "";
 			sessionConfigurations1.AddrFileAnalyserDescription = "";
 			sessionConfigurations1.AddrLogFileAnalyser = "";
@@ -287,19 +281,19 @@
 			sessionConfigurations1.Timestamp = 1D;
 			sessionConfigurations1.TimestampIsEnable = false;
 			sessionConfigurations1.WriteTimestampOnDataFile = false;
-			this.saveLogFileUC.SessionConfigurations = sessionConfigurations1;
+			this.optionCustomButtonUC1.SessionConfigurations = sessionConfigurations1;
 			// 
-			// groupBox1
+			// groupBox2
 			// 
-			resources.ApplyResources(this.groupBox1, "groupBox1");
-			this.groupBox1.Controls.Add(this.optionTerminalDisplay);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.TabStop = false;
+			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Controls.Add(this.saveLogFileUC);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.TabStop = false;
 			// 
-			// optionTerminalDisplay
+			// saveLogFileUC
 			// 
-			resources.ApplyResources(this.optionTerminalDisplay, "optionTerminalDisplay");
-			this.optionTerminalDisplay.Name = "optionTerminalDisplay";
+			resources.ApplyResources(this.saveLogFileUC, "saveLogFileUC");
+			this.saveLogFileUC.Name = "saveLogFileUC";
 			sessionConfigurations2.AddrDataFile = "";
 			sessionConfigurations2.AddrFileAnalyserDescription = "";
 			sessionConfigurations2.AddrLogFileAnalyser = "";
@@ -314,12 +308,34 @@
 			sessionConfigurations2.Timestamp = 1D;
 			sessionConfigurations2.TimestampIsEnable = false;
 			sessionConfigurations2.WriteTimestampOnDataFile = false;
-			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations2;
+			this.saveLogFileUC.SessionConfigurations = sessionConfigurations2;
 			// 
-			// optionCustomButtonUC1
+			// groupBox1
 			// 
-			resources.ApplyResources(this.optionCustomButtonUC1, "optionCustomButtonUC1");
-			this.optionCustomButtonUC1.Name = "optionCustomButtonUC1";
+			resources.ApplyResources(this.groupBox1, "groupBox1");
+			this.groupBox1.Controls.Add(this.optionTerminalDisplay);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.TabStop = false;
+			// 
+			// optionTerminalDisplay
+			// 
+			resources.ApplyResources(this.optionTerminalDisplay, "optionTerminalDisplay");
+			this.optionTerminalDisplay.Name = "optionTerminalDisplay";
+			sessionConfigurations3.AddrDataFile = "";
+			sessionConfigurations3.AddrFileAnalyserDescription = "";
+			sessionConfigurations3.AddrLogFileAnalyser = "";
+			sessionConfigurations3.AddrOfCustomButtonFileDescription = "";
+			sessionConfigurations3.DataAnalyserEnable = false;
+			sessionConfigurations3.MaxBufferLength = 2147483647;
+			sessionConfigurations3.TerminalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(36)))), ((int)(((byte)(86)))));
+			sessionConfigurations3.TerminalFont = new System.Drawing.Font("Lucida Console", 10F);
+			sessionConfigurations3.TerminalForeColor = System.Drawing.Color.White;
+			sessionConfigurations3.TerminalOpacity = 90;
+			sessionConfigurations3.TerminalOpacityFloat = 0.9D;
+			sessionConfigurations3.Timestamp = 1D;
+			sessionConfigurations3.TimestampIsEnable = false;
+			sessionConfigurations3.WriteTimestampOnDataFile = false;
+			this.optionTerminalDisplay.SessionConfigurations = sessionConfigurations3;
 			// 
 			// SerialPortConfiguration
 			// 

@@ -250,7 +250,7 @@ namespace SADCom.Configuration {
 		/// <param name="sender">Not used.</param>
 		/// <param name="e">Not used.</param>
 		private void pbCreateNewFileAnalyser_Click(object sender, EventArgs e) {
-			AnalyserDescriptionForm analyserDescriptionForm = new AnalyserDescriptionForm();
+			AnalyserDescriptionForm analyserDescriptionForm = new AnalyserDescriptionForm(this.mSessionConfigurations);
 
 			try {
 				if(analyserDescriptionForm.ShowDialog() == DialogResult.OK) {

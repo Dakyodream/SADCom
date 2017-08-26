@@ -14,7 +14,7 @@ namespace SADCom.UserButton {
 	/// <summary>
 	/// This class is used to generate and edit the user custom request buttons.
 	/// </summary>
-	public partial class RequestDesigner : Form {
+	public partial class CustomButtonViewer : Form {
 
 		/// <summary>
 		/// Contain the configuration of this session.
@@ -39,12 +39,12 @@ namespace SADCom.UserButton {
 		/// <summary>
 		/// Void constructor for the disigner viewer.
 		/// </summary>
-		public RequestDesigner() : this(new SessionConfigurations(), "") { }
+		public CustomButtonViewer() : this(new SessionConfigurations(), "") { }
 		/// <summary>
 		/// Constructor use to create a new list of custom button. 
 		/// </summary>
 		/// <param name="sessionConfigurations">Session configuration.</param>
-		public RequestDesigner(SessionConfigurations sessionConfigurations) : this(sessionConfigurations, "") { }
+		public CustomButtonViewer(SessionConfigurations sessionConfigurations) : this(sessionConfigurations, "") { }
 		/// <summary>
 		/// Constructor use to edit a custom button description file.
 		/// </summary>
@@ -63,9 +63,9 @@ namespace SADCom.UserButton {
 		///	}
 		///	</code>
 		/// </example>
-		public RequestDesigner(SessionConfigurations sessionConfigurations, string AddrOfCustomButtonFileDescription) {
+		public CustomButtonViewer(SessionConfigurations sessionConfigurations, string AddrOfCustomButtonFileDescription) {
 			InitializeComponent();
-
+			
 			//copy all params
 			this.mSessionConfigurations = sessionConfigurations;
 			this.msAddrOfCustomButtonFileDescription = AddrOfCustomButtonFileDescription;
@@ -239,8 +239,39 @@ namespace SADCom.UserButton {
 		/// <param name="e">Not sed.</param>
 		private void RequestDesigner_ResizeEnd(object sender, EventArgs e) {
 			int iHeight = this.mSizeOfCstForms.Height + ((this.pAutoscroll.Size.Height / 23) * 23);
+
+			if(!this.tlpColumnsLabels.Visible) {
+				iHeight -= this.tlpColumnsLabels.Size.Height;
+			}
 			this.Size = new Size(this.Size.Width, iHeight);
 		}
 
+		private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e) {
+			this.alwaysOnTopToolStripMenuItem.Checked = !this.alwaysOnTopToolStripMenuItem.Checked;
+			this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
+		}
+
+		private void minimalInterfaceToolStripMenuItem_Click(object sender, EventArgs e) {
+			this.minimalInterfaceToolStripMenuItem.Checked = !this.minimalInterfaceToolStripMenuItem.Checked;
+			ReduceDisplay(this.minimalInterfaceToolStripMenuItem.Checked);
+		}
+
+		private void ReduceDisplay(bool reduceIt) {
+			foreach(CustomButtonUC customButton in this.pCustomButtonDesigner.Controls) {
+				customButton.ReduceTheForm(reduceIt);
+			}
+			if(this.pCustomButtonDesigner.Controls.Count > 0) {
+				this.pCustomButtonDesigner.Controls[this.pCustomButtonDesigner.Controls.Count-1].Visible = !reduceIt;
+			}
+			this.tlpColumnsLabels.Visible = !reduceIt;
+
+			if(reduceIt) {
+				this.MinimumSize = new Size(215, 153);
+			} else {
+				this.MinimumSize = new Size(350, 153);
+			}
+		}
+
+		
 	}
 }
