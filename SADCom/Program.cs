@@ -15,10 +15,14 @@ namespace SADCom {
 			//SerialPortConfiguration configForm = new SerialPortConfiguration();
 			SerialPortShell shellForm = new SerialPortShell();
 
-			if(!shellForm.IsDisposed) {
-				Application.Run(shellForm);
+			//if(!shellForm.IsDisposed) {
+			//	Application.Run(shellForm);
+			//}
+
+			MainWindows mainWindows = new MainWindows();
+			if(!mainWindows.IsDisposed) {
+				Application.Run(mainWindows);
 			}
-			
 
 			//if(configForm.serialPort != null) {
 			//	Application.Run(new SerialPortShell(configForm.serialPort));

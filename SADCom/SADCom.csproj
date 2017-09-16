@@ -99,6 +99,12 @@
       <DependentUpon>CustomButtonUC.cs</DependentUpon>
     </Compile>
     <Compile Include="FileAnalyserDescription.cs" />
+    <Compile Include="MainWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindows.Designer.cs">
+      <DependentUpon>MainWindows.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionCustomButtonUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,19 @@
     </Compile>
     <Compile Include="SessionConfigurations.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="ShellBoardUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShellBoardUC.Designer.cs">
+      <DependentUpon>ShellBoardUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShellInterface.cs" />
+    <Compile Include="SimpleShell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SimpleShell.Designer.cs">
+      <DependentUpon>SimpleShell.cs</DependentUpon>
+    </Compile>
     <Compile Include="UARTOperator.cs" />
     <Compile Include="UIInterface.cs" />
     <EmbeddedResource Include="AnalyserDescriptionForm.resx">
@@ -163,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomButtonUC.resx">
       <DependentUpon>CustomButtonUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindows.resx">
+      <DependentUpon>MainWindows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionCustomButtonUC.resx">
       <DependentUpon>OptionCustomButtonUC.cs</DependentUpon>
@@ -195,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SerialPortShell.resx">
       <DependentUpon>SerialPortShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShellBoardUC.resx">
+      <DependentUpon>ShellBoardUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

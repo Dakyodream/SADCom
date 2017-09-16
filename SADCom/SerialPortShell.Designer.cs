@@ -65,7 +65,7 @@
 			this.rtbSerialPort.Location = new System.Drawing.Point(0, 0);
 			this.rtbSerialPort.Name = "rtbSerialPort";
 			this.rtbSerialPort.ReadOnly = true;
-			this.rtbSerialPort.Size = new System.Drawing.Size(379, 227);
+			this.rtbSerialPort.Size = new System.Drawing.Size(413, 249);
 			this.rtbSerialPort.TabIndex = 0;
 			this.rtbSerialPort.Text = "teste";
 			this.rtbSerialPort.SizeChanged += new System.EventHandler(this.rtbSerialPort_SizeChanged);
@@ -75,9 +75,9 @@
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lStatus,
             this.lLevelBuffer});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 276);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 298);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(403, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(445, 22);
 			this.statusStrip1.TabIndex = 1;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -104,7 +104,7 @@
 			// toolStripContainer1.ContentPanel
 			// 
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.rtbSerialPort);
-			this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(379, 227);
+			this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(413, 249);
 			this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer1.Name = "toolStripContainer1";
@@ -112,7 +112,7 @@
 			// toolStripContainer1.RightToolStripPanel
 			// 
 			this.toolStripContainer1.RightToolStripPanel.Controls.Add(this.toolStrip1);
-			this.toolStripContainer1.Size = new System.Drawing.Size(403, 276);
+			this.toolStripContainer1.Size = new System.Drawing.Size(445, 298);
 			this.toolStripContainer1.TabIndex = 2;
 			this.toolStripContainer1.Text = "toolStripContainer1";
 			// 
@@ -128,7 +128,7 @@
             this.pbSendDimpleMessage});
 			this.toolStrip2.Location = new System.Drawing.Point(3, 0);
 			this.toolStrip2.Name = "toolStrip2";
-			this.toolStrip2.Size = new System.Drawing.Size(168, 25);
+			this.toolStrip2.Size = new System.Drawing.Size(137, 25);
 			this.toolStrip2.TabIndex = 0;
 			// 
 			// tbSendSimpleMessage
@@ -154,7 +154,7 @@
             this.pbEnableTime});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 3);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(24, 57);
+			this.toolStrip1.Size = new System.Drawing.Size(32, 76);
 			this.toolStrip1.TabIndex = 0;
 			// 
 			// toolStripButton1
@@ -163,7 +163,7 @@
 			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
 			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(22, 20);
+			this.toolStripButton1.Size = new System.Drawing.Size(30, 20);
 			this.toolStripButton1.Text = "toolStripButton1";
 			// 
 			// pbEnableTime
@@ -172,7 +172,7 @@
 			this.pbEnableTime.Image = global::SADCom.Properties.Resources.Data;
 			this.pbEnableTime.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.pbEnableTime.Name = "pbEnableTime";
-			this.pbEnableTime.Size = new System.Drawing.Size(22, 20);
+			this.pbEnableTime.Size = new System.Drawing.Size(30, 20);
 			this.pbEnableTime.Text = "Enable time";
 			this.pbEnableTime.Click += new System.EventHandler(this.pbEnableTime_Click);
 			// 
@@ -187,7 +187,7 @@
             this.aideToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(403, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(445, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -257,7 +257,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(403, 298);
+			this.ClientSize = new System.Drawing.Size(445, 320);
 			this.Controls.Add(this.toolStripContainer1);
 			this.Controls.Add(this.statusStrip1);
 			this.MainMenuStrip = this.menuStrip1;

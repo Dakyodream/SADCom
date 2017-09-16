@@ -859,7 +859,7 @@
     <value>3, 16</value>
   </data>
   <data name="optionCustomButtonUC1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 55</value>
+    <value>511, 26</value>
   </data>
   <data name="optionCustomButtonUC1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -883,7 +883,7 @@
     <value>0, 276</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 74</value>
+    <value>517, 45</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
